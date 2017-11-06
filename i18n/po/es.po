@@ -3061,4 +3061,3 @@ msgstr "{{updatingTxHistoryProgress}} transacciones descargadas"
 #: www/views/includes/walletInfo.html:12
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-de-{{wallet.n}}"
-

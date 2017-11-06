@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('copayApp.services').factory('configService', function(storageService, lodash, $log, $timeout, $rootScope) {
+angular.module('copayApp.services').factory('configService', function(storageService, lodash, $log, $timeout, $rootScope, platformInfo) {
   var root = {};
+
+  var isWindowsPhoneApp = platformInfo.isCordova && platformInfo.isWP;
 
   var defaultConfig = {
     // wallet limits
@@ -44,10 +46,10 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       reconnectDelay: 5000,
       idleDurationMin: 4,
       settings: {
-        unitName: 'BTC',
+        unitName: 'NAV',
         unitToSatoshi: 100000000,
         unitDecimals: 8,
-        unitCode: 'btc',
+        unitCode: 'nav',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
       }
@@ -65,7 +67,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     },
 
     hideNextSteps: {
-      enabled: false,
+      enabled: isWindowsPhoneApp ? true : false,
     },
 
     rates: {
