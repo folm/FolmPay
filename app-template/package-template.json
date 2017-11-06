@@ -60,7 +60,7 @@
     "bower": "^1.7.9",
     "cordova-android": "5.1.1",
     "cordova-custom-config": "^3.0.5",
-    "cordova-plugin-qrscanner": "^2.5.0",
+    "cordova-plugin-qrscanner": "git://github.com/navcoin/cordova-plugin-qrscanner.git",
     "coveralls": "^2.11.9",
     "express": "^4.11.2",
     "fs": "0.0.2",
