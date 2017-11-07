@@ -7,7 +7,7 @@ angular.module('copayApp.services').service('scannerService', function($log, $ti
   var lightEnabled = false;
   var backCamera = true; // the plugin defaults to the back camera
 
-  console.log('QRScanner', QRScanner);
+  console.log('QRScanner', QRScanner, $window);
 
   // Initalize known capabilities
   // Assume camera is available. If init fails, we'll set this to false.
