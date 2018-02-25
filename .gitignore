@@ -3,6 +3,9 @@ i18n/po/*.mo
 i18n/crowdin_api_key.txt
 src/js/translations.js
 
+package-lock.json
+
+
 # cordova
 plugins
 platforms
@@ -100,6 +103,7 @@ app-template/bitpay-wallet
 src/js/appConfig.js
 src/js/externalServices.js
 chrome-app/manifest.json
+www/img/app
 www/index.html
 
 ## Firebase

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('copayApp.controllers').controller('createController',
-  function($scope, $rootScope, $timeout, $log, lodash, $state, $ionicScrollDelegate, $ionicHistory, profileService, configService, gettextCatalog, ledger, trezor, intelTEE, derivationPathHelper, ongoingProcess, walletService, storageService, popupService, appConfigService, pushNotificationsService) {
+  function ($scope, $rootScope, $timeout, $log, lodash, $state, $ionicScrollDelegate, $ionicHistory, profileService, configService, gettextCatalog, ledger, trezor, intelTEE, derivationPathHelper, ongoingProcess, walletService, storageService, popupService, appConfigService, pushNotificationsService) {
 
     /* For compressed keys, m*73 + n*34 <= 496 */
     var COPAYER_PAIR_LIMITS = {
@@ -19,51 +19,30 @@ angular.module('copayApp.controllers').controller('createController',
       12: 1,
     };
 
-    $scope.$on("$ionicView.beforeEnter", function(event, data) {
+    $scope.$on("$ionicView.beforeEnter", function (event, data) {
       $scope.formData = {};
       var defaults = configService.getDefaults();
+      var config = configService.getSync();
       var tc = $state.current.name == 'tabs.add.create-personal' ? 1 : defaults.wallet.totalCopayers;
       $scope.formData.account = 1;
       $scope.formData.bwsurl = defaults.bws.url;
       $scope.TCValues = lodash.range(2, defaults.limits.totalCopayers + 1);
       $scope.formData.derivationPath = derivationPathHelper.default;
+      $scope.formData.coin = data.stateParams.coin;
+
       $scope.setTotalCopayers(tc);
       updateRCSelect(tc);
-      resetPasswordFields();
     });
 
-    $scope.showAdvChange = function() {
+    $scope.showAdvChange = function () {
       $scope.showAdv = !$scope.showAdv;
-      $scope.encrypt = null;
       $scope.resizeView();
     };
 
-    $scope.checkPassword = function(pw1, pw2) {
-      if (pw1 && pw1.length > 0) {
-        if (pw2 && pw2.length > 0) {
-          if (pw1 == pw2) $scope.result = 'correct';
-          else {
-            $scope.formData.passwordSaved = null;
-            $scope.result = 'incorrect';
-          }
-        } else
-          $scope.result = null;
-      } else
-        $scope.result = null;
-    };
-
-    $scope.resizeView = function() {
-      $timeout(function() {
+    $scope.resizeView = function () {
+      $timeout(function () {
         $ionicScrollDelegate.resize();
       }, 10);
-      resetPasswordFields();
-    };
-
-    function resetPasswordFields() {
-      $scope.formData.passphrase = $scope.formData.createPassphrase = $scope.formData.passwordSaved = $scope.formData.repeatPassword = $scope.result = null;
-      $timeout(function() {
-        $scope.$apply();
-      });
     };
 
     function updateRCSelect(n) {
@@ -120,23 +99,24 @@ angular.module('copayApp.controllers').controller('createController',
       $scope.seedOptions = seedOptions;
     };
 
-    $scope.setTotalCopayers = function(tc) {
+    $scope.setTotalCopayers = function (tc) {
       $scope.formData.totalCopayers = tc;
       updateRCSelect(tc);
       updateSeedSourceSelect(tc);
     };
 
-    $scope.create = function() {
+    $scope.create = function () {
 
       var opts = {
         name: $scope.formData.walletName,
         m: $scope.formData.requiredCopayers,
         n: $scope.formData.totalCopayers,
         myName: $scope.formData.totalCopayers > 1 ? $scope.formData.myName : null,
-        networkName: $scope.formData.testnetEnabled ? 'testnet' : 'livenet',
+        networkName: $scope.formData.testnetEnabled && $scope.formData.coin != 'bch' ? 'testnet' : 'livenet',
         bwsurl: $scope.formData.bwsurl,
         singleAddress: $scope.formData.singleAddressEnabled,
         walletPrivKey: $scope.formData._walletPrivKey, // Only for testing
+        coin: $scope.formData.coin
       };
 
       var setSeed = $scope.formData.seedSource.id == 'set';
@@ -170,6 +150,11 @@ angular.module('copayApp.controllers').controller('createController',
       }
 
       if ($scope.formData.seedSource.id == walletService.externalSource.ledger.id || $scope.formData.seedSource.id == walletService.externalSource.trezor.id || $scope.formData.seedSource.id == walletService.externalSource.intelTEE.id) {
+        if ($scope.formData.coin == 'bch') {
+          popupService.showAlert(gettextCatalog.getString('Error'), gettextCatalog.getString('Hardware wallets are not yet supported with Bitcoin Cash'));
+          return;
+        }
+
         var account = $scope.formData.account;
         if (!account || account < 1) {
           popupService.showAlert(gettextCatalog.getString('Error'), gettextCatalog.getString('Invalid account number'));
@@ -198,7 +183,7 @@ angular.module('copayApp.controllers').controller('createController',
             return;
         }
 
-        src.getInfoForNewWallet(opts.n > 1, account, opts.networkName, function(err, lopts) {
+        src.getInfoForNewWallet(opts.n > 1, account, opts.networkName, function (err, lopts) {
           ongoingProcess.set('connecting ' + $scope.formData.seedSource.id, false);
           if (err) {
             popupService.showAlert(gettextCatalog.getString('Error'), err);
@@ -214,8 +199,8 @@ angular.module('copayApp.controllers').controller('createController',
 
     function _create(opts) {
       ongoingProcess.set('creatingWallet', true);
-      $timeout(function() {
-        profileService.createWallet(opts, function(err, client) {
+      $timeout(function () {
+        profileService.createWallet(opts, function (err, client) {
           ongoingProcess.set('creatingWallet', false);
           if (err) {
             $log.warn(err);
@@ -237,7 +222,7 @@ angular.module('copayApp.controllers').controller('createController',
               disableAnimate: true
             });
             $state.go('tabs.home');
-            $timeout(function() {
+            $timeout(function () {
               $state.transitionTo('tabs.copayers', {
                 walletId: client.credentials.walletId
               });

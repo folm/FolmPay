@@ -18,14 +18,14 @@ angular.module('copayApp.services')
       name: 'Italiano',
       isoCode: 'it',
     }, {
+      name: 'Nederlands',
+      isoCode: 'nl',
+    }, {
       name: 'Polski',
       isoCode: 'pl',
     }, {
       name: 'Deutsch',
       isoCode: 'de',
-    }, {
-      name: 'Nederlands',
-      isoCode: 'nl',
     }, {
       name: '日本語',
       isoCode: 'ja',

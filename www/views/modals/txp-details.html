@@ -11,7 +11,7 @@
     </button>
   </ion-header-bar>
 
-  <ion-content ng-init="updateCopayerList()" ng-class="{'add-bottom-for-cta': tx.pendingForUs && canSign}">
+  <ion-content ng-init="updateCopayerList()" ng-class="{'add-bottom-for-cta': tx.pendingForUs && canSign && !paymentExpired}">
     <div class="list">
       <div class="item head">
         <div class="sending-label">
@@ -73,9 +73,7 @@
         <div class="item">
           <span class="label" translate>From</span>
           <div class="wallet">
-            <i class="icon big-icon-svg">
-              <img src="img/icon-wallet.svg" ng-class="{'wallet-background-color-default': !wallet.color}" ng-style="{'background-color': wallet.color}" class="bg"/>
-            </i>
+            <i class="icon big-icon-svg" ng-include="'views/includes/walletIcon.html'"></i>
             <div>{{wallet.name}}</div>
           </div>
         </div>

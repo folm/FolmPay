@@ -1,5 +1,4 @@
 .settings {
-  @extend .deflash-blue;
   .icon-bitpay {
     background-image: url("../img/icon-bitpay.svg");
   }
@@ -20,6 +19,12 @@
   .has-comment {
     border-bottom: 0 none;
   }
+  .scan-label {
+    cursor: pointer;
+    cursor: hand;
+    color: $link-color;
+    font-weight: bold;
+  }
   .comment {
     padding: 15px;
     background-color: #fff;
@@ -33,6 +38,9 @@
       img {
         width: 20px;
       }
+    }
+    a {
+      cursor: pointer;
     }
   }
   &-explanation, &-button-group {
@@ -100,6 +108,10 @@
     .item-button-right > .button {
       top: 16px;
     }
+    .toggle-small.item-toggle .toggle,
+    .item-button-right > .button {
+      top: 25px;
+    }
     .item-button-right > .button {
       font-size: 16px;
     }
@@ -119,6 +131,28 @@
     color: #00901B;
    }
  }
+ .log-bg {
+    background: white;
+  }
+ .log-entry {
+    font-size: 12px;
+    line-height: 18px;
+    border: none;
+  }
+ .log-timestamp {
+    font-weight: bold;
+  }
+ .log-level {
+    font-weight: bold;
+  }
+  .alt-currency-radio {
+    .item-content {
+      padding-right: 16px;
+    }
+    .radio-icon {
+      display: none;
+    }
+  }
 }
 
 #tab-settings {
@@ -130,6 +164,13 @@
         height:20px;
         border-radius: 0;
         box-shadow: none;
+       }
+       & > .bch {
+         background-color: #9b9bab;
+         border-radius: 1rem;
+       }
+       & > .bch-enabled {
+         background-color: #ff9900 !important;
        }
        &.circle{
           left:8px;

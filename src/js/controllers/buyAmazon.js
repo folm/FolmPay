@@ -1,13 +1,15 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('buyAmazonController', function($scope, $log, $state, $timeout, $filter, $ionicHistory, $ionicConfig, lodash, amazonService, popupService, profileService, ongoingProcess, configService, walletService, payproService, bwcError, externalLinkService, platformInfo, gettextCatalog, txFormatService) {
+angular.module('copayApp.controllers').controller('buyAmazonController', function($scope, $log, $state, $timeout, $filter, $ionicHistory, $ionicConfig, $ionicModal, lodash, amazonService, popupService, profileService, ongoingProcess, configService, walletService, payproService, bwcError, externalLinkService, platformInfo, gettextCatalog, txFormatService, emailService) {
 
+  var coin = 'btc';
   var amount;
   var currency;
   var createdTx;
   var message;
   var invoiceId;
   var configWallet = configService.getSync().wallet;
+  var FEE_TOO_HIGH_LIMIT_PER = 15;
   $scope.isCordova = platformInfo.isCordova;
 
   $scope.openExternalLink = function(url) {
@@ -40,7 +42,7 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
 
   var publishAndSign = function(wallet, txp, onSendStatusChange, cb) {
     if (!wallet.canSign() && !wallet.isPrivKeyExternal()) {
-      var err = 'No signing proposal: No private key';
+      var err = gettextCatalog.getString('No signing proposal: No private key');
       $log.info(err);
       return cb(err);
     }
@@ -64,7 +66,7 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
   };
 
   var satToFiat = function(sat, cb) {
-    txFormatService.toFiat(sat, $scope.currencyIsoCode, function(value) {
+    txFormatService.toFiat(coin, sat, $scope.currencyIsoCode, function(value) {
       return cb(value);
     });
   };
@@ -94,11 +96,11 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
         var err_msg;
         if (err && err.message && err.message.match(/suspended/i)) {
           err_title = gettextCatalog.getString('Service not available');
-          err_msg = gettextCatalog.getString('Amazon.com Gift Card Service is not available at this moment. Please try back later.');
+          err_msg = gettextCatalog.getString('Amazon.com is not available at this moment. Please try back later.');
         } else if (err && err.message) {
           err_msg = err.message;
         } else {
-          err_msg = gettextCatalog.getString('Could not access Gift Card Service');
+          err_msg = gettextCatalog.getString('Could not access to Amazon.com');
         };
 
         return cb({
@@ -139,7 +141,7 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
 
     var outputs = [];
     var toAddress = invoice.bitcoinAddress;
-    var amountSat = parseInt(invoice.btcDue * 100000000); // BTC to Satoshi
+    var amountSat = parseInt((invoice.btcDue * 100000000).toFixed(0)); // BTC to Satoshi
 
     outputs.push({
       'toAddress': toAddress,
@@ -173,15 +175,8 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
       $log.debug("creating gift card " + count);
       if (err) {
         ongoingProcess.set('buyingGiftCard', false, statusChangeHandler);
-        giftCard = {};
-        giftCard.status = 'FAILURE';
-        showError(gettextCatalog.getString('Error creating gift card'), err);
-      }
-
-      if (giftCard.status == 'PENDING' && count < 3) {
-        $log.debug("Waiting for payment confirmation");
-        checkTransaction(count + 1, dataSrc);
-        return;
+        giftCard = giftCard || {};
+        giftCard['status'] = 'FAILURE';
       }
 
       var now = moment().unix() * 1000;
@@ -205,9 +200,20 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
         return;
       }
 
+      if (giftCard.status == 'PENDING' && count < 3) {
+        $log.debug("Waiting for payment confirmation");
+
+        amazonService.savePendingGiftCard(newData, null, function(err) {
+          $log.debug("Saving gift card with status: " + newData.status);
+        });
+
+        checkTransaction(count + 1, dataSrc);
+        return;
+      }
+
       amazonService.savePendingGiftCard(newData, null, function(err) {
         ongoingProcess.set('buyingGiftCard', false, statusChangeHandler);
-        $log.debug("Saving new gift card with status: " + newData.status);
+        $log.debug("Saved new gift card with status: " + newData.status);
         $scope.amazonGiftCard = newData;
       });
     });
@@ -216,13 +222,15 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
   });
 
   var initialize = function(wallet) {
-    var parsedAmount = txFormatService.parseAmount(amount, currency);
-    $scope.currencyIsoCode = parsedAmount.alternativeIsoCode;
+    var email = emailService.getEmailIfEnabled();
+    var parsedAmount = txFormatService.parseAmount(coin, amount, currency);
+    $scope.currencyIsoCode = parsedAmount.currency;
     $scope.amountUnitStr = parsedAmount.amountUnitStr;
     var dataSrc = {
       amount: parsedAmount.amount,
       currency: parsedAmount.currency,
-      uuid: wallet.id
+      uuid: wallet.id,
+      email: email
     };
     ongoingProcess.set('loadingTxInfo', true);
     createInvoice(dataSrc, function(err, invoice, accessKey) {
@@ -235,7 +243,7 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
       invoice['buyerPaidBtcMinerFee'] = invoice.buyerPaidBtcMinerFee || 0;
       var invoiceFeeSat = (invoice.buyerPaidBtcMinerFee * 100000000).toFixed();
 
-      message = gettextCatalog.getString("Amazon.com Gift Card {{amountStr}}", {
+      message = gettextCatalog.getString("{{amountStr}} for Amazon.com Gift Card", {
         amountStr: $scope.amountUnitStr
       });
 
@@ -260,11 +268,32 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
           invoiceUrl: invoice.url,
           invoiceTime: invoice.invoiceTime
         };
-        $scope.totalAmountStr = txFormatService.formatAmountStr(ctxp.amount);
+        $scope.totalAmountStr = txFormatService.formatAmountStr(coin, ctxp.amount);
+
+        // Warn: fee too high
+        checkFeeHigh(Number(parsedAmount.amountSat), Number(invoiceFeeSat) + Number(ctxp.fee));
+
         setTotalAmount(parsedAmount.amountSat, invoiceFeeSat, ctxp.fee);
       });
     });
   };
+
+  var checkFeeHigh = function(amount, fee) {
+    var per = fee / (amount + fee) * 100;
+
+    if (per > FEE_TOO_HIGH_LIMIT_PER) {
+      $ionicModal.fromTemplateUrl('views/modals/fee-warning.html', {
+        scope: $scope
+      }).then(function(modal) {
+        $scope.feeWarningModal = modal;
+        $scope.feeWarningModal.show();
+      });
+
+      $scope.close = function() {
+        $scope.feeWarningModal.hide();
+      };
+    }
+  }
 
   $scope.$on("$ionicView.beforeLeave", function(event, data) {
     $ionicConfig.views.swipeBackEnabled(true);
@@ -292,7 +321,8 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
     $scope.wallets = profileService.getWallets({
       onlyComplete: true,
       network: $scope.network,
-      hasFunds: true
+      hasFunds: true,
+      coin: coin
     });
     if (lodash.isEmpty($scope.wallets)) {
       showErrorAndBack(null, gettextCatalog.getString('No wallets available'));
@@ -307,7 +337,7 @@ angular.module('copayApp.controllers').controller('buyAmazonController', functio
       return;
     }
     var title = gettextCatalog.getString('Confirm');
-    var okText = gettextCatalog.getString('Ok');
+    var okText = gettextCatalog.getString('OK');
     var cancelText = gettextCatalog.getString('Cancel');
     popupService.showConfirm(title, message, okText, cancelText, function(ok) {
       if (!ok) {

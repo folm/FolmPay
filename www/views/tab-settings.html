@@ -22,13 +22,13 @@
           <img src="img/icon-link.svg" class="bg just-a-hint"/>
         </i>
       </a>
-<!--       <a class="item item-icon-left item-icon-right" ui-sref="tabs.feedback">
+      <a class="item item-icon-left item-icon-right" ui-sref="tabs.feedback">
         <i class="icon big-icon-svg">
           <img src="img/icon-send-feedback.svg" class="bg"/>
         </i>
         <span>{{'Send Feedback' | translate}}</span>
         <i class="icon bp-arrow-right"></i>
-      </a> -->
+      </a>
       <a ng-if="isCordova && !isWindowsPhoneApp" class="item item-icon-left item-icon-right" ui-sref="tabs.shareApp({score: 4, skipped: true, fromSettings: true})">
         <i class="icon big-icon-svg">
           <img src="img/icon-heart.svg" class="bg"/>
@@ -39,7 +39,15 @@
 
       <div class="item item-divider">{{'Preferences' | translate}}</div>
 
-      <a class="item item-icon-left item-icon-right" ui-sref="tabs.notifications" ng-if="isCordova">
+      <a class="item item-icon-left item-icon-right" ui-sref="tabs.preferencesCash">
+        <i class="icon big-icon-svg">
+          <img src="img/icon-bch.svg" class="bg bch bch-enabled"/>
+        </i>
+        <span class="setting-title">Bitcoin Cash</span>
+        <i class="icon bp-arrow-right"></i>
+      </a>
+
+      <a class="item item-icon-left item-icon-right" ui-sref="tabs.notifications">
         <i class="icon big-icon-svg">
           <img src="img/icon-notifications.svg" class="bg"/>
         </i>
@@ -56,16 +64,6 @@
        </span>
        <i class="icon bp-arrow-right"></i>
      </a>
-      <a class="item has-setting-value item-icon-left item-icon-right" ui-sref="tabs.unit">
-        <i class="icon big-icon-svg">
-          <img src="img/icon-unit.svg" class="bg"/>
-        </i>
-        <span class="setting-title">{{'Nav Coin Unit' | translate}}</span>
-        <span class="setting-value">
-          {{unitName}}
-        </span>
-        <i class="icon bp-arrow-right"></i>
-      </a>
 
       <a class="item has-setting-value item-icon-left item-icon-right" ui-sref="tabs.altCurrency">
         <i class="icon big-icon-svg">
@@ -78,16 +76,16 @@
         <i class="icon bp-arrow-right"></i>
       </a>
 
-      <!-- <a class="item has-setting-value item-icon-left item-icon-right" ui-sref="tabs.fee">
+      <a class="item has-setting-value item-icon-left item-icon-right" ui-sref="tabs.fee">
         <i class="icon big-icon-svg">
           <img src="img/icon-network.svg" class="bg"/>
         </i>
-        <span class="setting-title">{{'Nav Coin Network Fee Policy' | translate}}</span>
+        <span class="setting-title">{{'Bitcoin Network Fee Policy' | translate}}</span>
         <span class="setting-value">
           {{feeOpts[currentFeeLevel]|translate}}
         </span>
         <i class="icon bp-arrow-right"></i>
-      </a> -->
+      </a>
 
       <a class="item has-setting-value item-icon-left item-icon-right" ui-sref="tabs.lockSetup" ng-if="(isCordova || isDevel) && !isWindowsPhoneApp">
         <i class="icon ion-ios-locked-outline" ng-if="locked"></i>
@@ -99,28 +97,23 @@
         <i class="icon bp-arrow-right"></i>
       </a>
 
-      <div class="item item-divider" ng-show="wallets[0]">{{'Wallets & Integrations' | translate}}</div>
+      <div class="item item-divider" ng-show="walletsBtc[0]">{{'Bitcoin Wallets' | translate}}</div>
 
       <a class="item item-icon-left item-icon-right" href
-           ui-sref="tabs.preferences({'walletId': item.id})"
-           ng-repeat="item in wallets track by $index">
-         <i class="icon big-icon-svg circle">
-          <img src="img/icon-wallet.svg" ng-class="{'wallet-background-color-default': !item.color}" ng-style="{'background-color': item.color}" class="bg"/>
-        </i>
-        <span>
-          {{item.name || item.id}}
-          <span class="size-12 text-light" ng-show="item.n > 1">
-            {{item.m}}-of-{{item.n}}
-          </span>
-        </span>
-        <span class="right text-light assertive" ng-show="!item.isComplete()">
-          {{'Incomplete' | translate}}
-        </span>
-        <span class="right text-light assertive" ng-show="item.isComplete() && item.needsBackup">
-          {{'Backup needed' | translate}}
-        </span>
-        <i class="icon bp-arrow-right"></i>
+           ui-sref="tabs.preferences({'walletId': wallet.id})"
+           ng-repeat="wallet in walletsBtc track by $index">
+        <span ng-include="'views/includes/walletListSettings.html'"></span>
       </a>
+
+      <div class="item item-divider" ng-show="walletsBch[0]">{{'Bitcoin Cash Wallets' | translate}}</div>
+
+      <a class="item item-icon-left item-icon-right" href
+           ui-sref="tabs.preferences({'walletId': wallet.id})"
+           ng-repeat="wallet in walletsBch track by $index">
+        <span ng-include="'views/includes/walletListSettings.html'"></span>
+      </a>
+
+      <div class="item item-divider" ng-show="bitpayAccounts || buyAndSellServices[0]">{{'Integrations' | translate}}</div>
 
       <a class=" item item-icon-left item-icon-right"
          ng-if="bitpayAccounts || bitpayCards"

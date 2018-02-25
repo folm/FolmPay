@@ -1,10 +1,8 @@
 #view-amount {
-  @extend .deflash-blue;
   .recipient-label {
     font-size: 14px;
     padding-bottom: 0;
     color: $v-mid-gray;
-
   }
   .item-no-bottom-border + .item {
       border-top: 0;
@@ -140,6 +138,19 @@
     }
   }
   .amount {
+    .icon-toggle {
+      font-size: 1.2em;
+      width: auto;
+      margin: 0.8em auto;
+      border: 1px solid $v-subtle-gray;
+      color: $v-dark-gray;
+      border-radius: 3px;
+      padding: 0 10px;
+      cursor: pointer;
+      @media(max-height: 280px) {
+        margin: 0.1em auto;
+      }
+    }
     &__editable {
       &--minimize {
         font-size: 22px;
@@ -159,9 +170,8 @@
       color: $v-dark-gray;
     }
     &__currency-toggle {
-      color: #FFF;
-      background-color: $nav-purple;
-      opacity: 1;
+      border: 1px solid $v-subtle-gray;
+      color: $v-dark-gray;
       border-radius: 3px;
       padding: 0 10px;
       cursor: pointer;
@@ -169,13 +179,9 @@
       position: relative;
       top: -3px;
       line-height: 1;
-      // box-shadow: $v-mid-gray 0px 0px 1px 2px;
       @media(max-width: 320px) {
         line-height: 30px;
         height: 30px;
-      }
-      &.active {
-        opacity: 0.3;
       }
     }
     &__results {
@@ -193,7 +199,7 @@
     &__result {
       color: $v-light-gray;
       font-size: .9em;
-      margin-bottom: -.9em;
+      //margin-bottom: -.9em;  TODO matias
       line-height: 1;
       @media(max-height: 480px) {
         margin-bottom: 0;
@@ -202,7 +208,6 @@
     &__result-equiv {
       color: $v-mid-gray;
       font-size: 1.2em;
-      margin-top: 2rem;
       @media(max-height: 480px) {
         margin-top: 0;
         font-size: 16px;

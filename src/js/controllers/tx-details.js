@@ -1,9 +1,11 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('txDetailsController', function($rootScope, $log, $ionicHistory, $scope, $timeout, walletService, lodash, gettextCatalog, profileService, externalLinkService, popupService, ongoingProcess, txFormatService, txConfirmNotification, feeService) {
+angular.module('copayApp.controllers').controller('txDetailsController', function($rootScope, $log, $ionicHistory, $scope, $timeout, walletService, lodash, gettextCatalog, profileService, externalLinkService, popupService, ongoingProcess, txFormatService, txConfirmNotification, feeService, configService) {
 
   var txId;
   var listeners = [];
+  var config = configService.getSync();
+  var blockexplorerUrl;
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
     txId = data.stateParams.txid;
@@ -12,6 +14,17 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
     $scope.color = $scope.wallet.color;
     $scope.copayerId = $scope.wallet.credentials.copayerId;
     $scope.isShared = $scope.wallet.credentials.n > 1;
+    $scope.txsUnsubscribedForNotifications = config.confirmedTxsNotifications ? !config.confirmedTxsNotifications.enabled : true;
+
+    if ($scope.wallet.coin == 'bch') {
+      if (walletService.useLegacyAddress($scope.wallet)) {
+        blockexplorerUrl = 'bch-insight.bitpay.com';
+      } else {
+        blockexplorerUrl = 'blockdozer.com/insight';
+      }
+    } else {
+      blockexplorerUrl = 'insight.bitpay.com';
+    }
 
     txConfirmNotification.checkIfEnabled(txId, function(res) {
       $scope.txNotification = {
@@ -37,6 +50,16 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
       x();
     });
   });
+
+  $scope.readMore = function() {
+    var url = 'https://github.com/bitpay/copay/wiki/COPAY---FAQ#amount-too-low-to-spend';
+    var optIn = true;
+    var title = null;
+    var message = gettextCatalog.getString('Read more in our Wiki');
+    var okText = gettextCatalog.getString('Open');
+    var cancelText = gettextCatalog.getString('Go Back');
+    externalLinkService.open(url, optIn, title, message, okText, cancelText);
+  };
 
   function updateMemo() {
     walletService.getTxNote($scope.wallet, $scope.btx.txid, function(err, note) {
@@ -100,8 +123,10 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
         return popupService.showAlert(gettextCatalog.getString('Error'), gettextCatalog.getString('Transaction not available at this time'));
       }
 
-      $scope.btx = txFormatService.processTx(tx);
-      txFormatService.formatAlternativeStr(tx.fees, function(v) {
+      $scope.btx = txFormatService.processTx($scope.wallet.coin, tx, 
+        walletService.useLegacyAddress($scope.wallet));
+
+      txFormatService.formatAlternativeStr($scope.wallet.coin, tx.fees, function(v) {
         $scope.btx.feeFiatStr = v;
         $scope.btx.feeRateStr = ($scope.btx.fees / ($scope.btx.amount + $scope.btx.fees) * 100).toFixed(2) + '%';
       });
@@ -119,7 +144,7 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
         $scope.$digest();
       });
 
-      feeService.getFeeLevels(function(err, levels) {
+      feeService.getFeeLevels($scope.wallet.coin, function(err, levels) {
         if (err) return;
         walletService.getLowAmount($scope.wallet, levels, function(err, amount) {
           if (err) return;
@@ -166,12 +191,11 @@ angular.module('copayApp.controllers').controller('txDetailsController', functio
 
   $scope.viewOnBlockchain = function() {
     var btx = $scope.btx;
-    // var url = 'https://' + ($scope.getShortNetworkName() == 'test' ? 'test-' : '') + 'insight.bitpay.com/tx/' + btx.txid;
-    var url = 'https://chainz.cryptoid.info/nav/tx.dws?' + btx.txid;
+    var url = 'https://' + ($scope.getShortNetworkName() == 'test' ? 'test-' : '') + blockexplorerUrl + '/tx/' + btx.txid;
     var optIn = true;
     var title = null;
-    var message = gettextCatalog.getString('View Transaction on CryptoID');
-    var okText = gettextCatalog.getString('Open CryptoID');
+    var message = gettextCatalog.getString('View Transaction on Insight');
+    var okText = gettextCatalog.getString('Open Insight');
     var cancelText = gettextCatalog.getString('Go Back');
     externalLinkService.open(url, optIn, title, message, okText, cancelText);
   };

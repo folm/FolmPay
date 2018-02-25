@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: navpay\n"
+"Project-Id-Version: copay\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: navpay\n"
+"X-Crowdin-Project: copay\n"
 "X-Crowdin-Language: pt-BR\n"
 "X-Crowdin-File: template.pot\n"
 "Last-Translator: cmgustavo83\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt\n"
-"PO-Revision-Date: 2017-06-29 08:05-0400\n"
+"PO-Revision-Date: 2017-11-22 10:20-0500\n"
 
 #: www/views/modals/paypro.html:34
 msgid "(Trusted)"
@@ -22,15 +22,15 @@ msgstr "(Confiável)"
 msgid "(possible double spend)"
 msgstr "(Possível gasto duplo)"
 
-#: www/views/modals/txp-details.html:161
+#: www/views/modals/txp-details.html:159
 msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 24 hours have passed since the proposal was created."
 msgstr "* Uma proposta de pagamento pode ser apagada se 1) você é o criador e outro copayer não subscreveu, ou 2) Passaram-se 24 horas desde que a proposta foi criada."
 
-#: www/views/tx-details.html:84
+#: www/views/tx-details.html:82
 msgid "- {{btx.feeRateStr}} of the transaction"
 msgstr "- {{btx.feeRateStr}} da transação"
 
-#: www/views/modals/txp-details.html:104
+#: www/views/modals/txp-details.html:102
 msgid "- {{tx.feeRateStr}} of the transaction"
 msgstr "- {{tx.feeRateStr}} da transação"
 
@@ -38,36 +38,41 @@ msgstr "- {{tx.feeRateStr}} da transação"
 msgid "5-star ratings help us get {{appName}} into more hands, and more users means more resources can be committed to the app!"
 msgstr "Classificações de 5 estrelas ajudam-nos a que o {{appName}} chegue ás mãos de mais e mais utilizadores, que significa que mais recursos serão incluídos na aplicação!"
 
+#: www/views/mercadoLibre.html:18
+#: www/views/mercadoLibre.html:40
+msgid "<b>Only</b> redeemable on Mercado Livre (Brazil)"
+msgstr "<b>Somente</b> resgatável no Mercado Livre (Brasil)"
+
 #: src/js/controllers/feedback/send.js:27
 #: www/views/feedback/complete.html:21
 msgid "A member of the team will review your feedback as soon as possible."
 msgstr "Um membro da equipa irá rever a sua avaliação assim que possível."
 
-#: src/js/controllers/confirm.js:347
+#: src/js/controllers/confirm.js:401
 msgid "A total of {{amountAboveMaxSizeStr}} were excluded. The maximum size allowed for a transaction was exceeded."
 msgstr "O montante de {{amountAboveMaxSizeStr}} foi excluido. O valor máximo permitido para uma transação foi excedido."
 
-#: src/js/controllers/confirm.js:341
+#: src/js/controllers/confirm.js:395
 msgid "A total of {{amountBelowFeeStr}} were excluded. These funds come from UTXOs smaller than the network fee provided."
 msgstr "O montante de {{amountBelowFeeStr}} foi excluido. Estes fundos vieram de UTXOs menores que a taxa de rede fornecida."
 
 #: src/js/controllers/preferencesAbout.js:6
-#: www/views/tab-settings.html:156
+#: www/views/tab-settings.html:149
 msgid "About"
 msgstr "Sobre"
 
-#: src/js/controllers/modals/txpDetails.js:52
-#: src/js/controllers/tx-details.js:60
+#: src/js/controllers/modals/txpDetails.js:62
+#: src/js/controllers/tx-details.js:79
 msgid "Accepted"
 msgstr "Aceite"
 
-#: www/views/preferencesInformation.html:66
+#: www/views/preferencesInformation.html:72
 msgid "Account"
 msgstr "Conta"
 
-#: www/views/join.html:69
-#: www/views/tab-create-personal.html:43
-#: www/views/tab-create-shared.html:72
+#: www/views/join.html:72
+#: www/views/tab-create-personal.html:45
+#: www/views/tab-create-shared.html:74
 #: www/views/tab-import-hardware.html:19
 msgid "Account Number"
 msgstr "Número de conta"
@@ -85,8 +90,8 @@ msgid "Add Account"
 msgstr "Adicionar conta"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add NavPay Account?"
-msgstr "Adicionar conta NavPay?"
+msgid "Add BitPay Account?"
+msgstr "Adicionar conta BitPay?"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -97,13 +102,13 @@ msgstr "Adicionar contacto"
 msgid "Add Funds"
 msgstr "Adicionar fundos"
 
-#: www/views/confirm.html:96
+#: www/views/confirm.html:94
 msgid "Add Memo"
 msgstr "Adicionar nota"
 
-#: www/views/join.html:84
-#: www/views/tab-create-personal.html:57
-#: www/views/tab-create-shared.html:86
+#: www/views/join.html:87
+#: www/views/tab-create-personal.html:59
+#: www/views/tab-create-shared.html:88
 msgid "Add a password"
 msgstr "Adicionar uma senha"
 
@@ -111,23 +116,27 @@ msgstr "Adicionar uma senha"
 msgid "Add account"
 msgstr "Adicionar conta"
 
-#: www/views/join.html:87
-#: www/views/tab-create-personal.html:60
-#: www/views/tab-create-shared.html:89
+#: www/views/join.html:90
+#: www/views/tab-create-personal.html:62
+#: www/views/tab-create-shared.html:91
 msgid "Add an optional password to secure the recovery phrase"
 msgstr "Adicionar uma senha opcional para asegurar a frase de recuperação"
 
-#: src/js/controllers/confirm.js:370
+#: www/views/includes/incomingDataMenu.html:41
+msgid "Add as a contact"
+msgstr "Adicionar como um contato"
+
+#: src/js/controllers/confirm.js:424
 msgid "Add description"
 msgstr "Adicionar descrição"
 
 #: www/views/topup.html:6
 msgid "Add funds"
-msgstr ""
+msgstr "Adicionar fundos"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this NavPay account ({{email}})?"
-msgstr "Adicionar esta conta NavPay ({{email}})?"
+msgid "Add this BitPay account ({{email}})?"
+msgstr "Adicionar esta conta BitPay ({{email}})?"
 
 #: www/views/add.html:3
 msgid "Add wallet"
@@ -136,7 +145,6 @@ msgstr "Adicionar carteira"
 #: www/views/addressbook.view.html:26
 #: www/views/customAmount.html:28
 #: www/views/modals/paypro.html:24
-#: www/views/paymentUri.html:15
 msgid "Address"
 msgstr "Endereço"
 
@@ -145,7 +153,7 @@ msgstr "Endereço"
 msgid "Address Book"
 msgstr "Livros de endereços"
 
-#: www/views/preferencesInformation.html:35
+#: www/views/preferencesInformation.html:41
 msgid "Address Type"
 msgstr "Tipo de Endereço"
 
@@ -153,7 +161,7 @@ msgstr "Tipo de Endereço"
 msgid "Addresses With Balance"
 msgstr "Endereços com valores"
 
-#: www/views/tab-settings.html:149
+#: www/views/tab-settings.html:142
 msgid "Advanced"
 msgstr "Avançado"
 
@@ -170,12 +178,12 @@ msgid "All Addresses"
 msgstr "Todos os endereços"
 
 #: www/views/modals/wallet-balance.html:18
-msgid "All of your Nav Coin wallet balance may not be available for immediate spending."
-msgstr "Todos os seus Nav Coins na carteira poderão não estar disponíveis de imediato para gastar."
+msgid "All of your bitcoin wallet balance may not be available for immediate spending."
+msgstr "Todos os seus bitcoins na carteira poderão não estar disponíveis de imediato para gastar."
 
 #: www/views/tab-receive.html:25
-msgid "All signing devices must be added to this multisig wallet before Nav Coin addresses can be created."
-msgstr "Todos os dispositivos de autenticação devem ser adicionados a esta carteira de multi-assinatura antes dos endereços Nav Coin poderem ser criados."
+msgid "All signing devices must be added to this multisig wallet before bitcoin addresses can be created."
+msgstr "Todos os dispositivos de autenticação devem ser adicionados a esta carteira de multi-assinatura antes dos endereços bitcoin poderem ser criados."
 
 #: www/views/tab-scan.html:21
 msgid "Allow Camera Access"
@@ -190,14 +198,17 @@ msgid "Almost done! Let's review."
 msgstr "Quase pronto! Vamos rever."
 
 #: www/views/preferencesAltCurrency.html:4
-#: www/views/tab-settings.html:74
+#: www/views/tab-settings.html:72
 msgid "Alternative Currency"
 msgstr "Moeda Alternativa"
+
+#: src/js/controllers/buyAmazon.js:98
+msgid "Amazon.com is not available at this moment. Please try back later."
+msgstr "Amazon.com não está disponível neste momento. Por favor, tente mais tarde."
 
 #: www/views/amount.html:44
 #: www/views/customAmount.html:34
 #: www/views/includes/output.html:7
-#: www/views/paymentUri.html:16
 msgid "Amount"
 msgstr "﻿Valor"
 
@@ -205,7 +216,7 @@ msgstr "﻿Valor"
 msgid "Amount below minimum allowed"
 msgstr "Montante abaixo do mínimo permitido"
 
-#: src/js/controllers/confirm.js:188
+#: src/js/controllers/confirm.js:216
 msgid "Amount too big"
 msgstr "Montante muito grande"
 
@@ -213,43 +224,43 @@ msgstr "Montante muito grande"
 msgid "Amount too low to spend"
 msgstr "Quantidade muito baixa para gastar"
 
-#: src/js/controllers/tab-home.js:147
+#: src/js/controllers/tab-home.js:148
 msgid "An update to this app is available. For your security, please update to the latest version."
 msgstr "Está disponível uma actualização para esta aplicação. Para sua segurança, por favor atualize para a versão mais recente."
 
 #: www/views/backupWarning.html:14
-msgid "Anyone with your backup phrase can access or spend your Nav Coin."
-msgstr "Qualquer pessoa com sua frase de segurança pode aceder ou gastar os seus Nav Coins."
+msgid "Anyone with your backup phrase can access or spend your bitcoin."
+msgstr "Qualquer pessoa com sua frase de segurança pode aceder ou gastar os seus bitcoins."
 
 #: www/views/addresses.html:94
-msgid "Approximate Nav Coin network fee to transfer wallet's balance (with normal priority)"
-msgstr "Taxa de rede Nav Coin aproximada para transferir o saldo da carteira (com prioridade normal)"
+msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
+msgstr "Taxa de rede Bitcoin aproximada para transferir o saldo da carteira (com prioridade normal)"
 
 #: www/views/backupWarning.html:10
 msgid "Are you being watched?"
 msgstr "Você está sendo vigiado?"
 
 #: src/js/controllers/preferencesExternal.js:15
-msgid "Are you being watched? Anyone with your recovery phrase can access or spend your Nav Coin."
-msgstr "Você está sendo observado? Qualquer pessoa com sua frase de recuperação pode acessar ou gastar seu Nav Coin."
+msgid "Are you being watched? Anyone with your recovery phrase can access or spend your bitcoin."
+msgstr "Você está sendo observado? Qualquer pessoa com sua frase de recuperação pode acessar ou gastar seu bitcoin."
 
 #: src/js/controllers/copayers.js:56
 msgid "Are you sure you want to cancel and delete this wallet?"
 msgstr "Tem certeza que deseja cancelar e eliminar esta carteira?"
 
-#: src/js/controllers/addressbookView.js:24
+#: src/js/controllers/addressbookView.js:37
 msgid "Are you sure you want to delete this contact?"
 msgstr "Tem certeza que deseja excluir este contato?"
 
-#: src/js/controllers/preferencesDelete.js:26
+#: src/js/controllers/preferencesDelete.js:25
 msgid "Are you sure you want to delete this wallet?"
 msgstr "Tem certeza que deseja excluir esta carteira?"
 
-#: src/js/controllers/modals/txpDetails.js:144
+#: src/js/controllers/modals/txpDetails.js:154
 msgid "Are you sure you want to reject this transaction?"
 msgstr "Tem certeza que deseja cancelar esta transação?"
 
-#: src/js/controllers/modals/txpDetails.js:161
+#: src/js/controllers/modals/txpDetails.js:171
 msgid "Are you sure you want to remove this transaction?"
 msgstr "Tem certeza que deseja remover esta transação?"
 
@@ -258,15 +269,15 @@ msgid "Are you sure you want to skip it?"
 msgstr "Tem a certeza que deseja ignorar?"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your NavPay Card account?"
-msgstr "Tem certeza que você deseja sair da sua conta do NavPay Card?"
+msgid "Are you sure you would like to log out of your BitPay Card account?"
+msgstr "Tem certeza que você deseja sair da sua conta do BitPay Card?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your NavPay Card ({{lastFourDigits}}) from this device?"
-msgstr "Tem a certeza de que quer remover o seu Cartão NavPay ({{lastFourDigits}}) deste dispositivo?"
+msgid "Are you sure you would like to remove your BitPay Card ({{lastFourDigits}}) from this device?"
+msgstr "Tem a certeza de que quer remover o seu Cartão BitPay ({{lastFourDigits}}) deste dispositivo?"
 
-#: www/views/includes/walletInfo.html:5
+#: www/views/includes/walletInfo.html:10
 msgid "Auditable"
 msgstr "Audivel"
 
@@ -278,19 +289,23 @@ msgstr "Disponível"
 msgid "Available Balance"
 msgstr "Saldo Disponível"
 
-#: www/views/modals/chooseFeeLevel.html:14
+#: www/views/modals/chooseFeeLevel.html:24
 #: www/views/preferencesFee.html:15
 msgid "Average confirmation time"
 msgstr "Tempo de confirmação (em média)"
 
-#: www/views/join.html:140
-#: www/views/tab-create-personal.html:111
-#: www/views/tab-create-shared.html:140
-#: www/views/tab-import-phrase.html:48
+#: www/views/join.html:143
+#: www/views/tab-create-personal.html:113
+#: www/views/tab-create-shared.html:142
+#: www/views/tab-import-phrase.html:51
 msgid "BIP32 path for address derivation"
 msgstr "Pacote BIP32 para endereço de derivação"
 
-#: www/views/preferences.html:39
+#: www/views/preferencesCash.html:25
+msgid "BTC wallets"
+msgstr "Carteiras BTC"
+
+#: www/views/preferences.html:34
 msgid "Backup"
 msgstr "Backup"
 
@@ -302,8 +317,9 @@ msgstr "Cópia de segurança necessária"
 msgid "Backup all livenet wallets before using this function"
 msgstr "Faça backup de todas as carteiras do livenet antes de usar esta função"
 
-#: www/views/preferences.html:41
-#: www/views/tab-settings.html:120
+#: src/js/controllers/preferencesCash.js:64
+#: www/views/includes/walletListSettings.html:12
+#: www/views/preferences.html:36
 msgid "Backup needed"
 msgstr "Backup necessário"
 
@@ -320,11 +336,11 @@ msgstr "Criar cópia da carteira"
 msgid "Backup your wallet before using this function"
 msgstr "Faça backup da sua carteira antes de usar esta função"
 
-#: src/js/services/profileService.js:430
+#: src/js/services/profileService.js:446
 msgid "Bad wallet invitation"
 msgstr "Convite para carteira inválido"
 
-#: www/views/preferencesInformation.html:96
+#: www/views/preferencesInformation.html:110
 msgid "Balance By Address"
 msgstr "Saldo por endereço"
 
@@ -333,49 +349,62 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "Certifique-se de armazenar a sua frase de recuperação num lugar seguro. Se esta aplicação for eliminada o seu dinheiro não pode ser recuperado sem ela."
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "NavPay Visa&reg; Cards"
-msgstr "Cartões NavPay Visa&reg"
+msgid "BitPay Visa&reg; Cards"
+msgstr "Cartões BitPay Visa&reg"
 
 #: www/views/addressbook.add.html:38
-msgid "Nav Coin Address"
-msgstr "Endereço Nav Coin"
+#: www/views/includes/incomingDataMenu.html:29
+msgid "Bitcoin Address"
+msgstr "Endereço Bitcoin"
+
+#: www/views/includes/walletSelector.html:42
+#: www/views/tab-home.html:112
+#: www/views/tab-settings.html:108
+msgid "Bitcoin Cash Wallets"
+msgstr "Carteiras Bitcoin Cash"
 
 #: www/views/modals/chooseFeeLevel.html:4
 #: www/views/preferencesFee.html:4
-#: www/views/tab-settings.html:85
-msgid "Nav Coin Network Fee Policy"
-msgstr "Política de taxa de rede Nav Coin"
+#: www/views/tab-settings.html:83
+msgid "Bitcoin Network Fee Policy"
+msgstr "Política de taxa de rede Bitcoin"
 
-#: www/views/paymentUri.html:10
-msgid "Nav Coin URI is NOT valid!"
-msgstr "Nav Coin URI não é válido!"
+#: www/views/includes/walletSelector.html:11
+#: www/views/tab-home.html:97
+#: www/views/tab-settings.html:100
+msgid "Bitcoin Wallets"
+msgstr "Carteiras Bitcoin"
 
-#: www/views/tab-settings.html:63
-msgid "Nav Coin Unit"
-msgstr "Unidade do Nav Coin"
+#: src/js/services/incomingData.js:151
+msgid "Bitcoin cash Payment"
+msgstr "Pagamento Bitcoin Cash"
 
 #: www/views/onboarding/tour.html:31
-msgid "Nav Coin is a currency."
-msgstr "Nav Coin é uma moeda."
+msgid "Bitcoin is a currency."
+msgstr "Bitcoin é uma moeda."
 
 #: www/views/onboarding/disclaimer.html:15
-msgid "Nav Coin is different &ndash; it cannot be safely held with a bank or web service."
-msgstr "Nav Coin é diferente &ndash; ela não pode ser retida com segurança por um serviço web ou banco."
+msgid "Bitcoin is different &ndash; it cannot be safely held with a bank or web service."
+msgstr "Bitcoin é diferente &ndash; ela não pode ser retida com segurança por um serviço web ou banco."
 
 #: www/views/onboarding/tour.html:18
-msgid "Nav Coin is secure,<br>digital money."
-msgstr "Nav Coin é seguro,<br>moeda digital."
+msgid "Bitcoin is secure,<br>digital money."
+msgstr "Bitcoin é seguro,<br>moeda digital."
 
 #: www/views/preferencesFee.html:11
-msgid "Nav Coin transactions include a fee collected by miners on the network."
-msgstr "As transações Nav Coin incluem uma taxa cobrada pelos mineiros na rede."
+msgid "Bitcoin transactions include a fee collected by miners on the network."
+msgstr "As transações Bitcoin incluem uma taxa cobrada pelos mineiros na rede."
+
+#: www/views/buyAmazon.html:108
+msgid "Bought {{amountUnitStr}}"
+msgstr "Comprado {{amountUnitStr}}"
 
 #: www/views/modals/txp-details.html:36
 msgid "Broadcast Payment"
 msgstr "Transmitir Pagamento"
 
-#: src/js/controllers/modals/txpDetails.js:54
-#: src/js/controllers/tx-details.js:62
+#: src/js/controllers/modals/txpDetails.js:64
+#: src/js/controllers/tx-details.js:81
 msgid "Broadcasted"
 msgstr "Transmitido"
 
@@ -387,34 +416,56 @@ msgstr "Transmitindo transação"
 msgid "Browser unsupported"
 msgstr "Navegador não suportado"
 
-#: www/views/includes/buyAndSellCard.html:4
-msgid "Buy &amp; Sell Nav Coin"
-msgstr "Comprar &amp; Vender Nav Coin"
+#: www/views/buyAmazon.html:5
+#: www/views/buyMercadoLibre.html:6
+msgid "Buy"
+msgstr "Comprar"
 
-#: www/views/tab-send.html:35
-msgid "Buy Nav Coin"
-msgstr "Comprar Nav Coin"
+#: www/views/includes/buyAndSellCard.html:3
+msgid "Buy &amp; Sell Bitcoin"
+msgstr "Comprar &amp; Vender Bitcoin"
+
+#: www/views/tab-send.html:40
+msgid "Buy Bitcoin"
+msgstr "Comprar Bitcoin"
+
+#: www/views/mercadoLibre.html:22
+#: www/views/mercadoLibre.html:50
+msgid "Buy a Gift Card"
+msgstr "Comprar um Vale-Presente"
+
+#: src/js/controllers/buyAmazon.js:336
+msgid "Buy from"
+msgstr "Comprar de"
 
 #: src/js/services/onGoingProcess.js:40
-msgid "Buying Nav Coin..."
-msgstr "A comprar Nav Coin..."
+msgid "Buying Bitcoin..."
+msgstr "A comprar Bitcoin..."
 
 #: src/js/services/onGoingProcess.js:12
 msgid "Calculating fee"
 msgstr "A calcular taxa"
 
-#: src/js/controllers/confirm.js:491
-#: src/js/controllers/topup.js:277
-#: src/js/services/popupService.js:60
+#: src/js/controllers/buyAmazon.js:315
+#: src/js/controllers/buyMercadoLibre.js:309
+#: src/js/controllers/confirm.js:550
+#: src/js/controllers/topup.js:287
+#: src/js/services/incomingData.js:154
+#: src/js/services/popupService.js:62
+#: src/js/services/popupService.js:73
 #: www/views/addressbook.add.html:10
 #: www/views/feedback/send.html:5
+#: www/views/includes/incomingDataMenu.html:22
+#: www/views/includes/incomingDataMenu.html:54
+#: www/views/includes/incomingDataMenu.html:73
+#: www/views/includes/incomingDataMenu.html:97
 #: www/views/includes/note.html:6
 #: www/views/modals/bitpay-card-confirmation.html:8
 #: www/views/modals/confirmation.html:13
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: www/views/copayers.html:37
+#: www/views/copayers.html:36
 msgid "Cancel invitation"
 msgstr "Cancelar convite"
 
@@ -422,11 +473,11 @@ msgstr "Cancelar convite"
 msgid "Cannot Create Wallet"
 msgstr "Não é possível criar a carteira"
 
-#: src/js/services/profileService.js:426
+#: src/js/services/profileService.js:442
 msgid "Cannot join the same wallet more that once"
 msgstr "Não pode juntar-se a mesma carteira mais que uma vez"
 
-#: www/views/includes/bitpayCardsCard.html:4
+#: www/views/includes/bitpayCardsCard.html:2
 msgid "Cards"
 msgstr "Cartões"
 
@@ -450,7 +501,7 @@ msgstr "Escolha a sua carteira de destino"
 msgid "Choose your source wallet"
 msgstr "Escolha a sua carteira de origem"
 
-#: www/views/backup.html:54
+#: www/views/backup.html:61
 msgid "Clear"
 msgstr "Eliminar"
 
@@ -458,17 +509,34 @@ msgstr "Eliminar"
 msgid "Clear cache"
 msgstr "Limpar cache"
 
-#: src/js/controllers/modals/txpDetails.js:33
-msgid "Click"
-msgstr "Clique"
+#: src/js/controllers/confirm.js:373
+#: src/js/controllers/modals/txpDetails.js:49
+msgid "Click to accept"
+msgstr "Clique para aceitar"
+
+#: src/js/controllers/confirm.js:367
+msgid "Click to pay"
+msgstr "Clique para pagar"
+
+#: src/js/controllers/confirm.js:379
+#: src/js/controllers/modals/txpDetails.js:42
+msgid "Click to send"
+msgstr "Clique para enviar"
 
 #: www/views/customAmount.html:4
+#: www/views/modals/mercadolibre-card-details.html:3
 #: www/views/modals/paypro.html:4
+#: www/views/modals/pin.html:3
 #: www/views/modals/search.html:3
 #: www/views/modals/wallet-balance.html:3
 #: www/views/modals/wallets.html:5
 msgid "Close"
 msgstr "Fechar"
+
+#: www/views/includes/cash.html:2
+#: www/views/preferencesInformation.html:17
+msgid "Coin"
+msgstr "Moeda"
 
 #: www/views/preferences.html:22
 msgid "Color"
@@ -478,7 +546,7 @@ msgstr "Cor"
 msgid "Commit hash"
 msgstr "Commit de hash"
 
-#: www/views/preferences.html:53
+#: www/views/preferences.html:49
 msgid "Complete the backup process to use this option"
 msgstr "Complete o processo de backup para usar esta opção"
 
@@ -486,11 +554,13 @@ msgstr "Complete o processo de backup para usar esta opção"
 msgid "Completed"
 msgstr "Concluído"
 
-#: src/js/controllers/confirm.js:490
+#: src/js/controllers/buyAmazon.js:313
+#: src/js/controllers/buyMercadoLibre.js:307
+#: src/js/controllers/confirm.js:549
 #: src/js/controllers/copayers.js:55
-#: src/js/controllers/topup.js:275
-#: www/views/backup.html:53
-#: www/views/backup.html:72
+#: src/js/controllers/topup.js:285
+#: www/views/backup.html:60
+#: www/views/backup.html:79
 #: www/views/confirm.html:4
 #: www/views/onboarding/collectEmail.html:32
 msgid "Confirm"
@@ -501,11 +571,15 @@ msgstr "Confirmar"
 msgid "Confirm &amp; Finish"
 msgstr "Confirmar &amp; Terminado"
 
+#: www/views/buyAmazon.html:90
+msgid "Confirm purchase"
+msgstr "Confirmar compra"
+
 #: www/views/modals/pin.html:10
 msgid "Confirm your PIN"
 msgstr "Confirme o seu PIN"
 
-#: src/js/services/walletService.js:1034
+#: src/js/services/walletService.js:1063
 msgid "Confirm your new spending password"
 msgstr "Confirme a nova senha de pagamento"
 
@@ -519,8 +593,8 @@ msgid "Confirming"
 msgstr "A confirmar"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my NavPay Card"
-msgstr "Introduzir o meu cartão do NavPay"
+msgid "Connect my BitPay Card"
+msgstr "Introduzir o meu cartão do BitPay"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -534,7 +608,7 @@ msgstr "A conectar ao Glidera..."
 msgid "Connection reset by peer"
 msgstr "Ligação redefinida pelo mesmo nível"
 
-#: www/views/tab-send.html:45
+#: www/views/tab-send.html:50
 msgid "Contacts"
 msgstr "Contactos"
 
@@ -545,6 +619,10 @@ msgstr "Continuar"
 #: www/views/preferencesLanguage.html:26
 msgid "Contribute Translations"
 msgstr "Contribuir para a tradução"
+
+#: src/js/controllers/confirm.js:130
+msgid "Copay only supports Bitcoin Cash using new version numbers addresses"
+msgstr "Copay apenas suporta Bitcoin Cash utilizando a nova versão de endereço"
 
 #: src/js/services/bwcError.js:62
 msgid "Copayer already in this wallet"
@@ -562,7 +640,7 @@ msgstr "Informação do Copayer inválida"
 msgid "Copayer joined"
 msgstr "Copayer juntou-se"
 
-#: www/views/preferencesInformation.html:88
+#: www/views/preferencesInformation.html:94
 msgid "Copayer {{$index}}"
 msgstr "Copayer {{$index}}"
 
@@ -576,24 +654,35 @@ msgstr "Copiado para a área de transferência"
 msgid "Copy this text as it is to a safe place (notepad or email)"
 msgstr "Copie este texto como está para um lugar seguro (bloco de notas ou e-mail)"
 
-#: www/views/preferencesLogs.html:10
+#: www/views/includes/incomingDataMenu.html:51
+#: www/views/includes/incomingDataMenu.html:70
+#: www/views/includes/incomingDataMenu.html:94
+#: www/views/includes/logOptions.html:9
 #: www/views/tab-export-file.html:78
 msgid "Copy to clipboard"
 msgstr "Copiar para área de transferência"
+
+#: src/js/controllers/buyMercadoLibre.js:102
+msgid "Could not access Gift Card Service"
+msgstr "Não foi possível acessar o serviço de Vale-Presente"
 
 #: www/views/tab-import-phrase.html:2
 msgid "Could not access the wallet at the server. Please check:"
 msgstr "Não foi possível acessar a carteira no servidor. Por favor, verifique:"
 
-#: src/js/services/profileService.js:493
+#: src/js/controllers/buyAmazon.js:102
+msgid "Could not access to Amazon.com"
+msgstr "Não foi possível acessar a Amazon.com"
+
+#: src/js/services/profileService.js:511
 msgid "Could not access wallet"
 msgstr "Impossível aceder à carteira"
 
-#: src/js/controllers/confirm.js:182
+#: src/js/controllers/confirm.js:210
 msgid "Could not add message to imported wallet without shared encrypting key"
 msgstr "Não foi possível adicionar mensagem à carteira importada sem chave de criptografia compartilhada"
 
-#: src/js/controllers/modals/txpDetails.js:189
+#: src/js/controllers/modals/txpDetails.js:199
 msgid "Could not broadcast payment"
 msgstr "Não foi possível transmitir o pagamento"
 
@@ -601,69 +690,81 @@ msgstr "Não foi possível transmitir o pagamento"
 msgid "Could not build transaction"
 msgstr "Não foi possível criar a transacção"
 
-#: src/js/services/walletService.js:857
+#: src/js/services/walletService.js:884
 msgid "Could not create address"
 msgstr "Não foi possível criar o endereço"
 
-#: src/js/controllers/topup.js:86
+#: src/js/controllers/topup.js:92
 msgid "Could not create the invoice"
 msgstr "Não foi possível criar a fatura"
 
-#: src/js/controllers/topup.js:136
+#: src/js/controllers/buyAmazon.js:164
+#: src/js/controllers/buyMercadoLibre.js:164
+#: src/js/controllers/topup.js:142
 msgid "Could not create transaction"
 msgstr "Não foi possível criar a transação"
 
-#: src/js/services/profileService.js:342
+#: src/js/services/profileService.js:350
 msgid "Could not create using the specified extended private key"
 msgstr "Não foi possível criar usando a chave privada estendida especificada"
 
-#: src/js/services/profileService.js:353
+#: src/js/services/profileService.js:362
 msgid "Could not create using the specified extended public key"
 msgstr "Não foi possível criar usando a chave privada estendida especificada"
 
-#: src/js/services/profileService.js:335
+#: src/js/services/profileService.js:338
 msgid "Could not create: Invalid wallet recovery phrase"
 msgstr "Não foi possível criar: Frase de recuperação de carteira inválida"
 
-#: src/js/controllers/import.js:99
+#: src/js/controllers/import.js:112
 msgid "Could not decrypt file, check your password"
 msgstr "Não foi possível descriptografar o arquivo, verifique sua senha"
 
-#: src/js/controllers/modals/txpDetails.js:171
+#: src/js/controllers/modals/txpDetails.js:181
 msgid "Could not delete payment proposal"
 msgstr "Não foi possível excluir a proposta de pagamento"
 
-#: src/js/services/feeService.js:68
+#: src/js/controllers/preferencesCash.js:117
+msgid "Could not duplicate"
+msgstr "Não foi possível duplicar"
+
+#: src/js/services/feeService.js:73
 msgid "Could not get dynamic fee"
 msgstr "Não foi possível obter taxa dinâmica"
 
-#: src/js/services/feeService.js:38
+#: src/js/services/feeService.js:43
 msgid "Could not get dynamic fee for level: {{feeLevel}}"
 msgstr "Não foi possível obter a taxa dinâmica para nível: {{feeLevel}}"
 
-#: src/js/controllers/topup.js:94
+#: src/js/controllers/modals/feeLevels.js:112
+msgid "Could not get fee levels"
+msgstr "Não foi possível obter níveis de taxa"
+
+#: src/js/controllers/buyAmazon.js:122
+#: src/js/controllers/buyMercadoLibre.js:122
+#: src/js/controllers/topup.js:100
 msgid "Could not get the invoice"
 msgstr "Não foi possível obter a fatura"
 
-#: src/js/controllers/bitpayCard.js:69
+#: src/js/controllers/bitpayCard.js:66
 msgid "Could not get transactions"
 msgstr "Não foi possível obter o histórico das transações"
 
-#: src/js/services/profileService.js:595
-#: src/js/services/profileService.js:629
-#: src/js/services/profileService.js:652
+#: src/js/services/profileService.js:615
+#: src/js/services/profileService.js:650
+#: src/js/services/profileService.js:674
 msgid "Could not import"
 msgstr "Não foi possível importar"
 
-#: src/js/services/profileService.js:564
+#: src/js/services/profileService.js:584
 msgid "Could not import. Check input file and spending password"
 msgstr "Não foi possível importar. Verifique o arquivo de entrada e senha de compra"
 
-#: src/js/services/profileService.js:439
+#: src/js/services/profileService.js:457
 msgid "Could not join wallet"
 msgstr "Impossível juntar à carteira"
 
-#: src/js/controllers/modals/txpDetails.js:151
+#: src/js/controllers/modals/txpDetails.js:161
 msgid "Could not reject payment"
 msgstr "Não foi possível rejeitar o pagamento"
 
@@ -676,24 +777,26 @@ msgstr "Não foi possível remover a conta"
 msgid "Could not remove card"
 msgstr "Não foi possível remover o cartão"
 
-#: src/js/services/walletService.js:776
+#: src/js/services/walletService.js:806
 msgid "Could not save preferences on the server"
 msgstr "Não foi possível guardar as suas preferências no servidor"
 
-#: src/js/controllers/modals/txpDetails.js:137
+#: src/js/controllers/modals/txpDetails.js:147
 msgid "Could not send payment"
 msgstr "Não foi possível enviar o pagamento"
 
-#: src/js/controllers/topup.js:289
+#: src/js/controllers/buyAmazon.js:327
+#: src/js/controllers/buyMercadoLibre.js:320
+#: src/js/controllers/topup.js:299
 msgid "Could not send transaction"
 msgstr "Não foi possível enviar a transação"
 
-#: www/views/walletDetails.html:199
+#: www/views/walletDetails.html:210
 msgid "Could not update transaction history"
 msgstr "Não foi possível atualizar o histórico de transações"
 
-#: src/js/controllers/addresses.js:34
-#: src/js/controllers/addresses.js:42
+#: src/js/controllers/addresses.js:29
+#: src/js/controllers/addresses.js:37
 #: src/js/controllers/copayers.js:30
 #: src/js/controllers/walletDetails.js:78
 msgid "Could not update wallet"
@@ -708,12 +811,12 @@ msgid "Create Shared Wallet"
 msgstr "Criar carteira partilhada"
 
 #: www/views/onboarding/tour.html:51
-#: www/views/tab-home.html:77
-#: www/views/tab-send.html:36
-msgid "Create Nav Coin wallet"
-msgstr "Criar carteira Nav Coin"
+#: www/views/tab-home.html:89
+#: www/views/tab-send.html:41
+msgid "Create bitcoin wallet"
+msgstr "Criar carteira bitcoin"
 
-#: www/views/tab-create-personal.html:129
+#: www/views/tab-create-personal.html:131
 msgid "Create new wallet"
 msgstr "Criando nova carteira"
 
@@ -721,12 +824,12 @@ msgstr "Criando nova carteira"
 msgid "Create shared wallet"
 msgstr "Criar carteira partilhada"
 
-#: www/views/tab-create-shared.html:158
+#: www/views/tab-create-shared.html:160
 msgid "Create {{formData.requiredCopayers}}-of-{{formData.totalCopayers}} wallet"
 msgstr "Criar carteira de {{formData.requiredCopayers}}-de-{{formData.totalCopayers}}"
 
-#: www/views/modals/txp-details.html:83
-#: www/views/tx-details.html:62
+#: www/views/modals/txp-details.html:81
+#: www/views/tx-details.html:60
 msgid "Created by"
 msgstr "Criado por"
 
@@ -738,17 +841,26 @@ msgstr "Criando Carteira…"
 msgid "Creating transaction"
 msgstr "Criando transação"
 
-#: www/views/modals/chooseFeeLevel.html:19
+#: www/views/modals/chooseFeeLevel.html:34
 #: www/views/preferencesFee.html:20
 msgid "Current fee rate for this policy"
 msgstr "Taxa atual para esta política"
+
+#: src/js/services/feeService.js:15
+msgid "Custom"
+msgstr "Personalizado"
 
 #: www/views/customAmount.html:9
 msgid "Custom Amount"
 msgstr "Montante personalizado"
 
-#: www/views/modals/txp-details.html:89
-#: www/views/tx-details.html:68
+#: src/js/controllers/preferencesFee.js:85
+msgid "Custom Fee"
+msgstr "Taxa personalizada"
+
+#: www/views/modals/mercadolibre-card-details.html:56
+#: www/views/modals/txp-details.html:87
+#: www/views/tx-details.html:66
 msgid "Date"
 msgstr "Data"
 
@@ -756,7 +868,7 @@ msgstr "Data"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: www/views/modals/txp-details.html:166
+#: www/views/modals/txp-details.html:164
 msgid "Delete Payment Proposal"
 msgstr "Excluir Proposta de Pagamento"
 
@@ -765,7 +877,7 @@ msgstr "Excluir Proposta de Pagamento"
 msgid "Delete Wallet"
 msgstr "Excluir Carteira"
 
-#: www/views/copayers.html:60
+#: www/views/copayers.html:59
 msgid "Delete it and create a new one"
 msgstr "Apagar e criar um novo"
 
@@ -777,23 +889,26 @@ msgstr "A eliminar carteira..."
 msgid "Deleting payment proposal"
 msgstr "A eliminar proposta de pagamento"
 
-#: www/views/join.html:138
-#: www/views/tab-create-personal.html:109
-#: www/views/tab-create-shared.html:138
-#: www/views/tab-import-phrase.html:46
+#: www/views/join.html:141
+#: www/views/tab-create-personal.html:111
+#: www/views/tab-create-shared.html:140
+#: www/views/tab-import-phrase.html:49
 msgid "Derivation Path"
 msgstr "Caminho de derivação"
 
-#: www/views/preferencesInformation.html:41
+#: www/views/preferencesInformation.html:47
 msgid "Derivation Strategy"
 msgstr "Estratégia de derivação"
 
+#: www/views/buyAmazon.html:39
+#: www/views/buyMercadoLibre.html:38
+#: www/views/modals/mercadolibre-card-details.html:6
 #: www/views/topup.html:45
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: src/js/controllers/lockSetup.js:9
-#: src/js/controllers/tab-settings.js:60
+#: src/js/controllers/tab-settings.js:61
 msgid "Disabled"
 msgstr "Desativado"
 
@@ -811,13 +926,21 @@ msgid "Don't see your language on Crowdin? Contact the Owner on Crowdin! We'd lo
 msgstr "Não vê o seu idioma no Crowdin? Contacte o Dono no Crowdin! Nós adoraríamos suportar a sua linguagem."
 
 #: www/views/tab-export-file.html:59
-#: www/views/tab-home.html:22
+#: www/views/tab-home.html:36
 msgid "Download"
 msgstr "Download"
 
+#: www/views/preferencesCash.html:37
+msgid "Duplicate for BCH"
+msgstr "Duplicado para BCH"
+
+#: src/js/services/onGoingProcess.js:49
+msgid "Duplicating wallet..."
+msgstr "Duplicando carteira..."
+
 #: www/views/addresses.html:19
-msgid "Each Nav Coin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
-msgstr "Cada carteira de Nav Coin pode gerar biliões de endereços através do seu backup de 12-palavras. Um novo endereço é gerado automáticamente e mostrado cada vez que receber um pagamento."
+msgid "Each bitcoin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
+msgstr "Cada carteira de Bitcoin pode gerar biliões de endereços através do seu backup de 12-palavras. Um novo endereço é gerado automáticamente e mostrado cada vez que receber um pagamento."
 
 #: src/js/services/feeService.js:13
 msgid "Economy"
@@ -832,7 +955,7 @@ msgstr "Editar"
 msgid "Email"
 msgstr "Email"
 
-#: www/views/preferencesNotifications.html:36
+#: www/views/preferencesNotifications.html:42
 msgid "Email Address"
 msgstr "Endereço de email"
 
@@ -844,7 +967,7 @@ msgstr "Limite de endereços vazios atingido. Novos endereço não podem ser ger
 msgid "Enable camera access in your device settings to get started."
 msgstr "Permita o acesso de câmera nas configurações do seu dispositivo para começar."
 
-#: www/views/preferencesNotifications.html:23
+#: www/views/preferencesNotifications.html:29
 msgid "Enable email notifications"
 msgstr "Ativar notificações por email"
 
@@ -856,26 +979,30 @@ msgstr "Ativar notificações push"
 msgid "Enable the camera to get started."
 msgstr "Ative a câmera para começar."
 
-#: www/views/amount.html:4
-msgid "Enter Amount"
-msgstr "Inserir montante"
-
-#: src/js/services/walletService.js:1048
-#: src/js/services/walletService.js:1063
+#: src/js/services/walletService.js:1077
+#: src/js/services/walletService.js:1092
 msgid "Enter Spending Password"
 msgstr "Inserir senha de compra"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your NavPay account"
-msgstr "Insira verificação dois passos para sua conta NavPay"
+msgid "Enter Two Factor for your BitPay account"
+msgstr "Insira verificação dois passos para sua conta BitPay"
 
-#: src/js/services/walletService.js:1030
+#: www/views/amount.html:4
+msgid "Enter amount"
+msgstr "Digite a quantidade"
+
+#: www/views/modals/chooseFeeLevel.html:41
+msgid "Enter custom fee"
+msgstr "Digite a taxa personalizada"
+
+#: src/js/services/walletService.js:1059
 msgid "Enter new spending password"
 msgstr "Insira a nova senha para pagamento"
 
-#: www/views/join.html:76
-#: www/views/tab-create-personal.html:49
-#: www/views/tab-create-shared.html:78
+#: www/views/join.html:79
+#: www/views/tab-create-personal.html:51
+#: www/views/tab-create-shared.html:80
 msgid "Enter the recovery phrase (BIP39)"
 msgstr "Digite a frase de recuperação (BIP39)"
 
@@ -883,27 +1010,32 @@ msgstr "Digite a frase de recuperação (BIP39)"
 msgid "Enter your email"
 msgstr "Digite seu e-mail"
 
-#: www/views/backup.html:62
+#: www/views/backup.html:69
 msgid "Enter your password"
 msgstr "Digite sua senha"
 
 #. Trying to import a malformed wallet export QR code
 #: src/js/controllers/activity.js:45
 #: src/js/controllers/addressbookAdd.js:30
-#: src/js/controllers/addressbookView.js:29
-#: src/js/controllers/addresses.js:130
-#: src/js/controllers/addresses.js:131
-#: src/js/controllers/bitpayCard.js:69
+#: src/js/controllers/addressbookView.js:42
+#: src/js/controllers/addresses.js:125
+#: src/js/controllers/addresses.js:126
+#: src/js/controllers/bitpayCard.js:66
 #: src/js/controllers/bitpayCardIntro.js:40
 #: src/js/controllers/bitpayCardIntro.js:81
-#: src/js/controllers/confirm.js:271
+#: src/js/controllers/buyAmazon.js:24
+#: src/js/controllers/buyAmazon.js:35
+#: src/js/controllers/buyMercadoLibre.js:24
+#: src/js/controllers/buyMercadoLibre.js:35
+#: src/js/controllers/confirm.js:307
 #: src/js/controllers/copayers.js:67
-#: src/js/controllers/create.js:155
-#: src/js/controllers/create.js:168
-#: src/js/controllers/create.js:175
-#: src/js/controllers/create.js:197
-#: src/js/controllers/create.js:204
-#: src/js/controllers/create.js:222
+#: src/js/controllers/create.js:159
+#: src/js/controllers/create.js:172
+#: src/js/controllers/create.js:178
+#: src/js/controllers/create.js:184
+#: src/js/controllers/create.js:206
+#: src/js/controllers/create.js:213
+#: src/js/controllers/create.js:231
 #: src/js/controllers/export.js:109
 #: src/js/controllers/export.js:115
 #: src/js/controllers/export.js:126
@@ -913,73 +1045,90 @@ msgstr "Digite sua senha"
 #: src/js/controllers/export.js:47
 #: src/js/controllers/export.js:53
 #: src/js/controllers/feedback/send.js:23
-#: src/js/controllers/import.js:104
-#: src/js/controllers/import.js:116
-#: src/js/controllers/import.js:134
-#: src/js/controllers/import.js:185
-#: src/js/controllers/import.js:213
-#: src/js/controllers/import.js:222
-#: src/js/controllers/import.js:237
-#: src/js/controllers/import.js:249
-#: src/js/controllers/import.js:260
-#: src/js/controllers/import.js:270
-#: src/js/controllers/import.js:294
-#: src/js/controllers/import.js:307
-#: src/js/controllers/import.js:317
-#: src/js/controllers/import.js:327
-#: src/js/controllers/import.js:351
-#: src/js/controllers/import.js:364
-#: src/js/controllers/import.js:70
+#: src/js/controllers/import.js:117
+#: src/js/controllers/import.js:129
+#: src/js/controllers/import.js:147
+#: src/js/controllers/import.js:198
+#: src/js/controllers/import.js:227
+#: src/js/controllers/import.js:236
+#: src/js/controllers/import.js:252
+#: src/js/controllers/import.js:264
+#: src/js/controllers/import.js:276
+#: src/js/controllers/import.js:286
+#: src/js/controllers/import.js:310
+#: src/js/controllers/import.js:323
+#: src/js/controllers/import.js:333
+#: src/js/controllers/import.js:343
+#: src/js/controllers/import.js:367
+#: src/js/controllers/import.js:380
 #: src/js/controllers/import.js:83
-#: src/js/controllers/join.js:121
-#: src/js/controllers/join.js:135
-#: src/js/controllers/join.js:142
-#: src/js/controllers/join.js:165
+#: src/js/controllers/import.js:96
+#: src/js/controllers/join.js:124
+#: src/js/controllers/join.js:138
+#: src/js/controllers/join.js:144
+#: src/js/controllers/join.js:150
 #: src/js/controllers/join.js:173
-#: src/js/controllers/join.js:191
-#: src/js/controllers/modals/txpDetails.js:130
+#: src/js/controllers/join.js:181
+#: src/js/controllers/join.js:199
+#: src/js/controllers/modals/feeLevels.js:9
+#: src/js/controllers/modals/txpDetails.js:140
 #: src/js/controllers/paperWallet.js:47
 #: src/js/controllers/preferencesBitpayCard.js:20
 #: src/js/controllers/preferencesBitpayServices.js:33
 #: src/js/controllers/preferencesBitpayServices.js:50
-#: src/js/controllers/preferencesDelete.js:37
+#: src/js/controllers/preferencesDelete.js:36
 #: src/js/controllers/preferencesExternal.js:20
-#: src/js/controllers/tab-home.js:174
-#: src/js/controllers/tab-send.js:132
+#: src/js/controllers/tab-home.js:180
+#: src/js/controllers/tab-send.js:149
 #: src/js/controllers/tabsController.js:36
 #: src/js/controllers/tabsController.js:7
-#: src/js/controllers/topup.js:15
-#: src/js/controllers/topup.js:26
-#: src/js/controllers/tx-details.js:100
-#: src/js/services/incomingData.js:98
+#: src/js/controllers/topup.js:21
+#: src/js/controllers/topup.js:32
+#: src/js/controllers/tx-details.js:119
+#: src/js/services/incomingData.js:101
+#: src/js/services/incomingData.js:125
+#: src/js/services/incomingData.js:168
+#: www/views/mercadoLibreCards.html:19
+#: www/views/modals/mercadolibre-card-details.html:45
 msgid "Error"
 msgstr "Erro"
 
-#: src/js/controllers/confirm.js:443
+#: src/js/controllers/confirm.js:502
 msgid "Error at confirm"
 msgstr "Erro na confirmação"
 
-#: src/js/services/profileService.js:396
+#: src/js/controllers/buyAmazon.js:179
+msgid "Error creating gift card"
+msgstr "Erro ao criar vale-presente"
+
+#: src/js/controllers/buyAmazon.js:94
+#: src/js/controllers/buyMercadoLibre.js:94
+msgid "Error creating the invoice"
+msgstr "Erro ao criar a fatura"
+
+#: src/js/services/profileService.js:412
 msgid "Error creating wallet"
 msgstr "Erro na criação da carteira"
 
-#: src/js/controllers/confirm.js:261
+#: src/js/controllers/confirm.js:296
 msgid "Error getting SendMax information"
 msgstr "Erro ao obter informações de SendMax"
 
-#: src/js/controllers/topup.js:108
+#: src/js/controllers/buyAmazon.js:136
+#: src/js/controllers/buyMercadoLibre.js:136
+#: src/js/controllers/topup.js:114
 msgid "Error in Payment Protocol"
 msgstr "Erro no Protocolo de Pagamento"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing NavPay Account"
-msgstr "Erro de emparelhamento na Conta NavPay"
+msgid "Error pairing BitPay Account"
+msgstr "Erro de emparelhamento na Conta BitPay"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
 msgstr "Erro na varredura dos fundos:"
 
-#: src/js/controllers/paperWallet.js:91
+#: src/js/controllers/paperWallet.js:90
 msgid "Error sweeping wallet:"
 msgstr "Erro na varredura da carteira:"
 
@@ -991,14 +1140,16 @@ msgstr "Erro na atualização dos Cartões de Débito"
 msgid "Exceeded daily limit of $500 per user"
 msgstr "Excedido limite diário de $500 por usuário"
 
-#: src/js/controllers/confirm.js:407
+#: src/js/controllers/confirm.js:461
 #: www/views/confirm.html:27
-#: www/views/modals/txp-details.html:121
+#: www/views/mercadoLibreCards.html:25
+#: www/views/modals/mercadolibre-card-details.html:34
+#: www/views/modals/txp-details.html:119
 msgid "Expired"
 msgstr "Expirado"
 
 #: www/views/modals/paypro.html:54
-#: www/views/modals/txp-details.html:127
+#: www/views/modals/txp-details.html:125
 msgid "Expires"
 msgstr "﻿Expira"
 
@@ -1015,17 +1166,22 @@ msgstr "Exportar para arquivo"
 msgid "Export wallet"
 msgstr "Exportar carteira"
 
-#: src/js/services/walletService.js:1175
+#: src/js/services/walletService.js:1204
 #: www/views/tab-export-qrCode.html:9
 msgid "Exporting via QR not supported for this wallet"
 msgstr "Exportação via QR code não suportada por essa carteira"
 
-#: www/views/preferencesInformation.html:83
+#: www/views/preferencesInformation.html:104
+#: www/views/preferencesPrivateKey.html:6
+msgid "Extended Private Key"
+msgstr "Chave Privada Estendida"
+
+#: www/views/preferencesInformation.html:89
 msgid "Extended Public Keys"
 msgstr "Chave Pública Estendida"
 
 #: src/js/services/onGoingProcess.js:20
-msgid "Extracting Wallet Information..."
+msgid "Extracting Wallet information..."
 msgstr "Extraindo informações da Carteira..."
 
 #: src/js/controllers/export.js:115
@@ -1041,12 +1197,20 @@ msgstr "Falha ao exportar"
 msgid "Family vacation funds"
 msgstr "Fundos de férias com a família"
 
-#: www/views/tx-details.html:81
+#: www/views/tx-details.html:79
 msgid "Fee"
 msgstr "Taxa"
 
-#: www/views/confirm.html:81
-#: www/views/modals/txp-details.html:101
+#: www/views/modals/chooseFeeLevel.html:75
+msgid "Fee level"
+msgstr "Nível de taxa"
+
+#: src/js/controllers/modals/feeLevels.js:100
+msgid "Fee level is not defined"
+msgstr "Nível de taxa não está definido"
+
+#: www/views/confirm.html:79
+#: www/views/modals/txp-details.html:99
 msgid "Fee:"
 msgstr "Taxa:"
 
@@ -1055,20 +1219,24 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "Comentário pode não ter sido enviado. Por favor, tente novamente mais tarde."
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching NavPay Account..."
-msgstr "Buscando Conta NavPay..."
+msgid "Fetching BitPay Account..."
+msgstr "Buscando Conta BitPay..."
 
 #: src/js/services/onGoingProcess.js:21
-msgid "Fetching Payment Information"
-msgstr "Buscando Informação de Pagamento"
+msgid "Fetching payment information"
+msgstr "Buscando informação de pagamento"
 
 #: www/views/export.html:14
 #: www/views/import.html:16
 msgid "File/Text"
 msgstr "Arquivo/Texto"
 
-#: src/js/services/fingerprintService.js:43
-#: src/js/services/fingerprintService.js:48
+#: www/views/preferencesLogs.html:17
+msgid "Filter setting"
+msgstr "Configuração de filtro"
+
+#: src/js/services/fingerprintService.js:42
+#: src/js/services/fingerprintService.js:47
 msgid "Finger Scan Failed"
 msgstr "Leitura de Impressão Digital falhou"
 
@@ -1077,11 +1245,14 @@ msgstr "Leitura de Impressão Digital falhou"
 msgid "Finish"
 msgstr "Encerrar"
 
-#: www/views/tab-create-personal.html:121
-#: www/views/tab-create-shared.html:150
+#: www/views/tab-create-personal.html:123
+#: www/views/tab-create-shared.html:152
 msgid "For audit purposes"
 msgstr "Para fins de auditoria"
 
+#: src/js/controllers/topup.js:308
+#: www/views/buyAmazon.html:29
+#: www/views/buyMercadoLibre.html:28
 #: www/views/confirm.html:65
 #: www/views/modals/txp-details.html:74
 #: www/views/topup.html:34
@@ -1090,10 +1261,10 @@ msgid "From"
 msgstr "De"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From NavPay account"
-msgstr "De conta NavPay"
+msgid "From BitPay account"
+msgstr "De conta BitPay"
 
-#: www/views/tab-import-phrase.html:54
+#: www/views/tab-import-phrase.html:57
 msgid "From Hardware Wallet"
 msgstr "De uma Carteira de Hardware"
 
@@ -1111,9 +1282,9 @@ msgstr "Saldos encontrados:"
 
 #: www/views/topup.html:49
 msgid "Funds to be added"
-msgstr ""
+msgstr "Fundos a ser adicionado"
 
-#: www/views/paperWallet.html:53
+#: www/views/paperWallet.html:51
 msgid "Funds transferred"
 msgstr "Saldos transferidos"
 
@@ -1142,11 +1313,15 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "Sacar dinheiro em qualquer lugar que você vá, de qualquer Caixa Eletrônico Visa<sup>&reg;</sup> compatível. Tarifas bancárias podem ser geradas."
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from NavPay"
-msgstr "Receba notícias e atualizações da NavPay"
+msgid "Get news and updates from BitPay"
+msgstr "Receba notícias e atualizações da BitPay"
 
 #: www/views/bitpayCard.html:49
+msgid "Get started"
+msgstr "Começar"
+
 #: www/views/onboarding/welcome.html:8
+msgctxt "button"
 msgid "Get started"
 msgstr "Começar"
 
@@ -1158,17 +1333,40 @@ msgstr "Comece adicionando o primeiro."
 msgid "Getting fee levels..."
 msgstr "Obtendo níveis de taxa..."
 
-#: src/js/controllers/bitpayCard.js:181
-#: src/js/controllers/bitpayCard.js:191
+#: www/views/buyAmazon.html:43
+#: www/views/buyMercadoLibre.html:42
+msgid "Gift Card"
+msgstr "Vale-Presente"
+
+#: www/views/modals/mercadolibre-card-details.html:30
+#: www/views/modals/mercadolibre-card-details.html:35
+msgid "Gift Card is not available to use anymore"
+msgstr "Vale-Presente não está mais disponível para uso"
+
+#: src/js/controllers/buyAmazon.js:204
+msgid "Gift card expired"
+msgstr "Vale-presente expirado"
+
+#: www/views/buyAmazon.html:111
+msgid "Gift card generated and ready to use."
+msgstr "Vale-presente gerado e pronto para uso."
+
+#: src/js/controllers/bitpayCard.js:114
+#: src/js/controllers/bitpayCard.js:124
+#: src/js/controllers/modals/mercadoLibreCardDetails.js:27
 #: src/js/controllers/onboarding/terms.js:23
+#: src/js/controllers/preferences.js:67
 #: src/js/controllers/preferencesAbout.js:16
+#: src/js/controllers/preferencesCash.js:20
 #: src/js/controllers/preferencesLanguage.js:14
-#: src/js/controllers/tab-home.js:149
-#: src/js/controllers/tab-settings.js:48
-#: src/js/controllers/tx-details.js:174
+#: src/js/controllers/tab-home.js:150
+#: src/js/controllers/tab-settings.js:49
+#: src/js/controllers/tx-details.js:193
+#: src/js/controllers/tx-details.js:56
 msgid "Go Back"
 msgstr "Retroceder"
 
+#: src/js/controllers/confirm.js:131
 #: src/js/controllers/onboarding/backupRequest.js:20
 #: src/js/controllers/onboarding/backupRequest.js:26
 #: src/js/services/bitpayAccountService.js:84
@@ -1181,8 +1379,8 @@ msgstr "Retroceder"
 msgid "Got it"
 msgstr "Compreendi"
 
-#: www/views/preferencesInformation.html:47
 #: www/views/preferencesInformation.html:53
+#: www/views/preferencesInformation.html:59
 msgid "Hardware Wallet"
 msgstr "Carteira de hardware"
 
@@ -1194,12 +1392,19 @@ msgstr "Hardware não conectado."
 msgid "Hardware wallet"
 msgstr "Carteira de hardware"
 
+#: src/js/controllers/create.js:178
+#: src/js/controllers/join.js:144
+msgid "Hardware wallets are not yet supported with Bitcoin Cash"
+msgstr "Carteiras de hardware ainda não são suportadas com Bitcoin Cash"
+
+#: www/views/modals/mercadolibre-card-details.html:69
 #: www/views/tab-settings.html:20
 msgid "Help & Support"
 msgstr "Ajuda e suporte"
 
-#: src/js/controllers/bitpayCard.js:179
-#: src/js/controllers/tab-settings.js:46
+#: src/js/controllers/bitpayCard.js:112
+#: src/js/controllers/modals/mercadoLibreCardDetails.js:25
+#: src/js/controllers/tab-settings.js:47
 msgid "Help and support information is available at the website."
 msgstr "Informações de Ajuda e Suporte estão disponíveis no site."
 
@@ -1207,21 +1412,21 @@ msgstr "Informações de Ajuda e Suporte estão disponíveis no site."
 msgid "Hide"
 msgstr "Esconder"
 
-#: www/views/preferences.html:32
+#: www/views/preferences.html:27
 msgid "Hide Balance"
 msgstr "Esconder saldos"
 
-#: www/views/advancedSettings.html:29
+#: www/views/advancedSettings.html:30
 msgid "Hide Next Steps Card"
 msgstr "Esconder próximo passo do cartão"
 
-#: www/views/join.html:46
-#: www/views/tab-create-personal.html:26
-#: www/views/tab-create-shared.html:55
+#: www/views/join.html:49
+#: www/views/tab-create-personal.html:28
+#: www/views/tab-create-shared.html:57
 #: www/views/tab-export-file.html:25
-#: www/views/tab-import-file.html:28
+#: www/views/tab-import-file.html:30
 #: www/views/tab-import-hardware.html:31
-#: www/views/tab-import-phrase.html:33
+#: www/views/tab-import-phrase.html:36
 msgid "Hide advanced options"
 msgstr "Ocultar opções avançadas"
 
@@ -1251,9 +1456,9 @@ msgstr "Li, entendi e concordo com os <a ng-click=\"openTerms()\" translate=\"\"
 msgid "I have read, understood, and agree with the Terms of use."
 msgstr "Eu li, entendi, é concordo com os Termos de uso."
 
-#: www/views/join.html:134
-#: www/views/tab-create-personal.html:105
-#: www/views/tab-create-shared.html:134
+#: www/views/join.html:137
+#: www/views/tab-create-personal.html:107
+#: www/views/tab-create-shared.html:136
 msgid "I have written it down"
 msgstr "Eu escrevi isso"
 
@@ -1271,32 +1476,32 @@ msgid "I understand"
 msgstr "Eu compreendi"
 
 #: www/views/onboarding/disclaimer.html:21
-msgid "I understand that if this app is moved to another device or deleted, my Nav Coin can only be recovered with the backup phrase."
-msgstr "Eu entendi que se esse aplicativo for movido para outro dispositivo ou deletado, meus Nav Coins só podem ser recuperados com frase de backup."
+msgid "I understand that if this app is moved to another device or deleted, my bitcoin can only be recovered with the backup phrase."
+msgstr "Eu entendi que se esse aplicativo for movido para outro dispositivo ou deletado, meus bitcoins só podem ser recuperados com frase de backup."
 
 #: www/views/onboarding/disclaimer.html:18
 msgid "I understand that my funds are held securely on this device, not by a company."
 msgstr "Eu entendi que meu saldo são mantidos em segurança neste dispositivo e não por uma empresa."
 
-#: www/views/backup.html:29
+#: www/views/backup.html:36
 msgid "I've written it down"
 msgstr "Já escrevi isso"
 
-#: www/views/preferences.html:50
+#: www/views/preferences.html:45
 msgid "If enabled, all sensitive information (private key and recovery phrase) and actions (spending and exporting) associated with this wallet will be protected."
 msgstr "Se habilitado, todas as informações sensíveis (chave privada e frase de recuperação) e ações (gastos e exportações) associados à essa carteira será protegido."
 
-#: www/views/advancedSettings.html:22
+#: www/views/advancedSettings.html:23
 msgid "If enabled, the Recent Transactions card - a list of transactions occuring across all wallets - will appear in the Home tab."
 msgstr "Se habilitado, o Cartão de Transações - Lista todas as transações que ocorreram em todas as Carteiras - aparecerá na aba Início."
 
-#: www/views/advancedSettings.html:13
+#: www/views/advancedSettings.html:14
 msgid "If enabled, wallets will also try to spend unconfirmed funds. This option may cause transaction delays."
 msgstr "Se habilitado, as carteiras irão tentar gastar fundos não confirmados. Está opção pode causar atrasos de transações."
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor NavPay can recover your funds without a backup."
-msgstr "Se esse dispositivo é substituído ou este aplicativo deletado, nem você nem a NavPay poderá recuperar seus fundos sem um backup."
+msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
+msgstr "Se esse dispositivo é substituído ou este aplicativo deletado, nem você nem a BitPay poderá recuperar seus fundos sem um backup."
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1307,7 +1512,7 @@ msgid "If you take a screenshot, your backup may be viewed by other apps. You ca
 msgstr "Se você fizer uma Captura de tela, seu backup poderá ser visto por outros aplicativos. Você pode fazer um backup físico com um papel e caneta."
 
 #: www/views/tab-import-hardware.html:42
-#: www/views/tab-import-phrase.html:77
+#: www/views/tab-import-phrase.html:80
 msgid "Import"
 msgstr "Importar"
 
@@ -1315,7 +1520,7 @@ msgstr "Importar"
 msgid "Import Wallet"
 msgstr "Importar carteira"
 
-#: www/views/tab-import-file.html:39
+#: www/views/tab-import-file.html:41
 msgid "Import backup"
 msgstr "Importar backup"
 
@@ -1327,14 +1532,20 @@ msgstr "Importar carteira"
 msgid "Importing Wallet..."
 msgstr "A importar a carteira..."
 
-#: www/views/backup.html:65
+#: www/views/backup.html:72
 msgid "In order to verify your wallet backup, please type your password."
 msgstr "A fim de verificar o seu backup de carteira, por favor, digite sua senha."
 
-#: www/views/includes/walletItem.html:11
-#: www/views/includes/walletSelector.html:18
-#: www/views/tab-home.html:90
-#: www/views/tab-settings.html:117
+#: www/views/mercadoLibreCards.html:24
+#: www/views/modals/mercadolibre-card-details.html:29
+msgid "Inactive"
+msgstr "Inativo"
+
+#: www/views/includes/walletItem.html:9
+#: www/views/includes/walletList.html:6
+#: www/views/includes/walletListSettings.html:9
+#: www/views/includes/walletSelector.html:25
+#: www/views/includes/walletSelector.html:56
 msgid "Incomplete"
 msgstr "Incompleto"
 
@@ -1347,7 +1558,7 @@ msgid "Incorrect PIN, try again."
 msgstr "PIN incorreto, tente novamente."
 
 #. Trying to import a malformed wallet export QR code
-#: src/js/controllers/import.js:70
+#: src/js/controllers/import.js:83
 msgid "Incorrect code format"
 msgstr "Formato de código incorreto"
 
@@ -1355,27 +1566,35 @@ msgstr "Formato de código incorreto"
 msgid "Incorrect network address"
 msgstr "Endereço de rede incorreto"
 
+#: src/js/controllers/confirm.js:114
+#: src/js/controllers/confirm.js:306
 #: src/js/services/bwcError.js:44
 msgid "Insufficient funds"
 msgstr "Fundos insuficientes"
 
-#: src/js/controllers/topup.js:159
-#: src/js/controllers/topup.js:171
+#: src/js/controllers/topup.js:165
+#: src/js/controllers/topup.js:177
 #: src/js/services/bwcError.js:71
 msgid "Insufficient funds for fee"
 msgstr "Fundos insuficientes para taxa"
+
+#: www/views/tab-settings.html:116
+msgid "Integrations"
+msgstr "Integrações"
 
 #: www/views/includes/walletHistory.html:49
 msgid "Invalid"
 msgstr "Inválido"
 
-#: src/js/controllers/topup.js:109
+#: src/js/controllers/buyAmazon.js:137
+#: src/js/controllers/buyMercadoLibre.js:137
+#: src/js/controllers/topup.js:115
 msgid "Invalid URL"
 msgstr "URL inválida"
 
-#: src/js/controllers/create.js:175
-#: src/js/controllers/import.js:327
-#: src/js/controllers/join.js:142
+#: src/js/controllers/create.js:184
+#: src/js/controllers/import.js:343
+#: src/js/controllers/join.js:150
 msgid "Invalid account number"
 msgstr "Número de conta inválido"
 
@@ -1387,9 +1606,9 @@ msgstr "Endereço inválido"
 msgid "Invalid data"
 msgstr "Dados inválidos"
 
-#: src/js/controllers/create.js:155
-#: src/js/controllers/import.js:249
-#: src/js/controllers/join.js:121
+#: src/js/controllers/create.js:159
+#: src/js/controllers/import.js:264
+#: src/js/controllers/join.js:124
 msgid "Invalid derivation path"
 msgstr "Caminho de derivação inválido"
 
@@ -1397,15 +1616,16 @@ msgstr "Caminho de derivação inválido"
 msgid "Invitation to share a {{appName}} Wallet"
 msgstr "Convite para compartilhar a Carteira {{appName}}"
 
-#: www/views/topup.html:56
-msgid "Invoice Fee"
-msgstr ""
+#: www/views/mercadoLibreCards.html:20
+#: www/views/modals/mercadolibre-card-details.html:48
+msgid "Invoice expired"
+msgstr "Fatura expirada"
 
 #: src/js/controllers/feedback/send.js:79
 msgid "Is there anything we could do better?"
 msgstr "Há algo mais que podemos ajudar?"
 
-#: www/views/backup.html:47
+#: www/views/backup.html:54
 msgid "Is this correct?"
 msgstr "Isto está correto?"
 
@@ -1414,14 +1634,14 @@ msgid "Is this email address correct?"
 msgstr "Este endereço de e-mail está correto?"
 
 #: www/views/addresses.html:25
-msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your Nav Coins secure against hypothetical attacks by quantum computers."
-msgstr "É uma boa ideia evitar a reutilização de endereços - isto também protege a sua privacidade e mantém seus Nav Coins seguros, contra prováveis ataques de computadores quânticos."
+msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
+msgstr "É uma boa ideia evitar a reutilização de endereços - isto também protege a sua privacidade e mantém seus bitcoins seguros, contra prováveis ataques de computadores quânticos."
 
 #: src/js/controllers/backup.js:76
 msgid "It's important that you write your backup phrase down correctly. If something happens to your wallet, you'll need this backup to recover your money. Please review your backup and try again."
 msgstr "É importante que você escreva sua frase backup corretamente. Se algo acontecer a sua carteira, você vai precisar deste backup para recuperar seu dinheiro. Por favor, revise seu backup e tente novamente."
 
-#: www/views/join.html:148
+#: www/views/join.html:151
 msgid "Join"
 msgstr "Participar"
 
@@ -1447,7 +1667,7 @@ msgid "Key already associated with an existing wallet"
 msgstr "Chave já associada com uma carteira existente"
 
 #: www/views/preferencesLanguage.html:4
-#: www/views/tab-settings.html:53
+#: www/views/tab-settings.html:61
 msgid "Language"
 msgstr "Idioma"
 
@@ -1455,7 +1675,14 @@ msgstr "Idioma"
 msgid "Last Month"
 msgstr "Mês anterior"
 
-#: www/views/backup.html:36
+#: src/js/controllers/confirm.js:132
+#: www/views/preferences.html:48
+#: www/views/tab-home.html:24
+#: www/views/tx-details.html:94
+msgid "Learn more"
+msgstr "Saiba mais"
+
+#: www/views/backup.html:43
 msgid "Let's verify your backup phrase."
 msgstr "Vamos verificar a sua frase de backup."
 
@@ -1468,7 +1695,7 @@ msgstr "A carregar endereços..."
 msgid "Loading transaction info..."
 msgstr "A carregar informação da transação..."
 
-#: www/views/tab-settings.html:95
+#: www/views/tab-settings.html:93
 msgid "Lock App"
 msgstr "Bloquear aplicativo"
 
@@ -1492,6 +1719,10 @@ msgstr "Bloqueio de tempo em ação. Por favor, espere para criar uma nova propo
 msgid "Locktime in effect. Please wait to remove this spend proposal"
 msgstr "Bloqueio de tempo em ação. Por favor espere para remover esta proposta de gasto."
 
+#: www/views/includes/logOptions.html:3
+msgid "Log options"
+msgstr "Opções de log"
+
 #: www/views/modals/bitpay-card-confirmation.html:14
 msgid "Log out"
 msgstr "Sair"
@@ -1504,10 +1735,6 @@ msgstr "Quantidade de entrada baixa"
 msgid "Low fees"
 msgstr "Baixas taxas"
 
-#: www/views/paymentUri.html:13
-msgid "Make a payment to"
-msgstr "Fazer um pagamento para"
-
 #: www/views/onboarding/tour.html:38
 msgid "Makes sense"
 msgstr "Faz sentido"
@@ -1517,7 +1744,7 @@ msgid "Matches:"
 msgstr "Correspondências:"
 
 #: www/views/includes/copayers.html:4
-#: www/views/preferencesInformation.html:79
+#: www/views/preferencesInformation.html:85
 msgid "Me"
 msgstr "Eu"
 
@@ -1525,20 +1752,30 @@ msgstr "Eu"
 msgid "Meh - it's alright"
 msgstr "Meh - está tudo bem"
 
-#: src/js/controllers/tx-details.js:146
+#: src/js/controllers/tx-details.js:165
 #: www/views/modals/paypro.html:48
-#: www/views/modals/txp-details.html:95
-#: www/views/tx-details.html:74
+#: www/views/modals/txp-details.html:93
+#: www/views/tx-details.html:72
 msgid "Memo"
 msgstr "Nota"
 
-#: www/views/modals/txp-details.html:133
+#: www/views/mercadoLibre.html:6
+msgid "Mercado Livre Brazil Gift Cards"
+msgstr "Vales-Presente do Mercado Livre Brasil"
+
+#: src/js/controllers/buyMercadoLibre.js:98
+msgid "Mercadolibre Gift Card Service is not available at this moment. Please try back later."
+msgstr "Serviço de Vale-Presente Mercado Livre não está disponível neste momento. Por favor, tente mais tarde."
+
+#: www/views/modals/txp-details.html:131
 msgid "Merchant Message"
 msgstr "Mensagem Publicitária"
 
-#: www/views/paymentUri.html:17
-msgid "Message"
-msgstr "Mensagem"
+#: www/views/buyAmazon.html:55
+#: www/views/buyMercadoLibre.html:54
+#: www/views/topup.html:63
+msgid "Miner Fee"
+msgstr "Taxa do Minerador"
 
 #: src/js/services/bwcError.js:134
 msgid "Missing parameter"
@@ -1548,7 +1785,7 @@ msgstr "Parâmetro em falta"
 msgid "Missing private keys to sign"
 msgstr "Faltam chaves privadas para assinar"
 
-#: www/views/preferences.html:65
+#: www/views/preferences.html:61
 #: www/views/preferencesAdvanced.html:3
 msgid "More Options"
 msgstr "Mais opções"
@@ -1558,7 +1795,7 @@ msgstr "Mais opções"
 msgid "Moved"
 msgstr "Movido"
 
-#: src/js/controllers/tx-details.js:112
+#: src/js/controllers/tx-details.js:131
 msgid "Moved Funds"
 msgstr "Valores transferidos"
 
@@ -1577,13 +1814,11 @@ msgstr "Nota: Para importar uma carteira de software de terceiros, por favor, v�
 msgid "Name"
 msgstr "Nome"
 
-#: www/views/paymentUri.html:18
-msgid "Network"
-msgstr "Rede"
-
-#: www/views/topup.html:63
-msgid "Network Fee"
-msgstr ""
+#: www/views/buyAmazon.html:49
+#: www/views/buyMercadoLibre.html:48
+#: www/views/topup.html:56
+msgid "Network Cost"
+msgstr "Custo de rede"
 
 #: src/js/services/bwcError.js:47
 msgid "Network error"
@@ -1593,7 +1828,7 @@ msgstr "Erro de rede"
 msgid "New Proposal"
 msgstr "Nova proposta"
 
-#: src/js/controllers/addresses.js:131
+#: src/js/controllers/addresses.js:126
 msgid "New address could not be generated. Please try again."
 msgstr "Novo endereço não pode ser gerado. Por favor tente novamente"
 
@@ -1609,13 +1844,22 @@ msgstr "Próximos passos"
 msgid "No Wallet"
 msgstr "Sem carteira"
 
+#: src/js/controllers/buyAmazon.js:115
+#: src/js/controllers/buyMercadoLibre.js:115
+msgid "No access key defined"
+msgstr "Nenhuma chave de acesso definida"
+
 #: www/views/onboarding/backupRequest.html:5
-msgid "No backup, no Nav Coin."
-msgstr "Sem backup, sem Nav Coin."
+msgid "No backup, no bitcoin."
+msgstr "Sem backup, sem bitcoin."
 
 #: www/views/addressbook.html:19
 msgid "No contacts yet"
 msgstr "Ainda não existem contactos"
+
+#: www/views/preferencesLogs.html:16
+msgid "No entries for this log level"
+msgstr "Não há entradas para este nível de log"
 
 #: www/views/preferencesExternal.html:12
 msgid "No hardware information available."
@@ -1625,7 +1869,7 @@ msgstr "Nenhuma informação de hardware disponível."
 msgid "No hardware wallets supported on this device"
 msgstr "Não há carteiras de hardware com suporte neste dispositivo"
 
-#: www/views/proposals.html:25
+#: www/views/proposals.html:24
 msgid "No pending proposals"
 msgstr "Sem propostas pendentes"
 
@@ -1633,11 +1877,12 @@ msgstr "Sem propostas pendentes"
 msgid "No recent transactions"
 msgstr "Não há transações recentes"
 
-#: src/js/controllers/topup.js:41
+#: src/js/controllers/buyAmazon.js:44
+#: src/js/controllers/topup.js:47
 msgid "No signing proposal: No private key"
 msgstr "Nenhuma proposta de assinatura: Nenhuma chave privada"
 
-#: www/views/walletDetails.html:193
+#: www/views/walletDetails.html:204
 msgid "No transactions yet"
 msgstr "Nenhuma transação ainda"
 
@@ -1646,16 +1891,32 @@ msgid "No wallet found"
 msgstr "Carteira não encontrada"
 
 #: src/js/controllers/preferencesDelete.js:8
+#: src/js/controllers/preferencesPrivateKey.js:7
 msgid "No wallet selected"
 msgstr "Sem carteira selecionada"
 
-#: src/js/controllers/topup.js:255
+#: src/js/controllers/buyAmazon.js:302
+#: src/js/controllers/buyMercadoLibre.js:294
+#: src/js/controllers/confirm.js:85
+#: src/js/controllers/topup.js:265
 msgid "No wallets available"
-msgstr ""
+msgstr "Não há carteiras disponíveis"
 
-#: www/views/paperWallet.html:47
+#: www/views/paperWallet.html:45
 msgid "No wallets available to receive funds"
 msgstr "Nenhuma Carteira disponível para receber fundos"
+
+#: www/views/preferencesCash.html:15
+msgid "No wallets eligible for Bitcoin Cash support"
+msgstr "Sem carteiras elegíveis para suporte a Bitcoin Cash"
+
+#: src/js/controllers/preferencesCash.js:58
+msgid "Non BIP44 wallet"
+msgstr "Carteira sem BIP44"
+
+#: www/views/preferencesCash.html:46
+msgid "Non eligible BTC wallets"
+msgstr "Carteiras BTC não elegíveis"
 
 #: src/js/services/feeService.js:12
 msgid "Normal"
@@ -1665,12 +1926,12 @@ msgstr "Normal"
 msgid "Not authorized"
 msgstr "Não autorizada"
 
-#: src/js/controllers/confirm.js:271
+#: src/js/controllers/confirm.js:307
 msgid "Not enough funds for fee"
 msgstr "Não há fundos para taxa"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even NavPay can access it."
+msgid "Not even BitPay can access it."
 msgstr "Nem mesmo Bitpay pode acessar isso."
 
 #: src/js/controllers/paperWallet.js:47
@@ -1686,12 +1947,16 @@ msgstr "Agora não"
 msgid "Note"
 msgstr "Nota"
 
+#: www/views/backup.html:19
+msgid "Note: if this BCH wallet was duplicated from a BTC wallet, they share the same recovery phrase."
+msgstr "Nota: se esta carteira BCH foi duplicada de uma carteira BTC, elas compartilham a mesma frase de recuperação."
+
 #: www/views/modals/wallets.html:25
-msgid "Notice: only 1-1 (single signature) wallets can be used for sell Nav Coin"
-msgstr "Aviso: Apenas Carteiras 1-1 (de assinatura única) podem ser usadas para vender Nav Coins"
+msgid "Notice: only 1-1 (single signature) wallets can be used for sell bitcoin"
+msgstr "Aviso: Apenas Carteiras 1-1 (de assinatura única) podem ser usadas para vender bitcoins"
 
 #: www/views/preferencesNotifications.html:3
-#: www/views/tab-settings.html:46
+#: www/views/tab-settings.html:54
 msgid "Notifications"
 msgstr "Notificações"
 
@@ -1699,9 +1964,13 @@ msgstr "Notificações"
 msgid "Notifications by email"
 msgstr "Notificações por e-mail"
 
-#: www/views/tx-details.html:116
+#: www/views/tx-details.html:117
 msgid "Notify me if confirmed"
 msgstr "Me informe se confirmado"
+
+#: www/views/preferencesNotifications.html:24
+msgid "Notify me when transactions are confirmed"
+msgstr "Notificar-me quando as transações são confirmadas"
 
 #: www/views/includes/backupNeededPopup.html:8
 msgid "Now is a good time to backup your wallet. If this device is lost, it is impossible to access your funds without a backup."
@@ -1711,9 +1980,14 @@ msgstr "Agora é uma boa hora para fazer backup de sua carteira. Se este disposi
 msgid "Now is a perfect time to assess your surroundings. Nearby windows? Hidden cameras? Shoulder-spies?"
 msgstr "Agora é a hora perfeita para olhar em volta. Próximo de janelas? Câmeras escondidas? Espião atrás do ombro?"
 
-#: src/js/controllers/topup.js:276
+#: src/js/controllers/buyAmazon.js:314
+#: src/js/controllers/topup.js:286
+#: src/js/services/incomingData.js:153
 #: src/js/services/popupService.js:16
-#: src/js/services/popupService.js:59
+#: src/js/services/popupService.js:52
+#: src/js/services/popupService.js:61
+#: src/js/services/popupService.js:72
+#: www/views/modals/chooseFeeLevel.html:6
 msgid "OK"
 msgstr "OK"
 
@@ -1732,12 +2006,20 @@ msgstr "Aviso Legal Oficial em Inglês"
 msgid "Oh no!"
 msgstr "Oh não!"
 
-#: www/views/tab-home.html:39
+#: src/js/controllers/buyMercadoLibre.js:308
+msgid "Ok"
+msgstr "Ok"
+
+#: www/views/tab-home.html:53
 msgid "On this screen you can see all your wallets, accounts, and assets."
 msgstr "Nesta tela você pode ver todas as suas carteiras, contas e ativos."
 
-#: src/js/controllers/bitpayCard.js:180
-#: src/js/controllers/tab-settings.js:47
+#: src/js/controllers/bitpayCard.js:113
+#: src/js/controllers/modals/mercadoLibreCardDetails.js:26
+#: src/js/controllers/preferences.js:66
+#: src/js/controllers/preferencesCash.js:19
+#: src/js/controllers/tab-settings.js:48
+#: src/js/controllers/tx-details.js:55
 msgid "Open"
 msgstr "Abrir"
 
@@ -1753,8 +2035,8 @@ msgstr "Abrir GitHub"
 msgid "Open GitHub Project"
 msgstr "Abrir Projeto no GitHub"
 
-#: src/js/controllers/bitpayCard.js:190
-#: src/js/controllers/tx-details.js:173
+#: src/js/controllers/bitpayCard.js:123
+#: src/js/controllers/tx-details.js:192
 msgid "Open Insight"
 msgstr "Abrir Insight"
 
@@ -1770,26 +2052,34 @@ msgstr "Abrir Comunidade de Tradução"
 msgid "Open Website"
 msgstr "Abrir Site"
 
+#: src/js/controllers/preferencesCash.js:18
+msgid "Open the recovery tool."
+msgstr "Abrir ferramenta de recuperação."
+
 #: www/views/tab-receive.html:27
 msgid "Open wallet"
 msgstr "Abrir Carteira"
 
+#: www/views/includes/incomingDataMenu.html:19
+msgid "Open website"
+msgstr "Abrir página da Web"
+
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the NavPay Card"
+msgid "Order the BitPay Card"
 msgstr "Solicitar o Cartão Bitpay"
 
-#: www/views/join.html:102
-#: www/views/join.html:93
-#: www/views/tab-create-personal.html:67
-#: www/views/tab-create-personal.html:75
-#: www/views/tab-create-shared.html:104
-#: www/views/tab-create-shared.html:96
+#: www/views/join.html:105
+#: www/views/join.html:96
+#: www/views/tab-create-personal.html:69
+#: www/views/tab-create-personal.html:77
+#: www/views/tab-create-shared.html:106
+#: www/views/tab-create-shared.html:98
 #: www/views/tab-import-file.html:18
-#: www/views/tab-import-phrase.html:38
+#: www/views/tab-import-phrase.html:41
 msgid "Password"
 msgstr "Senha"
 
-#: src/js/controllers/import.js:83
+#: src/js/controllers/import.js:96
 msgid "Password required. Make sure to enter your password in advanced options"
 msgstr "Necessário Senha. Certifique-se de digitar sua senha em opções avançadas"
 
@@ -1802,13 +2092,14 @@ msgid "Paste the backup plain text code"
 msgstr "Cole o texto puro do backup aqui"
 
 #: www/views/bitpayCardIntro.html:28
-msgid "Pay 0% fees to turn Nav Coin into dollars."
-msgstr "Pague taxas de 0% para transformar Nav Coin em dólar."
+msgid "Pay 0% fees to turn bitcoin into dollars."
+msgstr "Pague taxas de 0% para transformar bitcoin em dólar."
 
 #: www/views/modals/paypro.html:18
 msgid "Pay To"
 msgstr "Pagar Para"
 
+#: src/js/controllers/modals/txpDetails.js:51
 #: www/views/modals/tx-status.html:33
 msgid "Payment Accepted"
 msgstr "﻿Pagamento Aceito"
@@ -1825,7 +2116,7 @@ msgstr "Proposta de Pagamento"
 msgid "Payment Proposal Created"
 msgstr "Proposta de Pagamento Criada"
 
-#: www/views/tab-home.html:46
+#: www/views/tab-home.html:60
 msgid "Payment Proposals"
 msgstr "Propostas de Pagamento"
 
@@ -1846,9 +2137,9 @@ msgstr "Pagamento Recebido"
 msgid "Payment Rejected"
 msgstr "Pagamento Rejeitado"
 
-#: www/views/confirm.html:126
+#: src/js/controllers/modals/txpDetails.js:44
+#: www/views/confirm.html:124
 #: www/views/includes/walletActivity.html:11
-#: www/views/modals/txp-details.html:188
 #: www/views/modals/txp-details.html:42
 msgid "Payment Sent"
 msgstr "Pagamento Enviado"
@@ -1861,7 +2152,11 @@ msgstr "Pagamento aceito, mas ainda não publicado"
 msgid "Payment accepted. It will be broadcasted by Glidera. In case there is a problem, it can be deleted 6 hours after it was created."
 msgstr "Pagamento aceito. Ele será publicado por Glidera. Em caso de problema, pode ser deletado até 6 horas depois de criado."
 
-#: www/views/modals/txp-details.html:109
+#: src/js/services/incomingData.js:152
+msgid "Payment address was translated to new Bitcoin Cash address format:"
+msgstr "Endereço de pagamento foi traduzido para o novo formato de endereço Bitcoin Cash:"
+
+#: www/views/modals/txp-details.html:107
 msgid "Payment details"
 msgstr "Detalhes do pagamento"
 
@@ -1869,7 +2164,12 @@ msgstr "Detalhes do pagamento"
 msgid "Payment request"
 msgstr "Pedido de pagamento"
 
-#: www/views/proposals.html:5
+#: www/views/mercadoLibreCards.html:22
+#: www/views/modals/mercadolibre-card-details.html:39
+msgid "Pending"
+msgstr "Pendente"
+
+#: www/views/proposals.html:4
 msgid "Pending Proposals"
 msgstr "Proposta pendente"
 
@@ -1877,11 +2177,11 @@ msgstr "Proposta pendente"
 msgid "Permanently delete this wallet."
 msgstr "Excluir permanentemente esta carteira."
 
-#: src/js/services/profileService.js:388
+#: src/js/services/profileService.js:403
 msgid "Personal Wallet"
 msgstr "Carteira Pessoal"
 
-#: www/views/backup.html:18
+#: www/views/backup.html:25
 msgid "Please carefully write down this phrase."
 msgstr "Por favor, anote esta frase com cuidado."
 
@@ -1889,12 +2189,12 @@ msgstr "Por favor, anote esta frase com cuidado."
 msgid "Please connect a camera to get started."
 msgstr "Por favor conecte uma câmera para iniciar."
 
-#: src/js/controllers/import.js:260
+#: src/js/controllers/import.js:276
 msgid "Please enter the recovery phrase"
 msgstr "Por favor, digite a frase de recuperação"
 
-#: src/js/controllers/create.js:168
-#: src/js/controllers/join.js:135
+#: src/js/controllers/create.js:172
+#: src/js/controllers/join.js:138
 msgid "Please enter the wallet recovery phrase"
 msgstr "Por favor, digite a frase de recuperação da carteira"
 
@@ -1902,15 +2202,20 @@ msgstr "Por favor, digite a frase de recuperação da carteira"
 msgid "Please enter your PIN"
 msgstr "Introduza o seu PIN"
 
-#: www/views/backup.html:46
+#: www/views/backup.html:53
 msgid "Please tap each word in the correct order."
 msgstr "Por favor escolhe cada palavra na ordem correta."
 
 #: src/js/services/bwcError.js:101
-msgid "Please upgrade Navpay to perform this action"
-msgstr "Por favor atualize Navpay para executar esta ação"
+msgid "Please upgrade Copay to perform this action"
+msgstr "Por favor atualize Copay para executar esta ação"
 
-#: src/js/controllers/import.js:222
+#: www/views/walletDetails.html:142
+#: www/views/walletDetails.html:62
+msgid "Please wait"
+msgstr "Por favor aguarde"
+
+#: src/js/controllers/import.js:236
 msgid "Please, select your backup file"
 msgstr "Por favor, selecione seu arquivo de backup"
 
@@ -1930,7 +2235,7 @@ msgstr "A preparar os endereços..."
 msgid "Preparing backup..."
 msgstr "A preparar o backup..."
 
-#: src/js/routes.js:1196
+#: src/js/routes.js:1263
 msgid "Press again to exit"
 msgstr "Pressione novamente para sair"
 
@@ -1938,7 +2243,11 @@ msgstr "Pressione novamente para sair"
 msgid "Priority"
 msgstr "Prioridade"
 
-#: src/js/controllers/paperWallet.js:137
+#: www/views/includes/incomingDataMenu.html:80
+msgid "Private Key"
+msgstr "Chave Privada"
+
+#: src/js/controllers/paperWallet.js:136
 msgid "Private key encrypted. Enter password"
 msgstr "Chave privada criptografada. Digite a senha"
 
@@ -1950,9 +2259,9 @@ msgstr "A Chave privada está criptografada, não é possível acessar"
 msgid "Proposal Accepted"
 msgstr "Proposta aceite"
 
-#: src/js/controllers/modals/txpDetails.js:51
-#: src/js/controllers/tx-details.js:59
-#: www/views/confirm.html:127
+#: src/js/controllers/modals/txpDetails.js:61
+#: src/js/controllers/tx-details.js:78
+#: www/views/confirm.html:125
 msgid "Proposal Created"
 msgstr "Proposta criada"
 
@@ -1964,9 +2273,17 @@ msgstr "Proposta eliminada"
 msgid "Proposal Rejected"
 msgstr "Proposta rejeitada"
 
-#: www/views/walletDetails.html:178
+#: www/views/walletDetails.html:189
 msgid "Proposals"
 msgstr "Propostas"
+
+#: src/js/controllers/buyAmazon.js:284
+msgid "Purchase Amount is limited to {{limitPerDay}} {{currency}} per day"
+msgstr "Valor da compra é limitado a {{limitPerDay}} {{currency}} por dia"
+
+#: src/js/controllers/buyMercadoLibre.js:283
+msgid "Purchase amount must be a value between 50 and 2000"
+msgstr "Valor da compra deve ser um valor entre 50 e 2000"
 
 #: www/views/onboarding/notifications.html:3
 msgid "Push Notifications"
@@ -1984,8 +2301,8 @@ msgstr "Código QR"
 msgid "Quick review!"
 msgstr "Avaliação rápida!"
 
-#: src/js/controllers/create.js:79
-#: src/js/controllers/join.js:65
+#: src/js/controllers/create.js:82
+#: src/js/controllers/join.js:67
 msgid "Random"
 msgstr "Aleatório"
 
@@ -2001,17 +2318,30 @@ msgstr "Ler menos"
 msgid "Read more"
 msgstr "Ler mais"
 
+#: src/js/controllers/preferences.js:65
+#: src/js/controllers/tx-details.js:54
+msgid "Read more in our Wiki"
+msgstr "Leia mais em nosso Wiki"
+
+#: src/js/controllers/preferencesCash.js:61
+msgid "Read only wallet"
+msgstr "Carteira somente leitura"
+
 #: www/views/tab-receive.html:3
 #: www/views/tabs.html:7
 msgid "Receive"
 msgstr "﻿Receber"
+
+#: www/views/customAmount.html:44
+msgid "Receive in"
+msgstr "﻿Receber em"
 
 #: www/views/includes/walletHistory.html:24
 #: www/views/tx-details.html:18
 msgid "Received"
 msgstr "Recebido"
 
-#: src/js/controllers/tx-details.js:111
+#: src/js/controllers/tx-details.js:130
 msgid "Received Funds"
 msgstr "Valores recebidos"
 
@@ -2025,17 +2355,17 @@ msgstr "A receber"
 msgid "Recent"
 msgstr "Recente"
 
-#: www/views/advancedSettings.html:20
+#: www/views/advancedSettings.html:21
 msgid "Recent Transaction Card"
 msgstr "Transações recentes do cartão"
 
 #: www/views/activity.html:4
-#: www/views/tab-home.html:58
+#: www/views/tab-home.html:72
 msgid "Recent Transactions"
 msgstr "Transações recentes"
 
 #: www/views/amount.html:18
-#: www/views/tab-send.html:9
+#: www/views/tab-send.html:14
 msgid "Recipient"
 msgstr "Destinatário"
 
@@ -2047,17 +2377,16 @@ msgstr "Destinatários"
 msgid "Recovery phrase"
 msgstr "Frase de recuperação"
 
-#: www/views/walletDetails.html:117
-#: www/views/walletDetails.html:36
-msgid "Recreate"
-msgstr "Recriado"
-
 #: src/js/services/onGoingProcess.js:26
 msgid "Recreating Wallet..."
 msgstr "Recriando Carteira…"
 
-#: src/js/controllers/modals/txpDetails.js:53
-#: src/js/controllers/tx-details.js:61
+#: www/views/modals/mercadolibre-card-details.html:22
+msgid "Redeem now"
+msgstr "Resgatar agora"
+
+#: src/js/controllers/modals/txpDetails.js:63
+#: src/js/controllers/tx-details.js:80
 msgid "Rejected"
 msgstr "Rejeitado"
 
@@ -2070,27 +2399,28 @@ msgid "Release information"
 msgstr "Informação de lançamento"
 
 #: www/views/addressbook.view.html:36
+#: www/views/modals/mercadolibre-card-details.html:74
 msgid "Remove"
 msgstr "Remover"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove NavPay Account?"
-msgstr "Remover conta do NavPay?"
+msgid "Remove BitPay Account?"
+msgstr "Remover conta do BitPay?"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove NavPay Card?"
-msgstr "Remover cartão do NavPay?"
+msgid "Remove BitPay Card?"
+msgstr "Remover cartão do BitPay?"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your NavPay account will remove all associated NavPay account data from this device. Are you sure you would like to remove your NavPay Account ({{email}}) from this device?"
-msgstr "Remover sua conta NavPay removerá todos os dados da conta associada ao NavPay neste dispositivo. Tem certeza que quer remover sua conta NavPay ({{email}}) deste dispositivo?"
+msgid "Removing your BitPay account will remove all associated BitPay account data from this device. Are you sure you would like to remove your BitPay Account ({{email}}) from this device?"
+msgstr "Remover sua conta BitPay removerá todos os dados da conta associada ao BitPay neste dispositivo. Tem certeza que quer remover sua conta BitPay ({{email}}) deste dispositivo?"
 
-#: www/views/join.html:113
-#: www/views/join.html:121
-#: www/views/tab-create-personal.html:84
-#: www/views/tab-create-personal.html:92
-#: www/views/tab-create-shared.html:113
-#: www/views/tab-create-shared.html:121
+#: www/views/join.html:116
+#: www/views/join.html:124
+#: www/views/tab-create-personal.html:86
+#: www/views/tab-create-personal.html:94
+#: www/views/tab-create-shared.html:115
+#: www/views/tab-create-shared.html:123
 #: www/views/tab-export-file.html:17
 msgid "Repeat password"
 msgstr "Repetir Senha"
@@ -2099,7 +2429,7 @@ msgstr "Repetir Senha"
 msgid "Repeat the password"
 msgstr "Repita a nova senha"
 
-#: www/views/preferences.html:60
+#: www/views/preferences.html:56
 msgid "Request Fingerprint"
 msgstr "Solicitação de impressão digital"
 
@@ -2107,11 +2437,11 @@ msgstr "Solicitação de impressão digital"
 msgid "Request Specific amount"
 msgstr "Solicitar quantia exata"
 
-#: www/views/preferences.html:47
+#: www/views/preferences.html:42
 msgid "Request Spending Password"
 msgstr "Solicitar senha de pagamento"
 
-#: www/views/tab-create-shared.html:42
+#: www/views/tab-create-shared.html:44
 msgid "Required number of signatures"
 msgstr "Número necessário de assinaturas"
 
@@ -2135,7 +2465,7 @@ msgstr "Tentar Camera novamente"
 #: www/views/includes/note.html:9
 #: www/views/preferencesAlias.html:21
 #: www/views/preferencesBwsUrl.html:25
-#: www/views/preferencesNotifications.html:40
+#: www/views/preferencesNotifications.html:46
 msgid "Save"
 msgstr "Salvar"
 
@@ -2156,13 +2486,17 @@ msgstr "Pesquisando endereços por fundos"
 msgid "Scan again"
 msgstr "Escanear novamente"
 
-#: src/js/services/fingerprintService.js:56
+#: src/js/services/fingerprintService.js:55
 msgid "Scan your fingerprint please"
 msgstr "Escaneie sua impressão digital, por favor"
 
 #: src/js/services/onGoingProcess.js:30
 msgid "Scanning Wallet funds..."
 msgstr "Pesquisando fundos de carteira…"
+
+#: www/views/includes/walletList.html:11
+msgid "Scanning funds..."
+msgstr "Pesquisando fundos..."
 
 #: www/views/includes/screenshotWarningModal.html:7
 msgid "Screenshots are not secure"
@@ -2172,9 +2506,9 @@ msgstr "Capturas de Tela não são seguras"
 msgid "Search Transactions"
 msgstr "Procurar transações"
 
-#: www/views/tab-send.html:13
-msgid "Search or enter Nav Coin address"
-msgstr "Procure ou digite o endereço Nav Coin"
+#: www/views/tab-send.html:18
+msgid "Search or enter bitcoin address"
+msgstr "Procure ou digite o endereço bitcoin"
 
 #: www/views/modals/search.html:16
 msgid "Search transactions"
@@ -2184,16 +2518,19 @@ msgstr "Procurar transações"
 msgid "Search your currency"
 msgstr "Procure a sua moeda"
 
-#: www/views/preferences.html:35
+#: www/views/preferences.html:30
 msgid "Security"
 msgstr "Segurança"
+
+#: www/views/modals/mercadolibre-card-details.html:64
+msgid "See invoice"
+msgstr "Ver fatura"
 
 #: www/views/tab-import-file.html:7
 msgid "Select a backup file"
 msgstr "Selecione um arquivo de backup"
 
-#: src/js/controllers/tab-receive.js:133
-#: www/views/paymentUri.html:30
+#: src/js/controllers/tab-receive.js:139
 msgid "Select a wallet"
 msgstr "Selecione uma carteira"
 
@@ -2202,8 +2539,8 @@ msgid "Self-signed Certificate"
 msgstr "Certificado Auto-Assinado"
 
 #: src/js/services/onGoingProcess.js:41
-msgid "Selling Nav Coin..."
-msgstr "Vendendo Nav Coin..."
+msgid "Selling Bitcoin..."
+msgstr "Vendendo Bitcoin..."
 
 #: www/views/feedback/send.html:13
 #: www/views/feedback/send.html:43
@@ -2225,18 +2562,22 @@ msgstr "Enviar Dinheiro"
 msgid "Send addresses by email"
 msgstr "Enviar endereços por e-mail"
 
-#: www/views/preferencesLogs.html:13
+#: www/views/includes/logOptions.html:17
 #: www/views/tab-export-file.html:82
 msgid "Send by email"
 msgstr "Enviar por E-mail"
 
-#: src/js/controllers/confirm.js:148
+#: src/js/controllers/confirm.js:177
 msgid "Send from"
 msgstr "Enviar De"
 
 #: www/views/includes/itemSelector.html:8
 msgid "Send max amount"
 msgstr "Quantidade Máxima de envio"
+
+#: www/views/includes/incomingDataMenu.html:46
+msgid "Send payment to this address"
+msgstr "Enviar pagamento para este endereço"
 
 #: www/views/feedback/rateApp.html:17
 msgid "Send us feedback instead"
@@ -2265,7 +2606,7 @@ msgstr "Quantidade máxima de envio"
 msgid "Sending transaction"
 msgstr "Enviando transação"
 
-#: src/js/controllers/confirm.js:486
+#: src/js/controllers/confirm.js:545
 msgid "Sending {{amountStr}} from your {{name}} wallet"
 msgstr "Enviando {{amountStr}} de sua carteira {{name}}"
 
@@ -2276,13 +2617,18 @@ msgstr "Enviando {{amountStr}} de sua carteira {{name}}"
 msgid "Sent"
 msgstr "Enviado"
 
-#: src/js/controllers/tx-details.js:110
+#: src/js/controllers/tx-details.js:129
 msgid "Sent Funds"
 msgstr "Enviar Fundos"
 
 #: src/js/services/bwcError.js:38
 msgid "Server response could not be verified"
 msgstr "Resposta do servidor não pôde ser verificada"
+
+#: src/js/controllers/buyAmazon.js:97
+#: src/js/controllers/buyMercadoLibre.js:97
+msgid "Service not available"
+msgstr "Serviço indisponível"
 
 #: www/views/includes/homeIntegrations.html:3
 msgid "Services"
@@ -2300,6 +2646,10 @@ msgstr "Log da sessão"
 msgid "Set up a password"
 msgstr "Configure uma senha"
 
+#: src/js/controllers/preferencesFee.js:85
+msgid "Set your own fee in satoshis/byte"
+msgstr "Defina sua própria taxa em satoshis/byte"
+
 #: www/views/tab-settings.html:3
 #: www/views/tabs.html:19
 msgid "Settings"
@@ -2310,7 +2660,7 @@ msgstr "Configurações"
 msgid "Share the love by inviting your friends."
 msgstr "Compartilhe o amor convidando seus amigos."
 
-#: www/views/copayers.html:21
+#: www/views/copayers.html:20
 msgid "Share this invitation with your copayers"
 msgstr "Compartilhe este convite com seus copayers"
 
@@ -2331,21 +2681,21 @@ msgstr "Mostrar Frase de Recuperação"
 msgid "Show address"
 msgstr "Mostrar endereço"
 
-#: www/views/join.html:45
-#: www/views/tab-create-personal.html:25
-#: www/views/tab-create-shared.html:54
+#: www/views/join.html:48
+#: www/views/tab-create-personal.html:27
+#: www/views/tab-create-shared.html:56
 #: www/views/tab-export-file.html:24
-#: www/views/tab-import-file.html:27
+#: www/views/tab-import-file.html:29
 #: www/views/tab-import-hardware.html:30
-#: www/views/tab-import-phrase.html:32
+#: www/views/tab-import-phrase.html:35
 msgid "Show advanced options"
 msgstr "Mostrar opções avançadas"
 
-#: www/views/tab-send.html:37
-msgid "Show Nav Coin address"
-msgstr "Mostrar endereço Nav Coin"
+#: www/views/tab-send.html:42
+msgid "Show bitcoin address"
+msgstr "Mostrar endereço bitcoin"
 
-#: www/views/tab-send.html:59
+#: www/views/tab-send.html:64
 msgid "Show more"
 msgstr "Mostrar mais"
 
@@ -2361,8 +2711,8 @@ msgstr "Assinando Transação"
 msgid "Since only you control your money, you’ll need to save your backup phrase in case this app is deleted."
 msgstr "Uma vez que só você controla o seu dinheiro, você precisará salvar sua frase de backup no caso deste app ser excluído."
 
-#: www/views/tab-create-personal.html:120
-#: www/views/tab-create-shared.html:149
+#: www/views/tab-create-personal.html:122
+#: www/views/tab-create-shared.html:151
 msgid "Single Address Wallet"
 msgstr "Único endereço carteira"
 
@@ -2371,12 +2721,30 @@ msgstr "Único endereço carteira"
 msgid "Skip"
 msgstr "Pular"
 
-#: src/js/controllers/modals/txpDetails.js:33
-msgid "Slide"
-msgstr "Deslize"
+#: src/js/controllers/confirm.js:371
+#: src/js/controllers/modals/txpDetails.js:47
+msgid "Slide to accept"
+msgstr "Deslize para aceitar"
 
-#: src/js/controllers/create.js:83
-#: src/js/controllers/join.js:68
+#: www/views/buyAmazon.html:96
+msgid "Slide to buy"
+msgstr "Deslize para comprar"
+
+#: src/js/controllers/confirm.js:365
+msgid "Slide to pay"
+msgstr "Deslize para pagar"
+
+#: src/js/controllers/confirm.js:377
+#: src/js/controllers/modals/txpDetails.js:40
+msgid "Slide to send"
+msgstr "Deslize para enviar"
+
+#: www/views/preferencesCash.html:56
+msgid "Some of your wallets are not eligible for Bitcoin Cash support. You can try to access BCH funds from these wallets using the"
+msgstr "Algumas das suas carteiras não são elegíveis para suportar Bitcoin Cash. Você pode tentar acessar fundos BCH destas carteiras usando a"
+
+#: src/js/controllers/create.js:86
+#: src/js/controllers/join.js:70
 msgid "Specify Recovery Phrase..."
 msgstr "Especifique a frase de recuperação..."
 
@@ -2392,21 +2760,22 @@ msgstr "Proposta de pagamento não encontrada"
 msgid "Spending Password needed"
 msgstr "Digitar a senha é necessária"
 
-#: www/views/walletDetails.html:162
-msgid "Spending this balance will need significant Nav Coin network fees"
-msgstr "Gastar este balanço necessitará uma taxa de rede Nav Coin significativa"
+#: www/views/walletDetails.html:173
+msgid "Spending this balance will need significant Bitcoin network fees"
+msgstr "Gastar este balanço necessitará uma taxa de rede Bitcoin significativa"
 
-#: www/views/tab-send.html:28
-msgid "Start sending Nav Coin"
-msgstr "Comece a enviar Nav Coin"
-
-#: src/js/routes.js:118
-msgid "Starting..."
-msgstr "A iniciar..."
+#: www/views/tab-send.html:33
+msgid "Start sending bitcoin"
+msgstr "Comece a enviar bitcoin"
 
 #: www/views/lockSetup.html:3
 msgid "Startup Lock"
 msgstr "Bloqueio de Inicialização"
+
+#: www/views/mercadoLibreCards.html:21
+#: www/views/modals/mercadolibre-card-details.html:42
+msgid "Still pending"
+msgstr "Ainda pendente"
 
 #: www/views/topup.html:101
 msgid "Success"
@@ -2420,6 +2789,7 @@ msgstr "Super Econômico"
 msgid "Sweep"
 msgstr "Limpar"
 
+#: www/views/includes/incomingDataMenu.html:89
 #: www/views/paperWallet.html:3
 msgid "Sweep paper wallet"
 msgstr "Varrer a carteira de papel"
@@ -2433,16 +2803,19 @@ msgid "THIS ACTION CANNOT BE REVERSED"
 msgstr "ESTA AÇÃO NÃO PODE SER REVERTIDA"
 
 #: www/views/onboarding/welcome.html:5
-msgid "Take control of your money,<br>get started with Nav Coin."
-msgstr "Assuma o controle de seu dinheiro, <br> começar com Nav Coin."
+msgid "Take control of your money,<br>get started with bitcoin."
+msgstr "Assuma o controle de seu dinheiro, <br> começar com bitcoin."
 
-#: www/views/walletDetails.html:140
-#: www/views/walletDetails.html:60
+#: www/views/walletDetails.html:132
+#: www/views/walletDetails.html:52
 msgid "Tap and hold to show"
 msgstr "Toque e mantenha para mostrar"
 
-#: www/views/walletDetails.html:112
-#: www/views/walletDetails.html:31
+#: www/views/includes/walletInfo.html:3
+msgid "Tap to recreate"
+msgstr "Toque para recriar"
+
+#: www/views/includes/walletInfo.html:4
 msgid "Tap to retry"
 msgstr "Bata para repetir"
 
@@ -2457,10 +2830,14 @@ msgstr "Termos de uso"
 msgid "Terms of Use"
 msgstr "Termos de uso"
 
-#: www/views/tab-create-personal.html:116
-#: www/views/tab-import-phrase.html:65
+#: www/views/tab-create-personal.html:118
+#: www/views/tab-import-phrase.html:68
 msgid "Testnet"
 msgstr "Testnet"
+
+#: www/views/includes/incomingDataMenu.html:61
+msgid "Text"
+msgstr "Texto"
 
 #: src/js/controllers/feedback/send.js:27
 #: src/js/controllers/feedback/send.js:76
@@ -2482,16 +2859,16 @@ msgid "The Ledger Chrome application is not installed"
 msgstr "O aplicativo Ledger Chrome não está instalado"
 
 #: www/views/modals/wallet-balance.html:55
-msgid "The amount of Nav Coin immediately spendable from this wallet."
-msgstr "A quantidade de Nav Coin imediatamente spendable desta carteira."
+msgid "The amount of bitcoin immediately spendable from this wallet."
+msgstr "A quantidade de bitcoin imediatamente spendable desta carteira."
 
 #: www/views/modals/wallet-balance.html:93
-msgid "The amount of Nav Coin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
-msgstr "A quantidade de Nav Coin armazenada nesta carteira que é alocada como entradas para suas propostas de transação pendentes. O valor é determinado usando saídas de transação não utilizadas associadas a essa carteira e podem ser maiores do que os valores reais associados às suas propostas de transações pendentes."
+msgid "The amount of bitcoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
+msgstr "A quantidade de bitcoin armazenada nesta carteira que é alocada como entradas para suas propostas de transação pendentes. O valor é determinado usando saídas de transação não utilizadas associadas a essa carteira e podem ser maiores do que os valores reais associados às suas propostas de transações pendentes."
 
 #: www/views/modals/wallet-balance.html:74
-msgid "The amount of Nav Coin stored in this wallet with less than 1 blockchain confirmation."
-msgstr "A quantidade de Nav Coin armazenada nesta carteira com menos de 1 confirmação blockchain."
+msgid "The amount of bitcoin stored in this wallet with less than 1 blockchain confirmation."
+msgstr "A quantidade de bitcoin armazenada nesta carteira com menos de 1 confirmação blockchain."
 
 #: www/views/tab-import-phrase.html:5
 msgid "The derivation path"
@@ -2510,14 +2887,14 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "O número máximo de endereços não utilizados consecutivos (20) foi atingido. Quando um de seus endereços não utilizados recebe um pagamento, um novo endereço será gerado e mostrado na sua guia Receber."
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the NavPay website."
-msgstr "Os Termos de Serviço oficiais estão disponíveis no site NavPay."
+msgid "The official English Terms of Service are available on the BitPay website."
+msgstr "Os Termos de Serviço oficiais estão disponíveis no site BitPay."
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
 msgstr "A senha da frase de recuperação (se configurada)"
 
-#: src/js/services/walletService.js:1140
+#: src/js/services/walletService.js:1169
 msgid "The payment was created but could not be completed. Please try again from home screen"
 msgstr "O pagamento foi criado mas não pode ser completado. Por favor, tente novamente a partir da tela inicial."
 
@@ -2525,10 +2902,10 @@ msgstr "O pagamento foi criado mas não pode ser completado. Por favor, tente no
 msgid "The payment was removed by creator"
 msgstr "O pagamento foi removido pelo criador"
 
-#: www/views/join.html:88
-#: www/views/tab-create-personal.html:61
-#: www/views/tab-create-shared.html:90
-#: www/views/tab-import-phrase.html:40
+#: www/views/join.html:91
+#: www/views/tab-create-personal.html:63
+#: www/views/tab-create-shared.html:92
+#: www/views/tab-import-phrase.html:43
 msgid "The recovery phrase could require a password to be imported"
 msgstr "A frase de recuperação pode exigir que uma senha seja importada"
 
@@ -2545,8 +2922,8 @@ msgid "The spend proposal is not pending"
 msgstr "A proposta de gasto não está pendente"
 
 #: www/views/modals/wallet-balance.html:36
-msgid "The total amount of Nav Coin stored in this wallet."
-msgstr "A quantidade total de Nav Coin armazenado nesta carteira."
+msgid "The total amount of bitcoin stored in this wallet."
+msgstr "A quantidade total de bitcoin armazenado nesta carteira."
 
 #: www/views/preferencesHistory.html:27
 msgid "The transaction history and every new incoming transaction are cached in the app. This feature clean this up and synchronizes again from the server"
@@ -2556,17 +2933,13 @@ msgstr "O histórico de transações e todas as novas transações recebidas sã
 msgid "The wallet service URL"
 msgstr "O URL do serviço carteira"
 
-#: www/views/paymentUri.html:23
-msgid "There are no wallets to make this payment"
-msgstr "Não há carteiras para fazer esse pagamento"
-
-#: src/js/controllers/tab-home.js:38
+#: src/js/controllers/tab-home.js:39
 msgid "There is a new version of {{appName}} available"
 msgstr "Existe uma nova versão do {{appName}} disponível"
 
-#: src/js/controllers/import.js:213
-#: src/js/controllers/import.js:237
-#: src/js/controllers/import.js:317
+#: src/js/controllers/import.js:227
+#: src/js/controllers/import.js:252
+#: src/js/controllers/import.js:333
 msgid "There is an error in the form"
 msgstr "Existe um erro no formulário"
 
@@ -2580,80 +2953,82 @@ msgid "This app is fantastic!"
 msgstr "Esta aplicação é fantástica!"
 
 #: www/views/onboarding/tour.html:47
-msgid "This app stores your Nav Coin with cutting-edge security."
-msgstr "Este aplicativo armazena seu Nav Coin com segurança de ponta."
+msgid "This app stores your bitcoin with cutting-edge security."
+msgstr "Este aplicativo armazena seu bitcoin com segurança de ponta."
 
-#: src/js/controllers/confirm.js:464
-msgid "This Nav Coin payment request has expired."
-msgstr "Este Nav Coin pagamento pedido expirou."
+#: src/js/controllers/confirm.js:523
+msgid "This bitcoin payment request has expired."
+msgstr "Este bitcoin pagamento pedido expirou."
 
-#: www/views/join.html:130
-#: www/views/tab-create-personal.html:101
-#: www/views/tab-create-shared.html:130
+#: www/views/join.html:133
+#: www/views/tab-create-personal.html:103
+#: www/views/tab-create-shared.html:132
 msgid "This password cannot be recovered. If the password is lost, there is no way you could recover your funds."
 msgstr "Esta senha não pode ser recuperada. Se a senha for perdida, não há nenhuma maneira que você poderia recuperar seus fundos."
 
-#: www/views/backup.html:24
+#: www/views/backup.html:31
 msgid "This recovery phrase was created with a password. To recover this wallet both the recovery phrase and password are needed."
 msgstr "Esta frase de recuperação foi criada com uma senha. Para recuperar esta carteira, tanto a frase de recuperação como a senha são necessárias."
 
-#: www/views/tx-details.html:93
-msgid "This transaction amount is too small compared to current Nav Coin network fees. Spending these funds will need a Nav Coin network fee cost comparable to the funds itself."
-msgstr "Este valor de transação é muito pequeno em comparação com as taxas de rede Nav Coin atuais. Gastar estes fundos terão uma taxa de rede Nav Coin maior do que o fundo em si."
+#: www/views/tx-details.html:91
+msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
+msgstr "Este valor de transação é muito pequeno em comparação com as taxas de rede Bitcoin atuais. Gastar estes fundos terão uma taxa de rede Bitcoin maior do que o fundo em si."
 
-#: www/views/tx-details.html:89
+#: www/views/tx-details.html:87
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender"
 msgstr "Esta operação poderá demorar muito tempo para ser confirmada ou poderá ser descartada devido às baixas taxas definidas pelo remetente"
 
-#: www/views/walletDetails.html:116
-#: www/views/walletDetails.html:35
+#: www/views/walletDetails.html:109
+#: www/views/walletDetails.html:29
 msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
 msgstr "Esta carteira não está registrada no dado serviço Wallet Service Bitcore (BWS) informado. Você pode recriá-la a partir da informação local."
 
-#: www/views/modals/txp-details.html:138
-#: www/views/tx-details.html:119
+#: www/views/modals/txp-details.html:136
+#: www/views/tx-details.html:121
 msgid "Timeline"
 msgstr "Cronograma"
 
 #: www/views/confirm.html:31
 #: www/views/includes/output.html:2
-#: www/views/modals/txp-details.html:111
+#: www/views/modals/txp-details.html:109
 #: www/views/modals/txp-details.html:53
 #: www/views/tx-details.html:41
 #: www/views/tx-details.html:53
 msgid "To"
 msgstr "Para"
 
-#: www/views/tab-send.html:32
-msgid "To get started, buy Nav Coin or share your address. You can receive Nav Coin from any wallet or service."
-msgstr "Para começar, compre Nav Coins ou compartilhe seu endereço. Você pode receber Nav Coins de qualquer carteira ou serviço."
+#: www/views/tab-send.html:37
+msgid "To get started, buy bitcoin or share your address. You can receive bitcoin from any wallet or service."
+msgstr "Para começar, compre bitcoins ou compartilhe seu endereço. Você pode receber bitcoins de qualquer carteira ou serviço."
 
-#: www/views/tab-send.html:33
-msgid "To get started, you'll need to create a Nav Coin wallet and get some Nav Coin."
-msgstr "Para começar, você precisa criar uma carteira de Nav Coins e obter alguns Nav Coins."
+#: www/views/tab-send.html:38
+msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
+msgstr "Para começar, você precisa criar uma carteira de bitcoins e obter alguns bitcoins."
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your NavPay account - {{email}}"
-msgstr "Para {{reason}} você deve primeiro adicionar sua conta NavPay - {{email}}"
+msgid "To {{reason}} you must first add your BitPay account - {{email}}"
+msgstr "Para {{reason}} você deve primeiro adicionar sua conta BitPay - {{email}}"
 
 #: src/js/services/onGoingProcess.js:48
 msgid "Top up in progress..."
 msgstr "Recarga em andamento..."
 
-#: src/js/controllers/topup.js:198
+#: src/js/controllers/topup.js:206
 msgid "Top up {{amountStr}} to debit card ({{cardLastNumber}})"
 msgstr "Recarga de {{amountStr}} para cartão de débito ({{cardLastNumber}})"
 
+#: www/views/buyAmazon.html:61
+#: www/views/buyMercadoLibre.html:60
 #: www/views/modals/wallet-balance.html:23
 #: www/views/topup.html:70
 msgid "Total"
 msgstr "Total"
 
-#: www/views/walletDetails.html:185
+#: www/views/walletDetails.html:196
 msgid "Total Locked Balance"
 msgstr "Saldo Total Bloqueado"
 
-#: www/views/tab-create-shared.html:33
+#: www/views/tab-create-shared.html:35
 msgid "Total number of copayers"
 msgstr "Número total de copayers"
 
@@ -2661,14 +3036,18 @@ msgstr "Número total de copayers"
 msgid "Total wallet inputs"
 msgstr "Total de entradas da carteira"
 
-#: src/js/services/fingerprintService.js:63
-#: src/js/services/fingerprintService.js:68
+#: src/js/services/fingerprintService.js:62
+#: src/js/services/fingerprintService.js:67
 msgid "Touch ID Failed"
 msgstr "Falha no Touch ID"
 
-#: src/js/controllers/tx-details.js:10
+#: src/js/controllers/tx-details.js:12
 msgid "Transaction"
 msgstr "Transação"
+
+#: www/views/confirm.html:126
+msgid "Transaction Created"
+msgstr "Transação Criada"
 
 #: www/views/preferencesAdvanced.html:29
 #: www/views/preferencesHistory.html:3
@@ -2679,32 +3058,34 @@ msgstr "Histórico de Transações"
 msgid "Transaction already broadcasted"
 msgstr "Transação foi publicada"
 
-#: www/views/confirm.html:128
-msgid "Transaction created"
-msgstr "Transação criada"
-
-#: src/js/controllers/topup.js:271
+#: src/js/controllers/buyAmazon.js:310
+#: src/js/controllers/buyMercadoLibre.js:303
+#: src/js/controllers/topup.js:281
 msgid "Transaction has not been created"
-msgstr ""
+msgstr "Transação não foi criada"
 
 #: www/views/topup.html:104
 msgid "Transaction initiated"
 msgstr "Transação iniciada"
 
-#: src/js/controllers/tx-details.js:100
+#: src/js/controllers/tx-details.js:119
 msgid "Transaction not available at this time"
 msgstr "Transação não está disponível neste momento"
 
 #: src/js/controllers/activity.js:45
-#: src/js/controllers/tab-home.js:174
+#: src/js/controllers/tab-home.js:180
 msgid "Transaction not found"
 msgstr "Transação não encontrada"
 
-#: src/js/controllers/paperWallet.js:110
+#: www/views/modals/chooseFeeLevel.html:55
+msgid "Transactions without fee are not supported."
+msgstr "Transações sem taxa não são suportadas."
+
+#: src/js/controllers/paperWallet.js:109
 msgid "Transfer to"
 msgstr "Transferir para"
 
-#: www/views/tab-send.html:67
+#: www/views/tab-send.html:72
 msgid "Transfer to Wallet"
 msgstr "Transferir para carteira"
 
@@ -2713,8 +3094,8 @@ msgid "Try again in {{expires}}"
 msgstr "Tente novamente em {{expires}}"
 
 #: www/views/bitpayCardIntro.html:18
-msgid "Turn Nav Coin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
-msgstr "Transforme Nav Coin em dólares, deslize em qualquer lugar que Visa <sup>&reg;</sup> seja aceito."
+msgid "Turn bitcoin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
+msgstr "Transforme bitcoin em dólares, deslize em qualquer lugar que Visa <sup>&reg;</sup> seja aceito."
 
 #: www/views/tab-import-phrase.html:17
 msgid "Type the Recovery Phrase (usually 12 words)"
@@ -2728,11 +3109,7 @@ msgstr "Uh oh..."
 msgid "Unconfirmed"
 msgstr "Não confirmado"
 
-#: www/views/preferencesUnit.html:4
-msgid "Unit"
-msgstr "﻿Unidade"
-
-#: www/views/walletDetails.html:179
+#: www/views/walletDetails.html:190
 msgid "Unsent transactions"
 msgstr "Transações não enviadas"
 
@@ -2744,15 +3121,15 @@ msgstr "Endereços não utilizados"
 msgid "Unused Addresses Limit"
 msgstr "Limite de endereços não utilizados"
 
-#: src/js/controllers/tab-home.js:146
+#: src/js/controllers/tab-home.js:147
 msgid "Update Available"
 msgstr "Atualização Disponível"
 
-#: www/views/proposals.html:15
+#: www/views/proposals.html:14
 msgid "Updating pending proposals. Please stand by"
 msgstr "Atualizando propostas pendentes. Por favor, aguarde"
 
-#: www/views/walletDetails.html:211
+#: www/views/walletDetails.html:217
 msgid "Updating transaction history. Please stand by."
 msgstr "Atualizando o histórico de transações. Por favor, aguarde."
 
@@ -2764,7 +3141,7 @@ msgstr "Atualizando... Por favor, aguarde"
 msgid "Urgent"
 msgstr "Urgente"
 
-#: www/views/advancedSettings.html:11
+#: www/views/advancedSettings.html:12
 msgid "Use Unconfirmed Funds"
 msgstr "Utilizar fundos não confirmados"
 
@@ -2793,20 +3170,24 @@ msgstr "Ver todos os endereços"
 msgid "View Terms of Service"
 msgstr "Ver os Termos de Serviço"
 
-#: src/js/controllers/bitpayCard.js:189
-#: src/js/controllers/tx-details.js:172
+#: src/js/controllers/bitpayCard.js:122
+#: src/js/controllers/tx-details.js:191
 msgid "View Transaction on Insight"
 msgstr "Exibir Transação no Insight"
 
-#: src/js/controllers/tab-home.js:148
+#: src/js/controllers/tab-home.js:149
 msgid "View Update"
 msgstr "Ver atualizações"
 
-#: www/views/tx-details.html:145
+#: www/views/tx-details.html:147
 msgid "View on blockchain"
 msgstr "Ver no blockchain"
 
-#: www/views/walletDetails.html:171
+#: www/views/mercadoLibre.html:26
+msgid "Visit mercadolivre.com.br &rarr;"
+msgstr "Visite mercadolivre.com.br &rarr;"
+
+#: www/views/walletDetails.html:182
 msgid "WARNING: Key derivation is not working on this device/wallet. Actions cannot be performed on this wallet."
 msgstr "Aviso: Derivação de chave não está funcionando neste dispositivo/carteira. Ações não podem ser executadas nesta carteira."
 
@@ -2822,6 +3203,10 @@ msgstr "ATENÇÃO: A chave privada desta carteira não está disponível. A expo
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "AVISO: CERTIFICADO NÃO CONFIÁVEL"
 
+#: www/views/preferencesPrivateKey.html:14
+msgid "WARNING: Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgstr "Aviso: Suas chaves privadas estendidas são tudo que é necessário para acessar seus fundos bitcoin. Certifique-se de proteger suas chaves privadas e armazená-las somente em dispositivos seguros. BitPay não tem acesso às suas chaves privadas, então você é responsável pelas suas chaves. Se você compartilhar a chave de acesso com serviços externos, responsabilize-se pelo risco de roubo ou violação. Apenas usuários avançados devem lidar com chaves privadas estendidas diretamente."
+
 #: src/js/services/onGoingProcess.js:15
 msgid "Waiting for Ledger..."
 msgstr "Esperando por Ledger..."
@@ -2830,11 +3215,11 @@ msgstr "Esperando por Ledger..."
 msgid "Waiting for Trezor..."
 msgstr "Esperando por Trezor..."
 
-#: www/views/copayers.html:49
+#: www/views/copayers.html:48
 msgid "Waiting for copayers"
 msgstr "Aguardando copayers"
 
-#: www/views/copayers.html:54
+#: www/views/copayers.html:53
 msgid "Waiting..."
 msgstr "Aguardando…"
 
@@ -2847,7 +3232,7 @@ msgstr "Endereços da carteira"
 msgid "Wallet Color"
 msgstr "Cor da carteira"
 
-#: www/views/preferencesInformation.html:23
+#: www/views/preferencesInformation.html:29
 msgid "Wallet Configuration (m-n)"
 msgstr "Configuração da carteira (m-n)"
 
@@ -2855,7 +3240,7 @@ msgstr "Configuração da carteira (m-n)"
 msgid "Wallet Created"
 msgstr "Carteira criada"
 
-#: www/views/preferencesInformation.html:17
+#: www/views/preferencesInformation.html:23
 msgid "Wallet Id"
 msgstr "Id da carteira"
 
@@ -2872,9 +3257,9 @@ msgstr "Entradas da carteira"
 msgid "Wallet Invitation"
 msgstr "Convite para Carteira"
 
-#: www/views/join.html:57
-#: www/views/tab-create-personal.html:36
-#: www/views/tab-create-shared.html:65
+#: www/views/join.html:60
+#: www/views/tab-create-personal.html:38
+#: www/views/tab-create-shared.html:67
 msgid "Wallet Key"
 msgstr "Chave da carteira"
 
@@ -2886,13 +3271,13 @@ msgstr "Nome da carteira"
 msgid "Wallet Name (at creation)"
 msgstr "Nome da carteira (na criação)"
 
-#: www/views/preferencesInformation.html:29
+#: www/views/preferencesInformation.html:35
 msgid "Wallet Network"
 msgstr "Network da carteira"
 
-#: www/views/join.html:74
-#: www/views/tab-create-personal.html:48
-#: www/views/tab-create-shared.html:77
+#: www/views/join.html:77
+#: www/views/tab-create-personal.html:50
+#: www/views/tab-create-shared.html:79
 msgid "Wallet Recovery Phrase"
 msgstr "Frase de recuperação da carteira"
 
@@ -2901,7 +3286,7 @@ msgid "Wallet Recovery Phrase is invalid"
 msgstr "Frase de recuperação da carteira é inválida"
 
 #: www/views/preferencesAdvanced.html:25
-#: www/views/tab-import-phrase.html:70
+#: www/views/tab-import-phrase.html:73
 msgid "Wallet Service URL"
 msgstr "URL do serviço de carteira"
 
@@ -2910,7 +3295,7 @@ msgid "Wallet Settings"
 msgstr "Configurações da carteira"
 
 #: www/views/tab-import-hardware.html:11
-#: www/views/tab-import-phrase.html:58
+#: www/views/tab-import-phrase.html:61
 msgid "Wallet Type"
 msgstr "Tipo da carteira"
 
@@ -2918,15 +3303,15 @@ msgstr "Tipo da carteira"
 msgid "Wallet already exists"
 msgstr "A carteira já existe"
 
-#: src/js/services/profileService.js:498
-msgid "Wallet already in Navpay"
-msgstr "Carteira já em Navpay"
+#: src/js/services/profileService.js:516
+msgid "Wallet already in {{appName}}"
+msgstr "Carteira já existente no {{appName}}"
 
 #: www/views/includes/walletActivity.html:6
 msgid "Wallet created"
 msgstr "Carteira criada"
 
-#: www/views/copayers.html:59
+#: www/views/copayers.html:58
 msgid "Wallet incomplete and broken"
 msgstr "Carteira incompleta e quebrada"
 
@@ -2952,7 +3337,7 @@ msgid "Wallet needs backup"
 msgstr "Carteira precisa de backup"
 
 #: www/views/tab-receive.html:59
-#: www/views/walletDetails.html:157
+#: www/views/walletDetails.html:169
 msgid "Wallet not backed up"
 msgstr "Carteira sem backup"
 
@@ -2960,7 +3345,8 @@ msgstr "Carteira sem backup"
 msgid "Wallet not found"
 msgstr "Carteira não encontrada"
 
-#: src/js/controllers/tab-home.js:220
+#: src/js/controllers/preferencesCash.js:81
+#: src/js/controllers/tab-home.js:238
 msgid "Wallet not registered"
 msgstr "Carteira não registrada"
 
@@ -2968,28 +3354,25 @@ msgstr "Carteira não registrada"
 msgid "Wallet not registered at the wallet service. Recreate it from \"Create Wallet\" using \"Advanced Options\" to set your recovery phrase"
 msgstr "Carteira não registrada no serviço de carteira. Recriá-la em \"Criar carteira\" usando \"Opções avançadas\" para definir a sua frase de recuperação"
 
-#: www/views/backup.html:11
-msgid "Wallet recovery phrase not available."
-msgstr "Frase de recuperação da carteira não disponível."
+#: www/views/backup.html:12
+msgid "Wallet recovery phrase not available"
+msgstr "Frase de recuperação da carteira não disponível"
 
 #: src/js/services/bwcError.js:50
 msgid "Wallet service not found"
 msgstr "Serviço de carteira não encontrado"
 
-#: www/views/tab-home.html:69
+#: www/views/tab-home.html:83
 msgid "Wallets"
 msgstr "Carteiras"
 
-#: www/views/tab-settings.html:102
-msgid "Wallets & Integrations"
-msgstr "Carteiras & Integrações"
-
-#: src/js/controllers/addressbookView.js:23
-#: src/js/controllers/modals/txpDetails.js:143
-#: src/js/controllers/modals/txpDetails.js:160
-#: src/js/controllers/preferencesDelete.js:25
+#: src/js/controllers/addressbookView.js:36
+#: src/js/controllers/modals/txpDetails.js:153
+#: src/js/controllers/modals/txpDetails.js:170
+#: src/js/controllers/preferencesDelete.js:24
 #: src/js/controllers/preferencesExternal.js:14
 #: www/views/preferencesDeleteWallet.html:11
+#: www/views/preferencesPrivateKey.html:12
 msgid "Warning!"
 msgstr "Atenção!"
 
@@ -3005,7 +3388,7 @@ msgstr "Cuidado!"
 msgid "We'd love to do better."
 msgstr "Nós adoraríamos fazer melhor."
 
-#: www/views/backup.html:28
+#: www/views/backup.html:35
 msgid "We'll confirm on the next screen."
 msgstr "Confirmaremos na próxima tela."
 
@@ -3016,6 +3399,10 @@ msgstr "Estamos sempre procurando maneiras de melhorar o {{appName}}."
 #: src/js/controllers/feedback/send.js:83
 msgid "We're always looking for ways to improve {{appName}}. How could we improve your experience?"
 msgstr "Estamos sempre procurando maneiras de melhorar o {{appName}}. Como melhorar sua experiência?"
+
+#: www/views/includes/incomingDataMenu.html:6
+msgid "Website"
+msgstr "Página da Web"
 
 #: www/views/preferencesLanguage.html:16
 msgid "We’re always looking for translation contributions! You can make corrections or help to make this app available in your native language by joining our community on Crowdin."
@@ -3045,7 +3432,7 @@ msgstr "Você estaria disposto a dar uma nota ao {{appName}} na app store?"
 msgid "Would you like to receive push notifications about payments?"
 msgstr "Gostaria de receber notificações push sobre pagamentos?"
 
-#: src/js/controllers/import.js:270
+#: src/js/controllers/import.js:286
 msgid "Wrong number of recovery words:"
 msgstr "Número errado de palavras de recuperação:"
 
@@ -3070,18 +3457,18 @@ msgid "You can make contributions by signing up on our Crowdin community transla
 msgstr "Você pode fazer contribuições inscrevendo-se no nosso site da comunidade de tradução Crowdin. Estamos ansiosos para ouvir de você!"
 
 #: www/views/tab-scan.html:16
-msgid "You can scan Nav Coin addresses, payment requests, paper wallets, and more."
-msgstr "Você pode escanear endereços Nav Coins, pedidos de pagamento carteiras de papel e muito mais."
+msgid "You can scan bitcoin addresses, payment requests, paper wallets, and more."
+msgstr "Você pode escanear endereços bitcoins, pedidos de pagamento carteiras de papel e muito mais."
 
 #: src/js/controllers/preferencesAbout.js:14
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
 msgstr "Você pode ver os mais recentes desenvolvimentos e contribuir para este aplicativo de código aberto, visitando nosso projeto no GitHub."
 
 #: www/views/onboarding/tour.html:19
-msgid "You can spend Nav Coin at stores and websites worldwide."
-msgstr "Você pode gastar Nav Coins em milhões de sites e lojas em todo o mundo."
+msgid "You can spend bitcoin at millions of websites and stores worldwide."
+msgstr "Você pode gastar bitcoins em milhões de sites e lojas em todo o mundo."
 
-#: www/views/backup.html:12
+#: www/views/backup.html:15
 msgid "You can still export it from Advanced &gt; Export."
 msgstr "Você ainda pode exportá-la em Avançado &gt; Exportar."
 
@@ -3090,28 +3477,41 @@ msgid "You can trade it for other currencies like US Dollars, Euros, or Pounds."
 msgstr "Você pode trocá-lo por outras moedas como dólares americanos, Euros ou libras."
 
 #: www/views/onboarding/tour.html:46
-msgid "You control your Nav Coin."
-msgstr "Você controla o seu Nav Coin."
+msgid "You control your bitcoin."
+msgstr "Você controla o seu bitcoin."
+
+#: www/views/modals/chooseFeeLevel.html:64
+msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte."
+msgstr "Você não deve definir uma taxa maior do que {{maxFeeRecommended}} satoshis/byte."
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your NavPay Card."
-msgstr "Você precisará entrar de novo para completar seu NavPay Card."
+msgid "You will need to log back for fill in your BitPay Card."
+msgstr "Você precisará entrar de novo para completar seu BitPay Card."
 
-#: www/views/preferencesNotifications.html:28
+#: www/views/preferencesNotifications.html:34
 msgid "You'll receive email notifications about payments sent and received from your wallets."
 msgstr "Você receberá notificações por e-mail sobre pagamentos enviados e recebidos de suas carteiras."
 
 #: www/views/bitpayCard.html:50
-msgid "Your NavPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "Seu NavPay Card está pronto. Adicione fundos ao seu cartão para começar a usá-lo em lojas e caixas eletrônicos em todo o mundo."
+msgid "Your BitPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "Seu BitPay Card está pronto. Adicione fundos ao seu cartão para começar a usá-lo em lojas e caixas eletrônicos em todo o mundo."
+
+#: www/views/mercadoLibre.html:57
+#: www/views/mercadoLibreCards.html:6
+msgid "Your Gift Cards"
+msgstr "Seus Vales-Presente"
 
 #: www/views/includes/confirmBackupPopup.html:6
-msgid "Your Nav Coin wallet is backed up!"
-msgstr "O backup de sua carteira de Nav Coins está feito!"
+msgid "Your bitcoin wallet is backed up!"
+msgstr "O backup de sua carteira de bitcoins está feito!"
 
-#: www/views/tab-home.html:36
-msgid "Your Nav Coin wallet is ready!"
-msgstr "Sua carteira de Nav Coins está pronta!"
+#: www/views/tab-home.html:50
+msgid "Your bitcoin wallet is ready!"
+msgstr "Sua carteira de bitcoins está pronta!"
+
+#: www/views/modals/chooseFeeLevel.html:61
+msgid "Your fee is lower than recommended."
+msgstr "Sua taxa é mais baixa do que a recomendada."
 
 #: www/views/feedback/send.html:42
 msgid "Your ideas, feedback, or comments"
@@ -3130,32 +3530,46 @@ msgstr "Seu apelido"
 msgid "Your password"
 msgstr "Sua senha"
 
+#: www/views/buyAmazon.html:102
+msgid "Your purchase could not be completed"
+msgstr "Sua compra não pôde ser concluída"
+
+#: www/views/buyAmazon.html:105
+msgid "Your purchase was added to the list of pending"
+msgstr "Sua compra foi adicionada à lista de pendências"
+
 #: www/views/onboarding/backupRequest.html:10
 msgid "Your wallet is never saved to cloud storage or standard device backups."
 msgstr "Sua carteira nunca foi salva num armazenamento em nuvem ou dispositivo padrão de backups."
 
-#: src/js/services/walletService.js:1031
+#: src/js/services/walletService.js:1060
 msgid "Your wallet key will be encrypted. The Spending Password cannot be recovered. Be sure to write it down."
 msgstr "Sua chave da carteira será criptografada. A senha de gastos não poderá ser recuperada. Não se esqueça de anotá-la."
 
-#: www/views/includes/walletSelector.html:23
-#: www/views/paperWallet.html:35
-#: www/views/tab-home.html:96
-#: www/views/tab-receive.html:74
-#: www/views/walletDetails.html:139
-#: www/views/walletDetails.html:59
+#: www/views/includes/walletList.html:13
+#: www/views/includes/walletSelector.html:30
+#: www/views/includes/walletSelector.html:61
+#: www/views/paperWallet.html:33
+#: www/views/tab-receive.html:72
+#: www/views/walletDetails.html:131
+#: www/views/walletDetails.html:51
 msgid "[Balance Hidden]"
 msgstr "[Valores escondidos]"
 
+#: www/views/walletDetails.html:141
+#: www/views/walletDetails.html:61
+msgid "[Scanning Funds]"
+msgstr "[Pesquisando fundos]"
+
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your NavPay Visa card(s)"
-msgstr "Adicionar seu(s) cartão(ões) NavPay Visa"
+msgid "add your BitPay Visa card(s)"
+msgstr "Adicionar seu(s) cartão(ões) BitPay Visa"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
 msgstr "bloqueado por pagamentos pendentes"
 
-#: src/js/services/profileService.js:389
+#: src/js/services/profileService.js:404
 msgid "me"
 msgstr "eu"
 
@@ -3167,80 +3581,37 @@ msgstr "nome@exemplo.pt"
 msgid "preparing..."
 msgstr "a preparar..."
 
-#: src/js/controllers/confirm.js:325
-#: src/js/controllers/modals/txpDetails.js:42
-msgid "to accept"
-msgstr "a aceitar"
+#: www/views/preferencesCash.html:57
+msgid "recovery tool."
+msgstr "ferramenta de recuperação."
 
-#: src/js/controllers/confirm.js:323
-msgid "to pay"
-msgstr "a pagar"
+#: src/js/controllers/buyAmazon.js:241
+msgid "{{amountStr}} for Amazon.com Gift Card"
+msgstr "{{amountStr}} em Vale-Presente da Amazon.com"
 
-#: src/js/controllers/confirm.js:327
-#: src/js/controllers/modals/txpDetails.js:40
-msgid "to send"
-msgstr "a enviar"
+#: src/js/controllers/buyMercadoLibre.js:239
+msgid "{{amountStr}} for Mercado Livre Brazil Gift Card"
+msgstr "{{amountStr}} em Vale-Presente do Mercado Livre Brasil"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (NavPay's public BWS instance)."
-msgstr "{{appName}} depende do Bitcore Wallet Service (BWS) para informações sobre cadeias de blocos, rede e sincronização Copayer. A configuração padrão aponta para https://bws.bitpay.com (instância pública BWS do NavPay)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgstr "{{appName}} depende do Bitcore Wallet Service (BWS) para informações sobre cadeias de blocos, rede e sincronização Copayer. A configuração padrão aponta para https://bws.bitpay.com (instância pública BWS do BitPay)."
 
-#: src/js/controllers/confirm.js:354
-msgid "{{fee}} will be deducted for Nav Coin networking fees."
-msgstr "{{fee}} será deduzido para taxas de rede Nav Coins."
+#: src/js/controllers/confirm.js:408
+msgid "{{fee}} will be deducted for bitcoin networking fees."
+msgstr "{{fee}} será deduzido para taxas de rede bitcoins."
 
-#: www/views/confirm.html:87
+#: www/views/confirm.html:85
 msgid "{{tx.txp[wallet.id].feeRatePerStr}}  of the sending amount"
 msgstr "{{tx.txp[wallet.id].feeRatePerStr}} da quantidade de envio"
 
-#: www/views/walletDetails.html:212
+#: www/views/walletDetails.html:218
 msgid "{{updatingTxHistoryProgress}} transactions downloaded"
 msgstr "Transações de {{updatingTxHistoryProgress}} transferidas"
 
-#: www/views/copayers.html:47
-#: www/views/includes/walletInfo.html:12
+#: www/views/copayers.html:46
+#: www/views/includes/walletInfo.html:18
+#: www/views/preferencesCash.html:33
 msgid "{{wallet.m}}-of-{{wallet.n}}"
 msgstr "{{wallet.m}}-de-{{wallet.n}}"
 
-
-
-#: changelly.html:19
-msgid "Can't load Changelly widget"
-msgstr "Não é possível carregar o widget Changelly"
-
-#: tab-scan.html:26
-msgid "Attempting to load the camera, please wait."
-msgstr "Tentando carregar a câmera, aguarde."
-
-#: tab-scan.html:27
-msgid "Your camera may be disabled or you may have no camera connected. In either case the scan function will not work."
-msgstr "A sua câmera pode estar desabilitada ou você pode não ter nenhuma câmera conectada. Em ambos os casos, a função de varredura não funcionará."
-
-#: onGoingProcess.js:49
-msgid "Calculating Transaction Fees"
-msgstr "Cálculo de taxas de transação"
-
-#: onGoingProcess.js:50
-msgid "Finding NavTech Server"
-msgstr "Encontrando o servidor NavTech"
-
-#: confirmPrivate.html:15
-#: tab-send.html:19
-msgid "Private Payment"
-msgstr "Pagamento Privado"
-
-#: tab-home.html:18
-msgid "Purchase Nav Coin"
-msgstr "Compra Nav Coin"
-
-#: tab-home.html:21
-msgid "To get started, you can buy Nav Coin through our exchange partner Changelly."
-msgstr "Para começar, você pode comprar a Nav Coin através do nosso parceiro de troca Changelly"
-
-#: changelly.html:16
-msgid "Loading Changelly Exchange..."
-msgstr "Carregando corretora Changelly"
-
-#: tab-send.html:24
-msgid "Next"
-msgstr "Não é possível carregar o widget Changelly"

@@ -13,6 +13,10 @@ bwcModule.provider("bwcService", function() {
       return Client.Bitcore;
     };
 
+    service.getBitcoreCash = function() {
+      return Client.BitcoreCash;
+    };
+
     service.getErrors = function() {
       return Client.errors;
     };
@@ -34,7 +38,7 @@ bwcModule.provider("bwcService", function() {
 
       //note opts use `bwsurl` all lowercase;
       var bwc = new Client({
-        baseUrl: 'https://navpay.navcoin.org:3333/bws/api',
+        baseUrl: opts.bwsurl || 'https://bws.bitpay.com/bws/api',
         verbose: opts.verbose,
         timeout: 100000,
         transports: ['polling'],

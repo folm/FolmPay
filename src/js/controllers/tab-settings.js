@@ -6,11 +6,11 @@ angular.module('copayApp.controllers').controller('tabSettingsController', funct
     $scope.currentLanguageName = uxLanguage.getCurrentLanguageName();
     $scope.feeOpts = feeService.feeOpts;
     $scope.currentFeeLevel = feeService.getCurrentFeeLevel();
-    $scope.wallets = profileService.getWallets();
+    $scope.walletsBtc = profileService.getWallets({ coin: 'btc' });
+    $scope.walletsBch = profileService.getWallets({ coin: 'bch' });
     $scope.buyAndSellServices = buyAndSellService.getLinked();
 
     configService.whenAvailable(function(config) {
-      $scope.unitName = config.wallet.settings.unitName;
       $scope.selectedAlternative = {
         name: config.wallet.settings.alternativeName,
         isoCode: config.wallet.settings.alternativeIsoCode
@@ -26,6 +26,7 @@ angular.module('copayApp.controllers').controller('tabSettingsController', funct
         }, 10);
       });
 
+
       // TODO move this to a generic service
       bitpayCardService.getCards(function(err, cards) {
         if (err) $log.error(err);
@@ -40,7 +41,7 @@ angular.module('copayApp.controllers').controller('tabSettingsController', funct
 
   $scope.openExternalLink = function() {
     var appName = appConfigService.name;
-    var url = 'https://github.com/NAVCoin/NavPay/issues';
+    var url = appName == 'copay' ? 'https://github.com/bitpay/copay/issues' : 'https://help.bitpay.com/bitpay-app';
     var optIn = true;
     var title = null;
     var message = gettextCatalog.getString('Help and support information is available at the website.');
@@ -62,6 +63,8 @@ angular.module('copayApp.controllers').controller('tabSettingsController', funct
         $scope.method = $scope.locked.charAt(0).toUpperCase() + config.lock.method.slice(1);
     });
   });
+
+
 
   $scope.$on("$ionicView.enter", function(event, data) {
     updateConfig();

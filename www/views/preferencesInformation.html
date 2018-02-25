@@ -14,6 +14,12 @@
         </span>
       </div>
       <div class="item" copy-to-clipboard="walletId">
+        <span translate>Coin</span>
+        <span class="item-note">
+          {{wallet.coin}}
+        </span>
+      </div>
+      <div class="item" copy-to-clipboard="walletId">
         <span translate>Wallet Id</span>
         <span class="item-note">
           {{walletId}}
@@ -88,8 +94,16 @@
         <span translate>Copayer {{$index}}</span>
         <span class="item-note">
           <span>{{pk}}</span>
-          <span ng-if="$index == 0">({{basePath}})</span>
+        <span ng-if="$index == 0">({{basePath}})</span>
         </span>
+      </div>
+
+      <div ng-if="!wallet.needsBackup && canSign">
+        <div class="item item-divider"></div>
+        <a class="item item-icon-right" ui-sref="tabs.preferences.preferencesPrivateKey">
+          <span translate>Extended Private Key</span>
+          <i class="icon bp-arrow-right"></i>
+        </a>
       </div>
 
       <div ng-show="wallet.balanceByAddress[0]">
@@ -99,7 +113,7 @@
         <div class="item" ng-repeat="a in wallet.balanceByAddress" copy-to-clipboard="a.address">
           <span>{{a.address}}</span>
           <span class="item-note">
-            {{(a.amount/1e8).toFixed(8)}} NAV
+            {{(a.amount/1e8).toFixed(8)}} BTC
           </span>
         </div>
       </div>

@@ -14,15 +14,15 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     // Bitcore wallet service URL
     bws: {
-      url: 'http://navpay.navcoin.org',
+      url: 'https://bws.bitpay.com/bws/api',
     },
 
     download: {
       bitpay: {
-        url: 'https://github.com/NAVCoin/NavPay'
+        url: 'https://bitpay.com/wallet'
       },
       copay: {
-        url: 'https://github.com/NAVCoin/NavPay'
+        url: 'https://copay.io/#download'
       }
     },
 
@@ -46,10 +46,10 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       reconnectDelay: 5000,
       idleDurationMin: 4,
       settings: {
-        unitName: 'NAV',
+        unitName: 'BTC',
         unitToSatoshi: 100000000,
         unitDecimals: 8,
-        unitCode: 'nav',
+        unitCode: 'btc',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
       }
@@ -61,7 +61,6 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       bannedUntil: null,
     },
 
-    // External services
     recentTransactions: {
       enabled: true,
     },
@@ -80,8 +79,16 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     pushNotificationsEnabled: true,
 
+    confirmedTxsNotifications: {
+      enabled: true,
+    },
+
     emailNotifications: {
       enabled: false,
+    },
+
+    log: {
+      filter: 'debug',
     },
   };
 
@@ -133,6 +140,14 @@ angular.module('copayApp.services').factory('configService', function(storageSer
         }
         if (!configCache.bitpayAccount) {
           configCache.bitpayAccount = defaultConfig.bitpayAccount;
+        }
+
+        if (configCache.wallet.settings.unitCode == 'bit') {
+          // Convert to BTC. Bits will be disabled
+          configCache.wallet.settings.unitName = defaultConfig.wallet.settings.unitName;
+          configCache.wallet.settings.unitToSatoshi = defaultConfig.wallet.settings.unitToSatoshi;
+          configCache.wallet.settings.unitDecimals = defaultConfig.wallet.settings.unitDecimals;
+          configCache.wallet.settings.unitCode = defaultConfig.wallet.settings.unitCode;
         }
 
       } else {

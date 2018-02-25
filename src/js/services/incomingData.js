@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.services').factory('incomingData', function($log, $state, $timeout, $ionicHistory, bitcore, $rootScope, payproService, scannerService, appConfigService, popupService, gettextCatalog) {
+angular.module('copayApp.services').factory('incomingData', function($log, $state, $timeout, $ionicHistory, bitcore, bitcoreCash, $rootScope, payproService, scannerService, appConfigService, popupService, gettextCatalog) {
 
   var root = {};
 
@@ -8,7 +8,7 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
     $rootScope.$broadcast('incomingDataMenu.showMenu', data);
   };
 
-  root.redir = function(data, privatePayment, stopRedirect) {
+  root.redir = function(data) {
     $log.debug('Processing incoming data: ' + data);
 
     function sanitizeUri(data) {
@@ -46,8 +46,8 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
       return true;
     }
 
-    function goSend(addr, amount, message) {
-      $state.go('tabs.send', { address: undefined }, {
+    function goSend(addr, amount, message, coin) {
+      $state.go('tabs.send', {}, {
         'reload': true,
         'notify': $state.current.name == 'tabs.send' ? false : true
       });
@@ -57,53 +57,134 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
           $state.transitionTo('tabs.send.confirm', {
             toAmount: amount,
             toAddress: addr,
-            description: message
+            description: message,
+            coin: coin
           });
         } else {
           $state.transitionTo('tabs.send.amount', {
             toAddress: addr,
-            privatePayment: privatePayment,
+            coin: coin
           });
         }
       }, 100);
     }
     // data extensions for Payment Protocol with non-backwards-compatible request
-    if ((/^bitcoin:\?r=[\w+]/).exec(data)) {
-      data = decodeURIComponent(data.replace('bitcoin:?r=', ''));
-      $state.go('tabs.send', { address: undefined }, {
-        'reload': true,
-        'notify': $state.current.name == 'tabs.send' ? false : true
-      }).then(function() {
-        $state.transitionTo('tabs.send.confirm', {
-          paypro: data
-        });
+    if ((/^bitcoin(cash)?:\?r=[\w+]/).exec(data)) {
+      var coin = 'btc';
+      if (data.indexOf('bitcoincash') === 0) coin = 'bch';
+
+      data = decodeURIComponent(data.replace(/bitcoin(cash)?:\?r=/, ''));
+
+      payproService.getPayProDetails(data, function(err, details) {
+        if (err) {
+          popupService.showAlert(gettextCatalog.getString('Error'), err);
+        } else handlePayPro(details, coin);
       });
+
       return true;
     }
 
     data = sanitizeUri(data);
 
-    // BIP21
+    // Bitcoin  URL
     if (bitcore.URI.isValid(data)) {
-      var parsed = new bitcore.URI(data);
 
-      var addr = parsed.address ? parsed.address.toString() : '';
-      var message = parsed.message;
+        var coin = 'btc';
+        var parsed = new bitcore.URI(data);
 
-      var amount = parsed.amount ? parsed.amount : '';
+        var addr = parsed.address ? parsed.address.toString() : '';
+        var message = parsed.message;
 
-      if (parsed.r) {
-        payproService.getPayProDetails(parsed.r, function(err, details) {
-          if (err) {
-            if (addr && amount) goSend(addr, amount, message);
-            else popupService.showAlert(gettextCatalog.getString('Error'), err);
-          } else handlePayPro(details);
-        });
-      } else {
-        goSend(addr, amount, message);
-      }
+        var amount = parsed.amount ? parsed.amount : '';
+
+        if (parsed.r) {
+          payproService.getPayProDetails(parsed.r, function(err, details) {
+            if (err) {
+              if (addr && amount) goSend(addr, amount, message, coin);
+              else popupService.showAlert(gettextCatalog.getString('Error'), err);
+            } else handlePayPro(details);
+          });
+        } else {
+          goSend(addr, amount, message, coin);
+        }
+        return true;
+    // Cash URI
+    } else if (bitcoreCash.URI.isValid(data)) {
+
+        var coin = 'bch';
+        var parsed = new bitcoreCash.URI(data);
+
+        var addr = parsed.address ? parsed.address.toString() : '';
+
+        // keep address in original formal
+        if (parsed.address && data.indexOf(addr)<0) {
+          addr = parsed.address.toCashAddress();
+        };
+
+        var message = parsed.message;
+
+        var amount = parsed.amount ? parsed.amount : '';
+
+        // paypro not yet supported on cash
+        if (parsed.r) {
+          payproService.getPayProDetails(parsed.r, function(err, details) {
+            if (err) {
+              if (addr && amount)
+                goSend(addr, amount, message, coin);
+              else
+                popupService.showAlert(gettextCatalog.getString('Error'), err);
+            }
+            handlePayPro(details, coin);
+          });
+        } else {
+          goSend(addr, amount, message, coin);
+        }
+        return true;
+
+    // Cash URI with bitcoin core address version number?
+    } else if (bitcore.URI.isValid(data.replace(/^bitcoincash:/,'bitcoin:'))) {
+        $log.debug('Handling bitcoincash URI with legacy address');
+        var coin = 'bch';
+        var parsed = new bitcore.URI(data.replace(/^bitcoincash:/,'bitcoin:'));
+
+        var oldAddr = parsed.address ? parsed.address.toString() : '';
+        if (!oldAddr) return false;
+
+        var addr = '';
+
+        var a = bitcore.Address(oldAddr).toObject();
+        addr = bitcoreCash.Address.fromObject(a).toString();
+
+        // Translate address
+        $log.debug('address transalated to:' + addr);
+        popupService.showConfirm(
+          gettextCatalog.getString('Bitcoin cash Payment'),
+          gettextCatalog.getString('Payment address was translated to new Bitcoin Cash address format: ' + addr),
+          gettextCatalog.getString('OK'),
+          gettextCatalog.getString('Cancel'),
+          function(ret) {
+            if (!ret) return false;
+
+            var message = parsed.message;
+            var amount = parsed.amount ? parsed.amount : '';
+
+            // paypro not yet supported on cash
+            if (parsed.r) {
+              payproService.getPayProDetails(parsed.r, function(err, details) {
+                if (err) {
+                  if (addr && amount)
+                    goSend(addr, amount, message, coin);
+                  else
+                    popupService.showAlert(gettextCatalog.getString('Error'), err);
+                }
+                handlePayPro(details, coin);
+              });
+            } else {
+              goSend(addr, amount, message, coin);
+            }
+          }
+        );
       return true;
-
       // Plain URL
     } else if (/^https?:\/\//.test(data)) {
 
@@ -123,15 +204,21 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
       if ($state.includes('tabs.scan')) {
         root.showMenu({
           data: data,
-          type: 'bitcoinAddress'
+          type: 'bitcoinAddress',
+          coin: 'btc',
         });
       } else {
-        if (!stopRedirect) {
-          goToAmountPage(data, privatePayment);
-          return false;
-        } else {
-          return true;
-        }
+        goToAmountPage(data);
+      }
+    } else if (bitcoreCash.Address.isValid(data, 'livenet')) {
+      if ($state.includes('tabs.scan')) {
+        root.showMenu({
+          data: data,
+          type: 'bitcoinAddress',
+          coin: 'bch',
+        });
+      } else {
+        goToAmountPage(data, 'bch');
       }
     } else if (data && data.indexOf(appConfigService.name + '://glidera') === 0) {
       var code = getParameterByName('code', data);
@@ -242,34 +329,32 @@ angular.module('copayApp.services').factory('incomingData', function($log, $stat
         });
       }
     }
-
     return false;
-
   };
 
-  function goToAmountPage(toAddress, privatePayment) {
-    $state.go('tabs.send', { address: undefined }, {
+  function goToAmountPage(toAddress, coin) {
+    $state.go('tabs.send', {}, {
       'reload': true,
       'notify': $state.current.name == 'tabs.send' ? false : true
     });
     $timeout(function() {
-      console.log('incomingData goToAmountPage', privatePayment);
       $state.transitionTo('tabs.send.amount', {
         toAddress: toAddress,
-        privatePayment: privatePayment,
+        coin: coin,
       });
     }, 100);
   }
 
-  function handlePayPro(payProDetails) {
+  function handlePayPro(payProDetails, coin) {
     var stateParams = {
       toAmount: payProDetails.amount,
       toAddress: payProDetails.toAddress,
       description: payProDetails.memo,
-      paypro: payProDetails
+      paypro: payProDetails,
+      coin: coin,
     };
     scannerService.pausePreview();
-    $state.go('tabs.send', { address: undefined }, {
+    $state.go('tabs.send', {}, {
       'reload': true,
       'notify': $state.current.name == 'tabs.send' ? false : true
     }).then(function() {

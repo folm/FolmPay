@@ -2,7 +2,7 @@
   <ion-nav-bar class="bar-royal">
     <ion-nav-back-button>
     </ion-nav-back-button>
-    <ion-nav-title>Buy Nav Coin</ion-nav-title>
+    <ion-nav-title>Buy bitcoin</ion-nav-title>
   </ion-nav-bar>
 
   <ion-content class="add-bottom-for-cta">
@@ -11,14 +11,14 @@
 
       <div class="item head">
         <div class="sending-label">
-          <img src="img/buy-bitcoin.svg" alt="buy Nav Coin" width="35" class="item-img-buy">
+          <img src="img/buy-bitcoin.svg" alt="buy bitcoin" width="35" class="item-img-buy">
           <span>Buying</span>
         </div>
         <div class="amount-label">
           <div class="amount">{{amountUnitStr}}</div>
           <div class="alternative" ng-if="buyPrice">
             <span ng-show="isFiat">{{buyRequestInfo.amount.amount}} {{buyRequestInfo.amount.currency}}</span>
-            @ ${{buyPrice.amount}} per NAV
+            @ ${{buyPrice.amount}} per BTC
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
           <div class="label">Receive in</div>
           <div class="wallet">
             <i class="icon big-icon-svg">
-              <img src="img/icon-wallet.svg" ng-class="{'wallet-background-color-default': !wallet.color}" ng-style="{'background-color': wallet.color}" class="bg">
+              <img ng-src="img/{{wallet.network == 'testnet' ? 'icon-wallet-testnet' : 'icon-wallet'}}.svg" ng-class="{'wallet-background-color-default': !wallet.color}" ng-style="{'background-color': wallet.color}" class="bg">
             </i>
             {{wallet ? wallet.name : '...'}}
           </div>
@@ -93,7 +93,7 @@
     slide-success-hide-on-confirm="true">
     <span>Bought</span>
     <div class="m10 size-14">
-      Nav Coin purchase completed. Coinbase has queued the transfer to your selected wallet
+      Bitcoin purchase completed. Coinbase has queued the transfer to your selected wallet
     </div>
   </slide-to-accept-success>
 

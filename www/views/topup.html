@@ -22,7 +22,7 @@
           <div class="amount-final">{{amountUnitStr}}</div>
           <div class="alternative" ng-show="amountUnitStr">
             <span ng-if="rate">@
-              {{rate | currency:currencySymbol:2}} {{currencyIsoCode}} per NAV</span>
+              {{rate | currency:currencySymbol:2}} {{currencyIsoCode}} per BTC</span>
             <span ng-if="!rate">...</span>
           </div>
         </div>
@@ -34,7 +34,7 @@
           <div class="label" translate>From</div>
           <div class="wallet">
             <i class="icon big-icon-svg">
-              <img src="img/icon-wallet.svg" ng-class="{'wallet-background-color-default': !wallet.color}" ng-style="{'background-color': wallet.color}" class="bg">
+              <img ng-src="img/{{wallet.network == 'testnet' ? 'icon-wallet-testnet' : 'icon-wallet'}}.svg" ng-class="{'wallet-background-color-default': !wallet.color}" ng-style="{'background-color': wallet.color}" class="bg">
             </i>
             {{wallet ? wallet.name : '...'}}
           </div>
@@ -44,6 +44,7 @@
         <div ng-show="totalAmountStr">
           <div class="item item-divider" translate>
             Details
+            <i class="icon ion-ios-help-outline details" ng-click="openExternalLink('https://support.bitpay.com/hc/en-us/articles/203076826-What-fees-will-I-pay-when-I-pay-a-BitPay-merchant-with-bitcoin-or-load-the-BitPay-Card-')"></i>
           </div>
           <div class="item">
             <span translate>Funds to be added</span>
@@ -53,14 +54,14 @@
             </span>
           </div>
           <div class="item">
-            <span translate>Invoice Fee</span>
+            <span translate>Network Cost</span>
             <span class="item-note">
               <span ng-if="invoiceFee">{{invoiceFee | currency:currencySymbol:2}} {{currencyIsoCode}}</span>
               <span ng-if="!invoiceFee">...</span>
             </span>
           </div>
           <div class="item">
-            <span translate>Network Fee</span>
+            <span translate>Miner Fee</span>
             <span class="item-note">
               <span ng-if="networkFee">{{networkFee | currency:currencySymbol:2}} {{currencyIsoCode}}</span>
               <span ng-if="!networkFee">...</span>

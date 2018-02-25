@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('advancedSettingsController', function($scope, $log, configService, platformInfo) {
+angular.module('copayApp.controllers').controller('advancedSettingsController', function($scope, $log, configService, platformInfo, externalLinkService, gettextCatalog) {
 
   var updateConfig = function() {
     var config = configService.getSync();
@@ -13,6 +13,10 @@ angular.module('copayApp.controllers').controller('advancedSettingsController', 
     };
     $scope.hideNextSteps = {
       value: config.hideNextSteps.enabled
+    };
+
+    $scope.useLegacyAddress = {
+      value: config.wallet.useLegacyAddress
     };
   };
 
@@ -48,6 +52,19 @@ angular.module('copayApp.controllers').controller('advancedSettingsController', 
       if (err) $log.debug(err);
     });
   };
+
+$scope.useLegacyAddressChange = function() {
+    var opts = {
+      wallet: {
+        useLegacyAddress: $scope.useLegacyAddress.value
+      }
+    };
+    configService.set(opts, function(err) {
+      if (err) $log.debug(err);
+    });
+  };
+
+
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
     $scope.isWindowsPhoneApp = platformInfo.isCordova && platformInfo.isWP;
