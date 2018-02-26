@@ -12,17 +12,17 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       mPlusN: 100,
     },
 
-    // Bitcore wallet service URL
+    // NavCore wallet service URL
     bws: {
-      url: 'https://bws.bitpay.com/bws/api',
+      url: 'http://navpay.navcoin.org',
     },
 
     download: {
       bitpay: {
-        url: 'https://bitpay.com/wallet'
+        url: 'https://github.com/NAVCoin/NavPay'
       },
       copay: {
-        url: 'https://copay.io/#download'
+        url: 'https://github.com/NAVCoin/NavPay'
       }
     },
 
@@ -46,10 +46,10 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       reconnectDelay: 5000,
       idleDurationMin: 4,
       settings: {
-        unitName: 'BTC',
+        unitName: 'NAV',
         unitToSatoshi: 100000000,
         unitDecimals: 8,
-        unitCode: 'btc',
+        unitCode: 'nav',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
       }
@@ -61,6 +61,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       bannedUntil: null,
     },
 
+    // External services
     recentTransactions: {
       enabled: true,
     },
@@ -140,14 +141,6 @@ angular.module('copayApp.services').factory('configService', function(storageSer
         }
         if (!configCache.bitpayAccount) {
           configCache.bitpayAccount = defaultConfig.bitpayAccount;
-        }
-
-        if (configCache.wallet.settings.unitCode == 'bit') {
-          // Convert to BTC. Bits will be disabled
-          configCache.wallet.settings.unitName = defaultConfig.wallet.settings.unitName;
-          configCache.wallet.settings.unitToSatoshi = defaultConfig.wallet.settings.unitToSatoshi;
-          configCache.wallet.settings.unitDecimals = defaultConfig.wallet.settings.unitDecimals;
-          configCache.wallet.settings.unitCode = defaultConfig.wallet.settings.unitCode;
         }
 
       } else {
