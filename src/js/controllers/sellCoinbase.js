@@ -235,7 +235,7 @@ angular.module('copayApp.controllers').controller('sellCoinbaseController', func
     var configWallet = config.wallet;
     var walletSettings = configWallet.settings;
 
-    var message = 'Selling bitcoin for ' + amount + ' ' + currency;
+    var message = 'Selling NavCoin for ' + amount + ' ' + currency;
     var okText = 'Confirm';
     var cancelText = 'Cancel';
     popupService.showConfirm(null, message, okText, cancelText, function(ok) {
@@ -263,7 +263,7 @@ angular.module('copayApp.controllers').controller('sellCoinbaseController', func
           var outputs = [];
           var toAddress = data.data.address;
           var amountSat = parseInt(($scope.sellRequestInfo.amount.amount * 100000000).toFixed(0));
-          var comment = 'Sell bitcoin (Coinbase)';
+          var comment = 'Sell NavCoin (Coinbase)';
 
           outputs.push({
             'toAddress': toAddress,

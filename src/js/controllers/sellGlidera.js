@@ -71,9 +71,14 @@ angular.module('copayApp.controllers').controller('sellGlideraController', funct
   });
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
-    $scope.isFiat = data.stateParams.currency != 'BTC' ? true : false;
-    amount = data.stateParams.amount;
-    currency = data.stateParams.currency;
+    $scope.isFiat = data.stateParams.currency != 'μNAV' && data.stateParams.currency != 'NAV' ? true : false;
+    var parsedAmount = txFormatService.parseAmount(
+      data.stateParams.amount,
+      data.stateParams.currency);
+
+    amount = parsedAmount.amount;
+    currency = parsedAmount.currency;
+    $scope.amountUnitStr = parsedAmount.amountUnitStr;
 
     $scope.network = glideraService.getNetwork();
     $scope.wallets = profileService.getWallets({
@@ -81,7 +86,7 @@ angular.module('copayApp.controllers').controller('sellGlideraController', funct
       onlyComplete: true,
       network: $scope.network,
       hasFunds: true,
-      coin: coin
+      minAmount: parsedAmount.amountSat
     });
 
     if (lodash.isEmpty($scope.wallets)) {
@@ -113,7 +118,7 @@ angular.module('copayApp.controllers').controller('sellGlideraController', funct
   };
 
   $scope.sellConfirm = function() {
-    var message = 'Sell bitcoin for ' + amount + ' ' + currency;
+    var message = 'Sell NavCoin for ' + amount + ' ' + currency;
     var okText = 'Confirm';
     var cancelText = 'Cancel';
     popupService.showConfirm(null, message, okText, cancelText, function(ok) {
