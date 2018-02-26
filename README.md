@@ -3,7 +3,7 @@
 <!-- [![Build Status](https://secure.travis-ci.org/bitpay/copay.svg)](http://travis-ci.org/bitpay/copay)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/copay/localized.png)](https://crowdin.com/project/copay) -->
 
-NavPay is a secure Navcoin wallet platform for both desktop and mobile devices. NavPay uses [Bitcore Wallet Service](https://github.com/navcoin/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
+NavPay is a secure NavCoin wallet platform for both desktop and mobile devices. NavPay uses [Bitcore Wallet Service](https://github.com/navcoin/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
 
 Binary versions of NavPay are available for download at [..](https://copay.io/#download). NavPay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
 
@@ -16,9 +16,9 @@ For a list of frequently asked questions please visit the [Copay FAQ](https://gi
 - Easy spending proposal flow for shared wallets and group payments
 - [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) Hierarchical deterministic (HD) address generation and wallet backups
 - Device-based security: all private keys are stored locally, not in the cloud
-- Support for Navcoin testnet wallets
+- Support for NavCoin testnet wallets
 - Synchronous access across all major mobile and desktop platforms
-- Payment protocol (BIP70-BIP73) support: easily-identifiable payment requests and verifiable, secure Navcoin payments
+- Payment protocol (BIP70-BIP73) support: easily-identifiable payment requests and verifiable, secure NavCoin payments
 - Support for over 150 currency pricing options and unit denomination in NAV or μNAV
 - Mnemonic (BIP39) support for wallet backups
 - Paper wallet sweep support (BIP38)
@@ -173,7 +173,7 @@ BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.bitpay/externalServices.json" npm r
 
 NavPay implements a multisig wallet using [p2sh](https://en.bitcoin.it/wiki/Pay_to_script_hash) addresses.  It supports multiple wallets, each with its own configuration, such as 3-of-5 (3 required signatures from 5 participant peers) or 2-of-3.  To create a multisig wallet shared between multiple participants, NavPay requires the extended public keys of all the wallet participants.  Those public keys are then incorporated into the wallet configuration and combined to generate a payment address where funds can be sent into the wallet.  Conversely, each participant manages their own private key and that private key is never transmitted anywhere.
 
-To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction.  The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.).  Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally.  Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the Navcoin network.
+To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction.  The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.).  Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally.  Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the NavCoin network.
 
 NavPay also implements [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) to generate new addresses for peers.  The public key that each participant contributes to the wallet is a BIP32 extended public key.  As additional public keys are needed for wallet operations (to produce new addresses to receive payments into the wallet, for example) new public keys can be derived from the participants' original extended public keys.  Once again, it's important to stress that each participant keeps their own private keys locally - private keys are not shared - and are used to sign transaction proposals to make payments from the shared wallet.
 
