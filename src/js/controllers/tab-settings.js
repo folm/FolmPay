@@ -40,7 +40,7 @@ angular.module('copayApp.controllers').controller('tabSettingsController', funct
 
   $scope.openExternalLink = function() {
     var appName = appConfigService.name;
-    var url = 'https://github.com/NAVCoin/NavPay/issues';
+    var url = 'https://github.com/folm/FolmPay/issues';
     var optIn = true;
     var title = null;
     var message = gettextCatalog.getString('Help and support information is available at the website.');

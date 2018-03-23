@@ -19,10 +19,10 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     download: {
       bitpay: {
-        url: 'https://github.com/NAVCoin/NavPay'
+        url: 'https://github.com/folm/FolmPay'
       },
       copay: {
-        url: 'https://github.com/NAVCoin/NavPay'
+        url: 'https://github.com/folm/FolmPay'
       }
     },
 

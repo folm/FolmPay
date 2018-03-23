@@ -3,7 +3,7 @@
 <!-- [![Build Status](https://secure.travis-ci.org/bitpay/copay.svg)](http://travis-ci.org/bitpay/copay)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/copay/localized.png)](https://crowdin.com/project/copay) -->
 
-NavPay is a secure Navcoin wallet platform for both desktop and mobile devices. NavPay uses [Bitcore Wallet Service](https://github.com/navcoin/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
+NavPay is a secure Navcoin wallet platform for both desktop and mobile devices. NavPay uses [Bitcore Wallet Service](https://github.com/folm/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
 
 Binary versions of NavPay are available for download at [..](https://copay.io/#download). NavPay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
 
@@ -214,7 +214,7 @@ Since version 1.5, NavPay uses the root `m/48'` for hardware multisignature wall
 
 ## Bitcore Wallet Service
 
-NavPay depends on [Bitcore Wallet Service](https://github.com/navcoin/bitcore-wallet-service) (BWS) for blockchain information, networking and Copayer synchronization.  A BWS instance can be setup and operational within minutes or you can use a public instance like `https://bws.bitpay.com`.  Switching between BWS instances is very simple and can be done with a click from within NavPay.  BWS also allows NavPay to interoperate with other wallets like [Bitcore Wallet CLI] (https://github.com/bitpay/bitcore-wallet).
+FolmPay depends on [Bitcore Wallet Service](https://github.com/folm/bitcore-wallet-service) (BWS) for blockchain information, networking and Copayer synchronization.  A BWS instance can be setup and operational within minutes or you can use a public instance like `https://bws.bitpay.com`.  Switching between BWS instances is very simple and can be done with a click from within NavPay.  BWS also allows NavPay to interoperate with other wallets like [Bitcore Wallet CLI] (https://github.com/bitpay/bitcore-wallet).
 
 ## Hardware Wallet Support
 
