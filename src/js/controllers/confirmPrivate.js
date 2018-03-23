@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('copayApp.controllers').controller('confirmPrivateController', function($rootScope, $scope, $interval, $filter, $timeout, $ionicScrollDelegate, gettextCatalog, walletService, platformInfo, lodash, configService, rateService, $stateParams, $window, $state, $log, profileService, bitcore, txFormatService, ongoingProcess, $ionicModal, popupService, $ionicHistory, $ionicConfig, payproService, feeService, bwcError, navTechService) {
+angular.module('copayApp.controllers').controller('confirmPrivateController', function($rootScope, $scope, $interval, $filter, $timeout, $ionicScrollDelegate, gettextCatalog, walletService, platformInfo, lodash, configService, rateService, $stateParams, $window, $state, $log, profileService, bitcore, txFormatService, ongoingProcess, $ionicModal, popupService, $ionicHistory, $ionicConfig, payproService, feeService, bwcError, folmTechService) {
 
   var countDown = null;
   var CONFIRM_LIMIT_USD = 20;
@@ -177,7 +177,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
     } else {
       $scope.tx = tx;
       ongoingProcess.set('findNavTechServer', true);
-      navTechService.findNode(amount, address, $scope.foundNode);
+      folmTechService.findNode(amount, address, $scope.foundNode);
     }
   });
 
@@ -190,7 +190,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
       return;
     }
 
-    $scope.navtechFeePercent = serverInfo.navtechFeePercent;
+    $scope.folmtechFeePercent = serverInfo.folmtechFeePercent;
 
     //@TODO setup the multiple transactions with the right data
     var anonTxes = [];
@@ -212,12 +212,12 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
     tx.anondest = data[0].anonDestination;
 
     if (tx.sendMax) {
-      $scope.feeNavtech = tx.toAmount - Math.floor(tx.toAmount / (1 + (serverInfo.navtechFeePercent / 100)));
-      var amountUnsafe = (tx.toAmount - $scope.feeNavtech) * satToUnit;
+      $scope.feeFolmtech = tx.toAmount - Math.floor(tx.toAmount / (1 + (serverInfo.folmtechFeePercent / 100)));
+      var amountUnsafe = (tx.toAmount - $scope.feeFolmtech) * satToUnit;
     } else {
-      $scope.feeNavtech = Math.floor(tx.toAmount * (serverInfo.navtechFeePercent / 100));
+      $scope.feeFolmtech = Math.floor(tx.toAmount * (serverInfo.folmtechFeePercent / 100));
       var amountUnsafe = tx.toAmount * satToUnit;
-      tx.toAmount = Math.floor($scope.feeNavtech + tx.toAmount);
+      tx.toAmount = Math.floor($scope.feeFolmtech + tx.toAmount);
     }
 
     if ($scope.countDecimals(amountUnsafe) > 8) {
@@ -226,7 +226,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
       $scope.amountStr = amountUnsafe;
     }
 
-    $scope.feeNavtechDisplay = $filter('number')($scope.feeNavtech * satToUnit, 8) + ' ' + walletConfig.settings.unitName;
+    $scope.feeFolmtechDisplay = $filter('number')($scope.feeFolmtech * satToUnit, 8) + ' ' + walletConfig.settings.unitName;
 
     updateTx(tx, null, {}, function() {
 
@@ -289,15 +289,15 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
           showSendMaxWarning(sendMaxInfo);
         }
         $scope.formattedAnonTxes = [];
-        $scope.navtechTxFeeSatoshi = 0;
+        $scope.folmtechTxFeeSatoshi = 0;
         getEachFee(0, function(err){
           ongoingProcess.set('Calculating Fees', false);
           if (err) {
             console.log('getEachFee.cb', err);
             return;
           }
-          $scope.navtechFee = $scope.navtechFeeTemp;
-          $scope.navtechTxFee = $scope.navtechTxFeeSatoshi * satToUnit + ' ' + walletConfig.settings.unitName;
+          $scope.folmtechFee = $scope.folmtechFeeTemp;
+          $scope.folmtechTxFee = $scope.folmtechTxFeeSatoshi * satToUnit + ' ' + walletConfig.settings.unitName;
         });
       });
     });
@@ -321,7 +321,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
       tx.txp[wallet.id] = txp;
       $log.debug('Confirm. TX Fully Updated for wallet:' + wallet.id, tx);
       refresh();
-      $scope.navtechTxFeeSatoshi += tx.txp[wallet.id].fee;
+      $scope.folmtechTxFeeSatoshi += tx.txp[wallet.id].fee;
       $scope.formattedAnonTxes[i] = tx;
       if (i < $scope.anonTxes.length - 1) {
         getEachFee(++i, cb);
@@ -379,7 +379,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
       } else txp.feeLevel = tx.feeLevel;
     }
 
-    txp.feeNavtech = $scope.feeNavtech;
+    txp.feeFolmtech = $scope.feeFolmtech;
     txp.message = tx.description;
 
     if (tx.paypro) {
@@ -454,7 +454,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
           if (!tx.anondest) {
             $scope.tx = tx;
             ongoingProcess.set('findNavTechServer', true);
-            navTechService.findNode(tx.toAmount, tx.toAddress, $scope.foundNode);
+            folmTechService.findNode(tx.toAmount, tx.toAddress, $scope.foundNode);
           }
 
           updateAmount();
@@ -475,9 +475,9 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
             txp.alternativeFeeStr = v;
           });
 
-          txp.feeNavtechStr = txFormatService.formatAmountStr($scope.feeNavtech);
-          txFormatService.formatAlternativeStr(txp.feeNavtech, function(v) {
-            txp.alternativeFeeNavtechStr = v;
+          txp.feeFolmtechStr = txFormatService.formatAmountStr($scope.feeFolmtech);
+          txFormatService.formatAlternativeStr(txp.feeFolmtech, function(v) {
+            txp.alternativeFeeFolmtechStr = v;
           });
 
           var per = ((txp.fee) / (txp.amount + txp.fee) * 100);
@@ -538,7 +538,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
       return warningMsg.join('\n');
     };
 
-    var msg = gettextCatalog.getString("{{fee}} will be deducted for NavCoin networking fees.", {
+    var msg = gettextCatalog.getString("{{fee}} will be deducted for Folm networking fees.", {
       fee: txFormatService.formatAmountStr(sendMaxInfo.fee)
     });
     var warningMsg = verifyExcludedUtxos();
@@ -647,7 +647,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
     if (!tx || !wallet) return;
 
     if ($scope.paymentExpired) {
-      popupService.showAlert(null, gettextCatalog.getString('This NavCoin payment request has expired.'));
+      popupService.showAlert(null, gettextCatalog.getString('This Folm payment request has expired.'));
       $scope.sendStatus = '';
       $timeout(function() {
         $scope.$apply();

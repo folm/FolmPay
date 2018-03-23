@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: navpay\n"
+"Project-Id-Version: folmpay\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: crowdin.com\n"
-"X-Crowdin-Project: navpay\n"
+"X-Crowdin-Project: folmpay\n"
 "X-Crowdin-Language: fr\n"
 "X-Crowdin-File: template.pot\n"
 "Last-Translator: cmgustavo83\n"
@@ -85,8 +85,8 @@ msgid "Add Account"
 msgstr "Ajouter un compte"
 
 #: src/js/services/bitpayAccountService.js:69
-msgid "Add NavPay Account?"
-msgstr "Ajouter un compte NavPay ?"
+msgid "Add FolmPay Account?"
+msgstr "Ajouter un compte FolmPay ?"
 
 #: www/views/addressbook.add.html:4
 #: www/views/addressbook.html:22
@@ -126,8 +126,8 @@ msgid "Add funds"
 msgstr "Ajouter des fonds"
 
 #: src/js/services/bitpayAccountService.js:78
-msgid "Add this NavPay account ({{email}})?"
-msgstr "Voulez-vous ajouter ce compte NavPay ({{email}}) ?"
+msgid "Add this FolmPay account ({{email}})?"
+msgstr "Voulez-vous ajouter ce compte FolmPay ({{email}}) ?"
 
 #: www/views/add.html:3
 msgid "Add wallet"
@@ -170,12 +170,12 @@ msgid "All Addresses"
 msgstr "Toutes les adresses"
 
 #: www/views/modals/wallet-balance.html:18
-msgid "All of your Nav Coin wallet balance may not be available for immediate spending."
-msgstr "L'intégralité du solde de votre portefeuille Nav Coin peut ne pas être disponible pour des dépenses immédiates."
+msgid "All of your Folm Coin wallet balance may not be available for immediate spending."
+msgstr "L'intégralité du solde de votre portefeuille Folm Coin peut ne pas être disponible pour des dépenses immédiates."
 
 #: www/views/tab-receive.html:25
-msgid "All signing devices must be added to this multisig wallet before Nav Coin addresses can be created."
-msgstr "Tous les appareils de signature doivent être ajoutés à ce portefeuille multisig avant que les adresses Nav Coin ne puissent être créées."
+msgid "All signing devices must be added to this multisig wallet before Folm Coin addresses can be created."
+msgstr "Tous les appareils de signature doivent être ajoutés à ce portefeuille multisig avant que les adresses Folm Coin ne puissent être créées."
 
 #: www/views/tab-scan.html:21
 msgid "Allow Camera Access"
@@ -218,20 +218,20 @@ msgid "An update to this app is available. For your security, please update to t
 msgstr "Une mise à jour de cette appli est disponible. Pour votre sécurité, veuillez mettre à jour vers la dernière version."
 
 #: www/views/backupWarning.html:14
-msgid "Anyone with your backup phrase can access or spend your Nav Coin."
-msgstr "Quelqu'un disposant de votre phrase de sauvegarde peut accéder ou dépenser vos Nav Coins."
+msgid "Anyone with your backup phrase can access or spend your Folm Coin."
+msgstr "Quelqu'un disposant de votre phrase de sauvegarde peut accéder ou dépenser vos Folm Coins."
 
 #: www/views/addresses.html:94
-msgid "Approximate Nav Coin network fee to transfer wallet's balance (with normal priority)"
-msgstr "Frais de réseau Nav Coin approximatifs pour transférer le solde du portefeuille (avec des frais normaux)"
+msgid "Approximate Folm Coin network fee to transfer wallet's balance (with normal priority)"
+msgstr "Frais de réseau Folm Coin approximatifs pour transférer le solde du portefeuille (avec des frais normaux)"
 
 #: www/views/backupWarning.html:10
 msgid "Are you being watched?"
 msgstr "Êtes-vous surveillé(e) ?"
 
 #: src/js/controllers/preferencesExternal.js:15
-msgid "Are you being watched? Anyone with your recovery phrase can access or spend your Nav Coin."
-msgstr "Êtes-vous surveillé(e) ? N’importe qui peut dépenser vos Nav Coins grâce à votre phrase de récupération."
+msgid "Are you being watched? Anyone with your recovery phrase can access or spend your Folm Coin."
+msgstr "Êtes-vous surveillé(e) ? N’importe qui peut dépenser vos Folm Coins grâce à votre phrase de récupération."
 
 #: src/js/controllers/copayers.js:56
 msgid "Are you sure you want to cancel and delete this wallet?"
@@ -258,13 +258,13 @@ msgid "Are you sure you want to skip it?"
 msgstr "Êtes-vous sûr(e) de vouloir ignorer la sauvegarde ?"
 
 #: www/views/modals/bitpay-card-confirmation.html:4
-msgid "Are you sure you would like to log out of your NavPay Card account?"
-msgstr "Souhaitez-vous réellement vous déconnecter de votre compte NavPay Card ?"
+msgid "Are you sure you would like to log out of your FolmPay Card account?"
+msgstr "Souhaitez-vous réellement vous déconnecter de votre compte FolmPay Card ?"
 
 #: src/js/controllers/preferencesBitpayCard.js:7
 #: src/js/controllers/preferencesBitpayServices.js:20
-msgid "Are you sure you would like to remove your NavPay Card ({{lastFourDigits}}) from this device?"
-msgstr "Êtes-vous sûr(e) de vouloir supprimer votre NavPay Card ({{lastFourDigits}}) de cet appareil ?"
+msgid "Are you sure you would like to remove your FolmPay Card ({{lastFourDigits}}) from this device?"
+msgstr "Êtes-vous sûr(e) de vouloir supprimer votre FolmPay Card ({{lastFourDigits}}) de cet appareil ?"
 
 #: www/views/includes/walletInfo.html:5
 msgid "Auditable"
@@ -333,42 +333,42 @@ msgid "Be sure to store your recovery phrase in a secure place. If this app is d
 msgstr "N’oubliez pas de conserver votre phrase de récupération dans un endroit sûr. Si cette application est supprimée, votre argent ne peut pas être récupéré sans elle."
 
 #: www/views/preferencesBitpayServices.html:9
-msgid "NavPay Visa&reg; Cards"
-msgstr "NavPay Visa&reg; Cards"
+msgid "FolmPay Visa&reg; Cards"
+msgstr "FolmPay Visa&reg; Cards"
 
 #: www/views/addressbook.add.html:38
-msgid "Nav Coin Address"
-msgstr "Adresse Nav Coin"
+msgid "Folm Coin Address"
+msgstr "Adresse Folm Coin"
 
 #: www/views/modals/chooseFeeLevel.html:4
 #: www/views/preferencesFee.html:4
 #: www/views/tab-settings.html:85
-msgid "Nav Coin Network Fee Policy"
+msgid "Folm Coin Network Fee Policy"
 msgstr "Frais de réseau"
 
 #: www/views/paymentUri.html:10
-msgid "Nav Coin URI is NOT valid!"
-msgstr "L'URI Nav Coin n'est pas valide !"
+msgid "Folm Coin URI is NOT valid!"
+msgstr "L'URI Folm Coin n'est pas valide !"
 
 #: www/views/tab-settings.html:63
-msgid "Nav Coin Unit"
-msgstr "Unité de Nav Coin"
+msgid "Folm Coin Unit"
+msgstr "Unité de Folm Coin"
 
 #: www/views/onboarding/tour.html:31
-msgid "Nav Coin is a currency."
-msgstr "Nav Coin est une monnaie."
+msgid "Folm Coin is a currency."
+msgstr "Folm Coin est une monnaie."
 
 #: www/views/onboarding/disclaimer.html:15
-msgid "Nav Coin is different &ndash; it cannot be safely held with a bank or web service."
-msgstr "Nav Coin est différent &ndash; il ne peut pas être conservé en toute sécurité avec un service internet ou bancaire."
+msgid "Folm Coin is different &ndash; it cannot be safely held with a bank or web service."
+msgstr "Folm Coin est différent &ndash; il ne peut pas être conservé en toute sécurité avec un service internet ou bancaire."
 
 #: www/views/onboarding/tour.html:18
-msgid "Nav Coin is secure,<br>digital money."
-msgstr "Nav Coin est de l'argent<br>numérique sécurisé."
+msgid "Folm Coin is secure,<br>digital money."
+msgstr "Folm Coin est de l'argent<br>numérique sécurisé."
 
 #: www/views/preferencesFee.html:11
-msgid "Nav Coin transactions include a fee collected by miners on the network."
-msgstr "Les transactions Nav Coin incluent des frais collectés par les mineurs du réseau."
+msgid "Folm Coin transactions include a fee collected by miners on the network."
+msgstr "Les transactions Folm Coin incluent des frais collectés par les mineurs du réseau."
 
 #: www/views/modals/txp-details.html:36
 msgid "Broadcast Payment"
@@ -388,16 +388,16 @@ msgid "Browser unsupported"
 msgstr "Navigateur non supporté"
 
 #: www/views/includes/buyAndSellCard.html:4
-msgid "Buy &amp; Sell Nav Coin"
-msgstr "Acheter &amp; vendre des Nav Coins"
+msgid "Buy &amp; Sell Folm Coin"
+msgstr "Acheter &amp; vendre des Folm Coins"
 
 #: www/views/tab-send.html:35
-msgid "Buy Nav Coin"
-msgstr "Acheter des Nav Coins"
+msgid "Buy Folm Coin"
+msgstr "Acheter des Folm Coins"
 
 #: src/js/services/onGoingProcess.js:40
-msgid "Buying Nav Coin..."
-msgstr "Achat de Nav Coins..."
+msgid "Buying Folm Coin..."
+msgstr "Achat de Folm Coins..."
 
 #: src/js/services/onGoingProcess.js:12
 msgid "Calculating fee"
@@ -519,8 +519,8 @@ msgid "Confirming"
 msgstr "Confirmation"
 
 #: www/views/bitpayCardIntro.html:37
-msgid "Connect my NavPay Card"
-msgstr "Connecter ma NavPay Card"
+msgid "Connect my FolmPay Card"
+msgstr "Connecter ma FolmPay Card"
 
 #: src/js/services/onGoingProcess.js:13
 msgid "Connecting to Coinbase..."
@@ -710,8 +710,8 @@ msgstr "Créer un portefeuille partagé"
 #: www/views/onboarding/tour.html:51
 #: www/views/tab-home.html:77
 #: www/views/tab-send.html:36
-msgid "Create Nav Coin wallet"
-msgstr "Créer un portefeuille Nav Coin"
+msgid "Create Folm Coin wallet"
+msgstr "Créer un portefeuille Folm Coin"
 
 #: www/views/tab-create-personal.html:129
 msgid "Create new wallet"
@@ -816,8 +816,8 @@ msgid "Download"
 msgstr "Télécharger"
 
 #: www/views/addresses.html:19
-msgid "Each Nav Coin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
-msgstr "Chaque portefeuille Nav Coin peut générer des milliards d’adresses depuis votre sauvegarde de 12 mots. Une nouvelle adresse est automatiquement générée et affichée à chaque fois que vous recevez un paiement."
+msgid "Each Folm Coin wallet can generate billions of addresses from your 12-word backup. A new address is automatically generated and shown each time you receive a payment."
+msgstr "Chaque portefeuille Folm Coin peut générer des milliards d’adresses depuis votre sauvegarde de 12 mots. Une nouvelle adresse est automatiquement générée et affichée à chaque fois que vous recevez un paiement."
 
 #: src/js/services/feeService.js:13
 msgid "Economy"
@@ -866,8 +866,8 @@ msgid "Enter Spending Password"
 msgstr "Saisissez le code de dépenses"
 
 #: src/js/services/bitpayAccountService.js:110
-msgid "Enter Two Factor for your NavPay account"
-msgstr "Saisissez le code à deux facteurs pour votre compte NavPay"
+msgid "Enter Two Factor for your FolmPay account"
+msgstr "Saisissez le code à deux facteurs pour votre compte FolmPay"
 
 #: src/js/services/walletService.js:1030
 msgid "Enter new spending password"
@@ -972,8 +972,8 @@ msgid "Error in Payment Protocol"
 msgstr "Erreur dans le protocole de paiement"
 
 #: src/js/controllers/bitpayCardIntro.js:14
-msgid "Error pairing NavPay Account"
-msgstr "Erreur d'appariement du compte NavPay"
+msgid "Error pairing FolmPay Account"
+msgstr "Erreur d'appariement du compte FolmPay"
 
 #: src/js/controllers/paperWallet.js:41
 msgid "Error scanning funds:"
@@ -1055,8 +1055,8 @@ msgid "Feedback could not be submitted. Please try again later."
 msgstr "Vos commentaires n'ont pas pu être envoyés. Veuillez réessayer plus tard."
 
 #: src/js/services/onGoingProcess.js:42
-msgid "Fetching NavPay Account..."
-msgstr "Récupération du compte NavPay..."
+msgid "Fetching FolmPay Account..."
+msgstr "Récupération du compte FolmPay..."
 
 #: src/js/services/onGoingProcess.js:21
 msgid "Fetching Payment Information"
@@ -1090,8 +1090,8 @@ msgid "From"
 msgstr "De"
 
 #: src/js/controllers/bitpayCardIntro.js:71
-msgid "From NavPay account"
-msgstr "Depuis un compte NavPay"
+msgid "From FolmPay account"
+msgstr "Depuis un compte FolmPay"
 
 #: www/views/tab-import-phrase.html:54
 msgid "From Hardware Wallet"
@@ -1142,8 +1142,8 @@ msgid "Get local cash anywhere you go, from any Visa<sup>&reg;</sup> compatible 
 msgstr "Retirez de l'argent partout où vous allez, depuis n'importe quel distributeur compatible Visa<sup>&reg;</sup>. Des frais bancaires de distributeur peuvent s'appliquer."
 
 #: www/views/onboarding/collectEmail.html:15
-msgid "Get news and updates from NavPay"
-msgstr "Obtenir les actualités et mises à jour de NavPay"
+msgid "Get news and updates from FolmPay"
+msgstr "Obtenir les actualités et mises à jour de FolmPay"
 
 #: www/views/bitpayCard.html:49
 #: www/views/onboarding/welcome.html:8
@@ -1271,8 +1271,8 @@ msgid "I understand"
 msgstr "Je comprends"
 
 #: www/views/onboarding/disclaimer.html:21
-msgid "I understand that if this app is moved to another device or deleted, my Nav Coin can only be recovered with the backup phrase."
-msgstr "Je comprends que si cette application est déplacée vers un autre appareil ou supprimée, mes Nav Coins ne peuvent être récupérés qu'avec la phrase de sauvegarde."
+msgid "I understand that if this app is moved to another device or deleted, my Folm Coin can only be recovered with the backup phrase."
+msgstr "Je comprends que si cette application est déplacée vers un autre appareil ou supprimée, mes Folm Coins ne peuvent être récupérés qu'avec la phrase de sauvegarde."
 
 #: www/views/onboarding/disclaimer.html:18
 msgid "I understand that my funds are held securely on this device, not by a company."
@@ -1295,8 +1295,8 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds. This option
 msgstr "Si l'option est activée, les portefeuilles vont essayer de dépenser des fonds non confirmés. Cette option peut entraîner des retards de transaction."
 
 #: src/js/controllers/onboarding/backupRequest.js:18
-msgid "If this device is replaced or this app is deleted, neither you nor NavPay can recover your funds without a backup."
-msgstr "Si cet appareil est remplacé ou si cette appli est supprimée, ni vous ni NavPay ne peuvent récupérer vos fonds sans une sauvegarde."
+msgid "If this device is replaced or this app is deleted, neither you nor FolmPay can recover your funds without a backup."
+msgstr "Si cet appareil est remplacé ou si cette appli est supprimée, ni vous ni FolmPay ne peuvent récupérer vos fonds sans une sauvegarde."
 
 #: www/views/feedback/complete.html:23
 msgid "If you have additional feedback, please let us know by tapping the \"Send feedback\" option in the Settings tab."
@@ -1414,8 +1414,8 @@ msgid "Is this email address correct?"
 msgstr "Cette adresse e-mail est-elle correcte ?"
 
 #: www/views/addresses.html:25
-msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your Nav Coins secure against hypothetical attacks by quantum computers."
-msgstr "C’est une bonne idée d'éviter la réutilisation des adresses. Cela fois protège votre anonymat et garde vos Nav Coins en sécurité contre les attaques hypothétiques des ordinateurs quantiques."
+msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your Folm Coins secure against hypothetical attacks by quantum computers."
+msgstr "C’est une bonne idée d'éviter la réutilisation des adresses. Cela fois protège votre anonymat et garde vos Folm Coins en sécurité contre les attaques hypothétiques des ordinateurs quantiques."
 
 #: src/js/controllers/backup.js:76
 msgid "It's important that you write your backup phrase down correctly. If something happens to your wallet, you'll need this backup to recover your money. Please review your backup and try again."
@@ -1568,7 +1568,7 @@ msgstr "Plusieurs destinataires"
 
 #: www/views/tab-import-phrase.html:8
 msgid "NOTE: To import a wallet from a 3rd party software, please go to Add Wallet &gt; Create Wallet, and specify the Recovery Phrase there."
-msgstr "Remarque : Pour importer un portefeuille d’un autre logiciel que Navpay, veuillez aller dans « Ajouter portefeuille » &gt; « Créer » et spécifier la phrase de récupération."
+msgstr "Remarque : Pour importer un portefeuille d’un autre logiciel que Folmpay, veuillez aller dans « Ajouter portefeuille » &gt; « Créer » et spécifier la phrase de récupération."
 
 #: www/views/addressbook.add.html:21
 #: www/views/addressbook.view.html:18
@@ -1610,8 +1610,8 @@ msgid "No Wallet"
 msgstr "Aucun portefeuille"
 
 #: www/views/onboarding/backupRequest.html:5
-msgid "No backup, no Nav Coin."
-msgstr "Pas de sauvegarde, pas de Nav Coin."
+msgid "No backup, no Folm Coin."
+msgstr "Pas de sauvegarde, pas de Folm Coin."
 
 #: www/views/addressbook.html:19
 msgid "No contacts yet"
@@ -1670,8 +1670,8 @@ msgid "Not enough funds for fee"
 msgstr "Pas assez de fonds pour les frais"
 
 #: www/views/onboarding/tour.html:50
-msgid "Not even NavPay can access it."
-msgstr "Même NavPay ne peut y accéder."
+msgid "Not even FolmPay can access it."
+msgstr "Même FolmPay ne peut y accéder."
 
 #: src/js/controllers/paperWallet.js:47
 msgid "Not funds found"
@@ -1687,8 +1687,8 @@ msgid "Note"
 msgstr "Note"
 
 #: www/views/modals/wallets.html:25
-msgid "Notice: only 1-1 (single signature) wallets can be used for sell Nav Coin"
-msgstr "Note : seuls les portefeuilles 1-1 (signature unique) peuvent être utilisés pour vendre des Nav Coins"
+msgid "Notice: only 1-1 (single signature) wallets can be used for sell Folm Coin"
+msgstr "Note : seuls les portefeuilles 1-1 (signature unique) peuvent être utilisés pour vendre des Folm Coins"
 
 #: www/views/preferencesNotifications.html:3
 #: www/views/tab-settings.html:46
@@ -1775,8 +1775,8 @@ msgid "Open wallet"
 msgstr "Ouvrir le portefeuille"
 
 #: www/views/bitpayCardIntro.html:34
-msgid "Order the NavPay Card"
-msgstr "Commander la NavPay Card"
+msgid "Order the FolmPay Card"
+msgstr "Commander la FolmPay Card"
 
 #: www/views/join.html:102
 #: www/views/join.html:93
@@ -1802,8 +1802,8 @@ msgid "Paste the backup plain text code"
 msgstr "Collez le code texte de sauvegarde"
 
 #: www/views/bitpayCardIntro.html:28
-msgid "Pay 0% fees to turn Nav Coin into dollars."
-msgstr "Aucun frais pour échanger des Nav Coins en dollars."
+msgid "Pay 0% fees to turn Folm Coin into dollars."
+msgstr "Aucun frais pour échanger des Folm Coins en dollars."
 
 #: www/views/modals/paypro.html:18
 msgid "Pay To"
@@ -1907,8 +1907,8 @@ msgid "Please tap each word in the correct order."
 msgstr "Veuillez sélectionner chaque mot dans le bon ordre."
 
 #: src/js/services/bwcError.js:101
-msgid "Please upgrade Navpay to perform this action"
-msgstr "Veuillez mettre à jour Navpay pour effectuer cette action"
+msgid "Please upgrade Folmpay to perform this action"
+msgstr "Veuillez mettre à jour Folmpay pour effectuer cette action"
 
 #: src/js/controllers/import.js:222
 msgid "Please, select your backup file"
@@ -2074,16 +2074,16 @@ msgid "Remove"
 msgstr "Supprimer"
 
 #: src/js/controllers/preferencesBitpayServices.js:7
-msgid "Remove NavPay Account?"
-msgstr "Supprimer le compte NavPay ?"
+msgid "Remove FolmPay Account?"
+msgstr "Supprimer le compte FolmPay ?"
 
 #: src/js/controllers/preferencesBitpayServices.js:19
-msgid "Remove NavPay Card?"
-msgstr "Supprimer la NavPay Card ?"
+msgid "Remove FolmPay Card?"
+msgstr "Supprimer la FolmPay Card ?"
 
 #: src/js/controllers/preferencesBitpayServices.js:8
-msgid "Removing your NavPay account will remove all associated NavPay account data from this device. Are you sure you would like to remove your NavPay Account ({{email}}) from this device?"
-msgstr "La suppression de votre compte NavPay supprimera tous les données de compte NavPay associées à cet appareil. Êtes-vous sûr(e) de vouloir supprimer votre compte NavPay {{email}} de cet appareil ?"
+msgid "Removing your FolmPay account will remove all associated FolmPay account data from this device. Are you sure you would like to remove your FolmPay Account ({{email}}) from this device?"
+msgstr "La suppression de votre compte FolmPay supprimera tous les données de compte FolmPay associées à cet appareil. Êtes-vous sûr(e) de vouloir supprimer votre compte FolmPay {{email}} de cet appareil ?"
 
 #: www/views/join.html:113
 #: www/views/join.html:121
@@ -2173,8 +2173,8 @@ msgid "Search Transactions"
 msgstr "Rechercher des transactions"
 
 #: www/views/tab-send.html:13
-msgid "Search or enter Nav Coin address"
-msgstr "Recherchez ou saisissez une adresse Nav Coin"
+msgid "Search or enter Folm Coin address"
+msgstr "Recherchez ou saisissez une adresse Folm Coin"
 
 #: www/views/modals/search.html:16
 msgid "Search transactions"
@@ -2202,8 +2202,8 @@ msgid "Self-signed Certificate"
 msgstr "Certificat auto-signé"
 
 #: src/js/services/onGoingProcess.js:41
-msgid "Selling Nav Coin..."
-msgstr "Vente de Nav Coins..."
+msgid "Selling Folm Coin..."
+msgstr "Vente de Folm Coins..."
 
 #: www/views/feedback/send.html:13
 #: www/views/feedback/send.html:43
@@ -2342,8 +2342,8 @@ msgid "Show advanced options"
 msgstr "Afficher les options avancées"
 
 #: www/views/tab-send.html:37
-msgid "Show Nav Coin address"
-msgstr "Afficher vos adresses Nav Coin"
+msgid "Show Folm Coin address"
+msgstr "Afficher vos adresses Folm Coin"
 
 #: www/views/tab-send.html:59
 msgid "Show more"
@@ -2393,12 +2393,12 @@ msgid "Spending Password needed"
 msgstr "Code de dépenses requis"
 
 #: www/views/walletDetails.html:162
-msgid "Spending this balance will need significant Nav Coin network fees"
-msgstr "La dépense de ce solde demandera d'importants frais de réseau Nav Coin"
+msgid "Spending this balance will need significant Folm Coin network fees"
+msgstr "La dépense de ce solde demandera d'importants frais de réseau Folm Coin"
 
 #: www/views/tab-send.html:28
-msgid "Start sending Nav Coin"
-msgstr "Commencez à envoyer des Nav Coins"
+msgid "Start sending Folm Coin"
+msgstr "Commencez à envoyer des Folm Coins"
 
 #: src/js/routes.js:118
 msgid "Starting..."
@@ -2433,8 +2433,8 @@ msgid "THIS ACTION CANNOT BE REVERSED"
 msgstr "CETTE ACTION NE PEUT PAS ÊTRE ANNULÉE"
 
 #: www/views/onboarding/welcome.html:5
-msgid "Take control of your money,<br>get started with Nav Coin."
-msgstr "Prenez le contrôle de votre argent,<br>commencez avec Nav Coin."
+msgid "Take control of your money,<br>get started with Folm Coin."
+msgstr "Prenez le contrôle de votre argent,<br>commencez avec Folm Coin."
 
 #: www/views/walletDetails.html:140
 #: www/views/walletDetails.html:60
@@ -2482,16 +2482,16 @@ msgid "The Ledger Chrome application is not installed"
 msgstr "L'application Ledger pour Chrome n'est pas installée"
 
 #: www/views/modals/wallet-balance.html:55
-msgid "The amount of Nav Coin immediately spendable from this wallet."
-msgstr "Le montant des Nav Coins immédiatement disponibles depuis ce portefeuille."
+msgid "The amount of Folm Coin immediately spendable from this wallet."
+msgstr "Le montant des Folm Coins immédiatement disponibles depuis ce portefeuille."
 
 #: www/views/modals/wallet-balance.html:93
-msgid "The amount of Nav Coin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
-msgstr "Le montant des Nav Coins stockés dans ce portefeuille qui est alloué en tant qu'entrées à vos propositions de transaction en attente. Le montant est déterminé en utilisant les sorties de transaction non dépensées associées à ce portefeuille et peut être plus important que les montants réels associés à vos propositions de transaction en attente."
+msgid "The amount of Folm Coin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
+msgstr "Le montant des Folm Coins stockés dans ce portefeuille qui est alloué en tant qu'entrées à vos propositions de transaction en attente. Le montant est déterminé en utilisant les sorties de transaction non dépensées associées à ce portefeuille et peut être plus important que les montants réels associés à vos propositions de transaction en attente."
 
 #: www/views/modals/wallet-balance.html:74
-msgid "The amount of Nav Coin stored in this wallet with less than 1 blockchain confirmation."
-msgstr "Le montant des Nav Coins stockés dans ce portefeuille avec moins d'une confirmation blockchain."
+msgid "The amount of Folm Coin stored in this wallet with less than 1 blockchain confirmation."
+msgstr "Le montant des Folm Coins stockés dans ce portefeuille avec moins d'une confirmation blockchain."
 
 #: www/views/tab-import-phrase.html:5
 msgid "The derivation path"
@@ -2510,8 +2510,8 @@ msgid "The maximum number of consecutive unused addresses (20) has been reached.
 msgstr "Le nombre maximal d’adresses inutilisées consécutives (20) a été atteint. Lorsqu'une de vos adresses inutilisées reçoit un paiement, une nouvelle adresse sera générée et affichée dans votre onglet Recevoir."
 
 #: src/js/controllers/onboarding/terms.js:21
-msgid "The official English Terms of Service are available on the NavPay website."
-msgstr "Les conditions d'utilisation officielles en anglais sont disponibles sur le site internet de NavPay."
+msgid "The official English Terms of Service are available on the FolmPay website."
+msgstr "Les conditions d'utilisation officielles en anglais sont disponibles sur le site internet de FolmPay."
 
 #: www/views/tab-import-phrase.html:4
 msgid "The password of the recovery phrase (if set)"
@@ -2545,8 +2545,8 @@ msgid "The spend proposal is not pending"
 msgstr "La proposition de dépense n'est pas en attente"
 
 #: www/views/modals/wallet-balance.html:36
-msgid "The total amount of Nav Coin stored in this wallet."
-msgstr "Le montant total des Nav Coins stockés dans ce portefeuille."
+msgid "The total amount of Folm Coin stored in this wallet."
+msgstr "Le montant total des Folm Coins stockés dans ce portefeuille."
 
 #: www/views/preferencesHistory.html:27
 msgid "The transaction history and every new incoming transaction are cached in the app. This feature clean this up and synchronizes again from the server"
@@ -2580,12 +2580,12 @@ msgid "This app is fantastic!"
 msgstr "Cette appli est fantastique !"
 
 #: www/views/onboarding/tour.html:47
-msgid "This app stores your Nav Coin with cutting-edge security."
-msgstr "Cette appli conserve vos Nav Coins avec une sécurité de pointe."
+msgid "This app stores your Folm Coin with cutting-edge security."
+msgstr "Cette appli conserve vos Folm Coins avec une sécurité de pointe."
 
 #: src/js/controllers/confirm.js:464
-msgid "This Nav Coin payment request has expired."
-msgstr "Cette demande de paiement Nav Coin a expiré."
+msgid "This Folm Coin payment request has expired."
+msgstr "Cette demande de paiement Folm Coin a expiré."
 
 #: www/views/join.html:130
 #: www/views/tab-create-personal.html:101
@@ -2598,8 +2598,8 @@ msgid "This recovery phrase was created with a password. To recover this wallet 
 msgstr "Cette phrase de récupération a été créée avec un mot de passe. Pour récupérer ce portefeuille, la phrase de récupération et le mot de passe sont requis."
 
 #: www/views/tx-details.html:93
-msgid "This transaction amount is too small compared to current Nav Coin network fees. Spending these funds will need a Nav Coin network fee cost comparable to the funds itself."
-msgstr "Ce montant de transaction est trop faible par rapport aux actuels frais de réseau Nav Coin. La dépense de ces fonds demandera des frais de réseau Nav Coin comparables aux fonds eux-mêmes."
+msgid "This transaction amount is too small compared to current Folm Coin network fees. Spending these funds will need a Folm Coin network fee cost comparable to the funds itself."
+msgstr "Ce montant de transaction est trop faible par rapport aux actuels frais de réseau Folm Coin. La dépense de ces fonds demandera des frais de réseau Folm Coin comparables aux fonds eux-mêmes."
 
 #: www/views/tx-details.html:89
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender"
@@ -2625,16 +2625,16 @@ msgid "To"
 msgstr "À"
 
 #: www/views/tab-send.html:32
-msgid "To get started, buy Nav Coin or share your address. You can receive Nav Coin from any wallet or service."
-msgstr "Pour commencer, achetez des Nav Coins ou partagez votre adresse. Vous pouvez recevoir des Nav Coins de n'importe quel portefeuille ou service."
+msgid "To get started, buy Folm Coin or share your address. You can receive Folm Coin from any wallet or service."
+msgstr "Pour commencer, achetez des Folm Coins ou partagez votre adresse. Vous pouvez recevoir des Folm Coins de n'importe quel portefeuille ou service."
 
 #: www/views/tab-send.html:33
-msgid "To get started, you'll need to create a Nav Coin wallet and get some Nav Coin."
-msgstr "Pour commencer, vous aurez besoin de créer un portefeuille Nav Coin et d'obtenir quelques Nav Coins."
+msgid "To get started, you'll need to create a Folm Coin wallet and get some Folm Coin."
+msgstr "Pour commencer, vous aurez besoin de créer un portefeuille Folm Coin et d'obtenir quelques Folm Coins."
 
 #: src/js/services/bitpayAccountService.js:73
-msgid "To {{reason}} you must first add your NavPay account - {{email}}"
-msgstr "Pour {{reason}} vous devez d'abord ajouter votre compte NavPay - {{email}}"
+msgid "To {{reason}} you must first add your FolmPay account - {{email}}"
+msgstr "Pour {{reason}} vous devez d'abord ajouter votre compte FolmPay - {{email}}"
 
 #: src/js/services/onGoingProcess.js:48
 msgid "Top up in progress..."
@@ -2713,8 +2713,8 @@ msgid "Try again in {{expires}}"
 msgstr "Réessayez dans {{expires}}"
 
 #: www/views/bitpayCardIntro.html:18
-msgid "Turn Nav Coin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
-msgstr "Convertissez des Nav Coins en dollars et dépensez partout où Visa<sup>&reg;</sup> est accepté."
+msgid "Turn Folm Coin into dollars, swipe anywhere Visa<sup>&reg;</sup> is accepted."
+msgstr "Convertissez des Folm Coins en dollars et dépensez partout où Visa<sup>&reg;</sup> est accepté."
 
 #: www/views/tab-import-phrase.html:17
 msgid "Type the Recovery Phrase (usually 12 words)"
@@ -2919,8 +2919,8 @@ msgid "Wallet already exists"
 msgstr "Le portefeuille existe déjà"
 
 #: src/js/services/profileService.js:498
-msgid "Wallet already in Navpay"
-msgstr "Le portefeuille existe déjà dans Navpay"
+msgid "Wallet already in Folmpay"
+msgstr "Le portefeuille existe déjà dans Folmpay"
 
 #: www/views/includes/walletActivity.html:6
 msgid "Wallet created"
@@ -3070,16 +3070,16 @@ msgid "You can make contributions by signing up on our Crowdin community transla
 msgstr "Vous pouvez faire des contributions en vous inscrivant sur notre site internet de traduction communautaire Crowdin. Nous sommes impatients de vous y voir !"
 
 #: www/views/tab-scan.html:16
-msgid "You can scan Nav Coin addresses, payment requests, paper wallets, and more."
-msgstr "Vous pouvez numériser des adresses Nav Coin, des demandes de paiement, des portefeuilles de papier et plus."
+msgid "You can scan Folm Coin addresses, payment requests, paper wallets, and more."
+msgstr "Vous pouvez numériser des adresses Folm Coin, des demandes de paiement, des portefeuilles de papier et plus."
 
 #: src/js/controllers/preferencesAbout.js:14
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
 msgstr "Vous pouvez voir les derniers développements et contribuer à cette application open source en visitant notre projet sur GitHub."
 
 #: www/views/onboarding/tour.html:19
-msgid "You can spend Nav Coin at stores and websites worldwide."
-msgstr "Vous pouvez dépenser des Nav Coins dans des millions de sites internet et de boutiques à travers le monde."
+msgid "You can spend Folm Coin at stores and websites worldwide."
+msgstr "Vous pouvez dépenser des Folm Coins dans des millions de sites internet et de boutiques à travers le monde."
 
 #: www/views/backup.html:12
 msgid "You can still export it from Advanced &gt; Export."
@@ -3090,28 +3090,28 @@ msgid "You can trade it for other currencies like US Dollars, Euros, or Pounds."
 msgstr "Vous pouvez l’échanger contre d'autres monnaies comme le dollar américain, l'euro ou la livre."
 
 #: www/views/onboarding/tour.html:46
-msgid "You control your Nav Coin."
-msgstr "Vous contrôlez vos Nav Coins."
+msgid "You control your Folm Coin."
+msgstr "Vous contrôlez vos Folm Coins."
 
 #: www/views/modals/bitpay-card-confirmation.html:5
-msgid "You will need to log back for fill in your NavPay Card."
-msgstr "Vous devrez vous reconnecter pour approvisionner votre NavPay Card."
+msgid "You will need to log back for fill in your FolmPay Card."
+msgstr "Vous devrez vous reconnecter pour approvisionner votre FolmPay Card."
 
 #: www/views/preferencesNotifications.html:28
 msgid "You'll receive email notifications about payments sent and received from your wallets."
 msgstr "Vous recevrez des notifications par e-mail concernant les paiements envoyés et reçus depuis vos portefeuilles."
 
 #: www/views/bitpayCard.html:50
-msgid "Your NavPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "Votre NavPay Card est prête. Ajoutez des fonds sur votre carte pour commencer à l'utiliser dans des magasins et distributeurs automatiques à travers le monde entier."
+msgid "Your FolmPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "Votre FolmPay Card est prête. Ajoutez des fonds sur votre carte pour commencer à l'utiliser dans des magasins et distributeurs automatiques à travers le monde entier."
 
 #: www/views/includes/confirmBackupPopup.html:6
-msgid "Your Nav Coin wallet is backed up!"
-msgstr "Votre portefeuille Nav Coin est sauvegardé !"
+msgid "Your Folm Coin wallet is backed up!"
+msgstr "Votre portefeuille Folm Coin est sauvegardé !"
 
 #: www/views/tab-home.html:36
-msgid "Your Nav Coin wallet is ready!"
-msgstr "Votre portefeuille Nav Coin est prêt !"
+msgid "Your Folm Coin wallet is ready!"
+msgstr "Votre portefeuille Folm Coin est prêt !"
 
 #: www/views/feedback/send.html:42
 msgid "Your ideas, feedback, or comments"
@@ -3148,8 +3148,8 @@ msgid "[Balance Hidden]"
 msgstr "[Solde masqué]"
 
 #: src/js/controllers/bitpayCardIntro.js:11
-msgid "add your NavPay Visa card(s)"
-msgstr "ajoutez vos cartes NavPay Visa"
+msgid "add your FolmPay Visa card(s)"
+msgstr "ajoutez vos cartes FolmPay Visa"
 
 #: www/views/includes/available-balance.html:8
 msgid "locked by pending payments"
@@ -3182,12 +3182,12 @@ msgid "to send"
 msgstr "pour envoyer"
 
 #: www/views/preferencesBwsUrl.html:21
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (NavPay's public BWS instance)."
-msgstr "{{appName}} repose sur Bitcore Wallet Service (BWS) pour les informations de blockchain, le réseau et la synchronisation des Copayers. La configuration par défaut est orientée vers https://bws.bitpay.com (instance BWS publique de NavPay)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (FolmPay's public BWS instance)."
+msgstr "{{appName}} repose sur Bitcore Wallet Service (BWS) pour les informations de blockchain, le réseau et la synchronisation des Copayers. La configuration par défaut est orientée vers https://bws.bitpay.com (instance BWS publique de FolmPay)."
 
 #: src/js/controllers/confirm.js:354
-msgid "{{fee}} will be deducted for Nav Coin networking fees."
-msgstr "{{fee}} seront déduits pour les frais de réseau Nav Coin."
+msgid "{{fee}} will be deducted for Folm Coin networking fees."
+msgstr "{{fee}} seront déduits pour les frais de réseau Folm Coin."
 
 #: www/views/confirm.html:87
 msgid "{{tx.txp[wallet.id].feeRatePerStr}}  of the sending amount"
@@ -3231,12 +3231,12 @@ msgid "Private Payment"
 msgstr "Paiement privé"
 
 #: tab-home.html:18
-msgid "Purchase Nav Coin"
-msgstr "Acheter Nav Coin"
+msgid "Purchase Folm Coin"
+msgstr "Acheter Folm Coin"
 
 #: tab-home.html:21
-msgid "To get started, you can buy Nav Coin through our exchange partner Changelly."
-msgstr "Pour commencer, vous pouvez acheter Nav Coin de notre partenaire d'échange Changelly"
+msgid "To get started, you can buy Folm Coin through our exchange partner Changelly."
+msgstr "Pour commencer, vous pouvez acheter Folm Coin de notre partenaire d'échange Changelly"
 
 #: changelly.html:16
 msgid "Loading Changelly Exchange..."

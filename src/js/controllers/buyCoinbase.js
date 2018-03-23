@@ -42,14 +42,14 @@ angular.module('copayApp.controllers').controller('buyCoinbaseController', funct
   });
 
   $scope.$on("$ionicView.beforeEnter", function(event, data) {
-    $scope.isFiat = data.stateParams.currency != 'μNAV' && data.stateParams.currency != 'NAV' ? true : false;
+    $scope.isFiat = data.stateParams.currency != 'μFLM' && data.stateParams.currency != 'FLM' ? true : false;
     var parsedAmount = txFormatService.parseAmount(
       data.stateParams.amount,
       data.stateParams.currency);
 
     // Buy always in BTC
     amount = (parsedAmount.amountSat / 100000000).toFixed(8);
-    currency = 'NAV';
+    currency = 'FLM';
 
     $scope.amountUnitStr = parsedAmount.amountUnitStr;
 
@@ -150,7 +150,7 @@ angular.module('copayApp.controllers').controller('buyCoinbaseController', funct
   };
 
   $scope.buyConfirm = function() {
-    var message = 'Buy NavCoin for ' + $scope.amountUnitStr;
+    var message = 'Buy Folm for ' + $scope.amountUnitStr;
     var okText = 'Confirm';
     var cancelText = 'Cancel';
     popupService.showConfirm(null, message, okText, cancelText, function(ok) {

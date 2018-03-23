@@ -1,11 +1,11 @@
-<!-- <img src="https://raw.githubusercontent.com/navcoin/navpay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="NavPay" width="79"> -->
+<!-- <img src="https://raw.githubusercontent.com/folm/folmpay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="FolmPay" width="79"> -->
 
 <!-- [![Build Status](https://secure.travis-ci.org/bitpay/copay.svg)](http://travis-ci.org/bitpay/copay)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/copay/localized.png)](https://crowdin.com/project/copay) -->
 
-NavPay is a secure Navcoin wallet platform for both desktop and mobile devices. NavPay uses [Bitcore Wallet Service](https://github.com/folm/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
+FolmPay is a secure Folm wallet platform for both desktop and mobile devices. FolmPay uses [Bitcore Wallet Service](https://github.com/folm/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
 
-Binary versions of NavPay are available for download at [..](https://copay.io/#download). NavPay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
+Binary versions of FolmPay are available for download at [..](https://copay.io/#download). FolmPay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
 
 For a list of frequently asked questions please visit the [Copay FAQ](https://github.com/bitpay/copay/wiki/COPAY---FAQ).
 
@@ -16,10 +16,10 @@ For a list of frequently asked questions please visit the [Copay FAQ](https://gi
 - Easy spending proposal flow for shared wallets and group payments
 - [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) Hierarchical deterministic (HD) address generation and wallet backups
 - Device-based security: all private keys are stored locally, not in the cloud
-- Support for Navcoin testnet wallets
+- Support for Folm testnet wallets
 - Synchronous access across all major mobile and desktop platforms
-- Payment protocol (BIP70-BIP73) support: easily-identifiable payment requests and verifiable, secure Navcoin payments
-- Support for over 150 currency pricing options and unit denomination in NAV or μNAV
+- Payment protocol (BIP70-BIP73) support: easily-identifiable payment requests and verifiable, secure Folm payments
+- Support for over 150 currency pricing options and unit denomination in FLM or μFLM
 - Mnemonic (BIP39) support for wallet backups
 - Paper wallet sweep support (BIP38)
 - Hardware wallet support (Trezor and Ledger) (only in Chrome App version)
@@ -92,7 +92,7 @@ npm run apply:copay
 npm run start:desktop
 ```
 
-## Build NavPay App Bundles
+## Build FolmPay App Bundles
 
 Before building the release version for a platform, run the `clean-all` command to delete any untracked files in your current working directory. (Be sure to stash any uncommitted changes you've made.) This guarantees consistency across builds for the current state of this repository.
 
@@ -127,18 +127,18 @@ npm run final:desktop
 
 #### Replacing the Icon
 1- Download Resource Hacker and install (http://www.angusj.com/resourcehacker/#download)
-1- Open `NavPay.exe` in Resource Hacker
+1- Open `FolmPay.exe` in Resource Hacker
 1- Open the `Icon Group` Folder
 1- Right click on `IDR_MAINFRAME : 1033`　(Should be the first icon in the list and look like compass in the preview window)
 1- Click 'Replace Icon ...' and then `Open file with a new icon`
 1- Select `icon.ico` and then click `Replace`
 1- Click the save button or press `Ctrl + S`
-1- Exit and remove `NavPay_original.exe` from the folder before you compile the installer
+1- Exit and remove `FolmPay_original.exe` from the folder before you compile the installer
 
 #### Building the Installer
 
 1. Ensure you have NSIS installed.
-1. Copy `icon.ico` and `installer.nsi` to `/webkitbuilds/NavPay/win64` (the Windows build dir)
+1. Copy `icon.ico` and `installer.nsi` to `/webkitbuilds/FolmPay/win64` (the Windows build dir)
 1. If you've updated the version number, make sure to adjust the version numbers listed in `installer.nsi`
 1. Open `installer.nsi` in NSIS and it will create the installer.
 
@@ -167,38 +167,38 @@ COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.copay/externalServices.json" npm run
 BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.bitpay/externalServices.json" npm run apply:bitpay
 ```
 
-## About NavPay
+## About FolmPay
 
 ### General
 
-NavPay implements a multisig wallet using [p2sh](https://en.bitcoin.it/wiki/Pay_to_script_hash) addresses.  It supports multiple wallets, each with its own configuration, such as 3-of-5 (3 required signatures from 5 participant peers) or 2-of-3.  To create a multisig wallet shared between multiple participants, NavPay requires the extended public keys of all the wallet participants.  Those public keys are then incorporated into the wallet configuration and combined to generate a payment address where funds can be sent into the wallet.  Conversely, each participant manages their own private key and that private key is never transmitted anywhere.
+FolmPay implements a multisig wallet using [p2sh](https://en.bitcoin.it/wiki/Pay_to_script_hash) addresses.  It supports multiple wallets, each with its own configuration, such as 3-of-5 (3 required signatures from 5 participant peers) or 2-of-3.  To create a multisig wallet shared between multiple participants, FolmPay requires the extended public keys of all the wallet participants.  Those public keys are then incorporated into the wallet configuration and combined to generate a payment address where funds can be sent into the wallet.  Conversely, each participant manages their own private key and that private key is never transmitted anywhere.
 
-To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction.  The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.).  Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally.  Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the Navcoin network.
+To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction.  The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.).  Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally.  Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the Folm network.
 
-NavPay also implements [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) to generate new addresses for peers.  The public key that each participant contributes to the wallet is a BIP32 extended public key.  As additional public keys are needed for wallet operations (to produce new addresses to receive payments into the wallet, for example) new public keys can be derived from the participants' original extended public keys.  Once again, it's important to stress that each participant keeps their own private keys locally - private keys are not shared - and are used to sign transaction proposals to make payments from the shared wallet.
+FolmPay also implements [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) to generate new addresses for peers.  The public key that each participant contributes to the wallet is a BIP32 extended public key.  As additional public keys are needed for wallet operations (to produce new addresses to receive payments into the wallet, for example) new public keys can be derived from the participants' original extended public keys.  Once again, it's important to stress that each participant keeps their own private keys locally - private keys are not shared - and are used to sign transaction proposals to make payments from the shared wallet.
 
 For more information regarding how addresses are generated using this procedure, see: [Structure for Deterministic P2SH Multisignature Wallets](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki).
 
-## NavPay Backups and Recovery
+## FolmPay Backups and Recovery
 
-NavPay uses BIP39 mnemonics for backing up wallets.  The BIP44 standard is used for wallet address derivation. Multisig wallets use P2SH addresses, while non-multisig wallets use P2PKH.
+FolmPay uses BIP39 mnemonics for backing up wallets.  The BIP44 standard is used for wallet address derivation. Multisig wallets use P2SH addresses, while non-multisig wallets use P2PKH.
 
 Information about backup and recovery procedures is available at: https://github.com/bitpay/copay/blob/master/backupRecovery.md
 
-Previous versions of NavPay used files as backups. See the following section.
+Previous versions of FolmPay used files as backups. See the following section.
 
-It is possible to recover funds from a NavPay Wallet without using NavPay or the Wallet Service, check the [NavPay Recovery Tool](https://github.com/bitpay/copay-recovery).
+It is possible to recover funds from a FolmPay Wallet without using FolmPay or the Wallet Service, check the [FolmPay Recovery Tool](https://github.com/bitpay/copay-recovery).
 
 
 ## Wallet Export Format
 
-NavPay encrypts the backup with the [Stanford JS Crypto Library](http://bitwiseshiftleft.github.io/sjcl/).  To extract the private key of your wallet you can use https://bitwiseshiftleft.github.io/sjcl/demo/, copy the backup to 'ciphertext' and enter your password.  The resulting JSON will have a key named: `xPrivKey`, that is the extended private key of your wallet.  That information is enough to sign any transaction from your wallet, so be careful when handling it!
+FolmPay encrypts the backup with the [Stanford JS Crypto Library](http://bitwiseshiftleft.github.io/sjcl/).  To extract the private key of your wallet you can use https://bitwiseshiftleft.github.io/sjcl/demo/, copy the backup to 'ciphertext' and enter your password.  The resulting JSON will have a key named: `xPrivKey`, that is the extended private key of your wallet.  That information is enough to sign any transaction from your wallet, so be careful when handling it!
 
 The backup also contains the key `publicKeyRing` that holds the extended public keys of the Copayers.
 Depending on the key `derivationStrategy`, addresses are derived using
-[BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) or [BIP45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki). Wallets created in NavPay v1.2 and forward always use BIP44, all previous wallets use BIP45. Also note that since NavPay version v1.2, non-multisig wallets use address types Pay-to-PublicKeyHash (P2PKH) while multisig wallets still use Pay-to-ScriptHash (P2SH) (key `addressType` at the backup):
+[BIP44](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki) or [BIP45](https://github.com/bitcoin/bips/blob/master/bip-0045.mediawiki). Wallets created in FolmPay v1.2 and forward always use BIP44, all previous wallets use BIP45. Also note that since FolmPay version v1.2, non-multisig wallets use address types Pay-to-PublicKeyHash (P2PKH) while multisig wallets still use Pay-to-ScriptHash (P2SH) (key `addressType` at the backup):
 
-| NavPay Version  | Wallet Type   | Derivation Strategy   | Address Type  |
+| FolmPay Version  | Wallet Type   | Derivation Strategy   | Address Type  |
 |---|---|---|---|---|
 |  <1.2  | All  |  BIP45 | P2SH   |
 |  >=1.2 | Non-multisig  | BIP44  | P2PKH   |
@@ -207,14 +207,14 @@ Depending on the key `derivationStrategy`, addresses are derived using
 
 Using a tool like [Bitcore PlayGround](http://bitcore.io/playground) all wallet addresses can be generated. (TIP: Use the `Address` section for P2PKH address type wallets and `Multisig Address` for P2SH address type wallets). For multisig addresses, the required number of signatures (key `m` on the export) is also needed to recreate the addresses.
 
-BIP45 note: All addresses generated at BWS with BIP45 use the 'shared cosigner index' (2147483647) so NavPay address indexes look like: `m/45'/2147483647/0/x` for main addresses and `m/45'/2147483647/1/y` for change addresses.
+BIP45 note: All addresses generated at BWS with BIP45 use the 'shared cosigner index' (2147483647) so FolmPay address indexes look like: `m/45'/2147483647/0/x` for main addresses and `m/45'/2147483647/1/y` for change addresses.
 
-Since version 1.5, NavPay uses the root `m/48'` for hardware multisignature wallets. This was coordinated with Ledger and Trezor teams. While the derivation path format is still similar to BIP44, the root was in order to indicate that these wallets are not discoverable by scanning addresses for funds. Address generation for multisignature wallets requires the other copayers extended public keys.
+Since version 1.5, FolmPay uses the root `m/48'` for hardware multisignature wallets. This was coordinated with Ledger and Trezor teams. While the derivation path format is still similar to BIP44, the root was in order to indicate that these wallets are not discoverable by scanning addresses for funds. Address generation for multisignature wallets requires the other copayers extended public keys.
 
 
 ## Bitcore Wallet Service
 
-FolmPay depends on [Bitcore Wallet Service](https://github.com/folm/bitcore-wallet-service) (BWS) for blockchain information, networking and Copayer synchronization.  A BWS instance can be setup and operational within minutes or you can use a public instance like `https://bws.bitpay.com`.  Switching between BWS instances is very simple and can be done with a click from within NavPay.  BWS also allows NavPay to interoperate with other wallets like [Bitcore Wallet CLI] (https://github.com/bitpay/bitcore-wallet).
+FolmPay depends on [Bitcore Wallet Service](https://github.com/folm/bitcore-wallet-service) (BWS) for blockchain information, networking and Copayer synchronization.  A BWS instance can be setup and operational within minutes or you can use a public instance like `https://bws.bitpay.com`.  Switching between BWS instances is very simple and can be done with a click from within FolmPay.  BWS also allows FolmPay to interoperate with other wallets like [Bitcore Wallet CLI] (https://github.com/bitpay/bitcore-wallet).
 
 ## Hardware Wallet Support
 
@@ -279,10 +279,10 @@ We release bug fixes as soon as possible for all platforms.  Usually around a we
 - t+7: iOS is submitted for 1.2.1. All other platforms are submitted with auto-release off.
 - t + (~17): All platforms 1.2.1 are released when Apple approves the iOS application update.
 
-## How to Verify NavPay Signatures
+## How to Verify FolmPay Signatures
 
- 1. Download the `admin@navcoin.org` public key (`gpg --recv-keys 3F3B5403`)
- 2. Download NavPay binary (`$FILENAME`) and signature file (`$FILENAME.sig`)
+ 1. Download the `admin@folm.io` public key (`gpg --recv-keys 3F3B5403`)
+ 2. Download FolmPay binary (`$FILENAME`) and signature file (`$FILENAME.sig`)
  3. Verify the signature by running:
 
 ``` bash
@@ -291,10 +291,10 @@ $ gpg --verify \
  $FILENAME
 
 # It should return:
-Good signature from "NavPay (visit copay.io) <copay@bitpay.com>"
+Good signature from "FolmPay (visit copay.io) <copay@bitpay.com>"
 ```
 
-### Public Key for NavPay Binaries
+### Public Key for FolmPay Binaries
 Instead of importing the public key from a public server (like gnu's) you can grab it from here:
 
 ```
@@ -348,4 +348,4 @@ review the [guidelines for contributing](CONTRIBUTING.md).
 
 ## License
 
-NavPay is released under the MIT License.  Please refer to the [LICENSE](https://github.com/bitpay/copay/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.
+FolmPay is released under the MIT License.  Please refer to the [LICENSE](https://github.com/bitpay/copay/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.

@@ -4,17 +4,17 @@ angular.module('copayApp.controllers').controller('preferencesUnitController', f
 
   var config = configService.getSync();
   $scope.unitList = [{
-    name: 'μNAV (1,000,000 μNAV = 1NAV)',
-    shortName: 'μNAV',
+    name: 'μFLM (1,000,000 μFLM = 1FLM)',
+    shortName: 'μFLM',
     value: 100,
     decimals: 2,
-    code: 'unav',
+    code: 'uflm',
   }, {
-    name: 'NAV',
-    shortName: 'NAV',
+    name: 'FLM',
+    shortName: 'FLM',
     value: 100000000,
     decimals: 8,
-    code: 'nav',
+    code: 'flm',
   }];
 
   $scope.save = function(newUnit) {

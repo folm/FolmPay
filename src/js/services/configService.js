@@ -14,7 +14,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
 
     // Bitcore wallet service URL
     bws: {
-      url: 'http://navpay.navcoin.org',
+      url: 'http://folmpay.folm.io',
     },
 
     download: {
@@ -46,10 +46,10 @@ angular.module('copayApp.services').factory('configService', function(storageSer
       reconnectDelay: 5000,
       idleDurationMin: 4,
       settings: {
-        unitName: 'NAV',
+        unitName: 'FLM',
         unitToSatoshi: 100000000,
         unitDecimals: 8,
-        unitCode: 'nav',
+        unitCode: 'flm',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
       }

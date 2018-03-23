@@ -37,8 +37,8 @@ angular.module('copayApp.services').factory('ongoingProcess', function($log, $ti
     'generatingNewAddress': gettext('Generating new address...'),
     'sendingByEmail': gettext('Preparing addresses...'),
     'sending2faCode': gettext('Sending 2FA code...'),
-    'buyingBitcoin': gettext('Buying NavCoin...'),
-    'sellingBitcoin': gettext('Selling NavCoin...'),
+    'buyingBitcoin': gettext('Buying Folm...'),
+    'sellingBitcoin': gettext('Selling Folm...'),
     'fetchingBitPayAccount': gettext('Fetching BitPay Account...'),
     'updatingGiftCards': 'Updating Gift Cards...',
     'updatingGiftCard': 'Updating Gift Card...',
@@ -48,7 +48,7 @@ angular.module('copayApp.services').factory('ongoingProcess', function($log, $ti
     'topup': gettext('Top up in progress...'),
     'calcTransFees': gettext('Calculating Transaction Fees'),
     'findNavTechServer': gettext('Finding NavTech Server'),
-    
+
   };
 
   root.clear = function() {

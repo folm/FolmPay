@@ -7,18 +7,18 @@
 # If you change the names "app.exe", "logo.ico", or "license.rtf" you should do a search and replace - they
 # show up in a few places.
 # All the other settings can be tweaked by editing the !defines at the top of this script
-!define APPNAME "NavPay"
-!define COMPANYNAME "NavCoin"
-!define DESCRIPTION "Windows installer for the NavPay multiwallet"
+!define APPNAME "FolmPay"
+!define COMPANYNAME "Folm"
+!define DESCRIPTION "Windows installer for the FolmPay multiwallet"
 # These three must be integers
 !define VERSIONMAJOR 4
 !define VERSIONMINOR 0
 !define VERSIONBUILD 2
 # These will be displayed by the "Click here for support information" link in "Add/Remove Programs"
 # It is possible to use "mailto:" links in here to open the email client
-!define HELPURL "http://www.navcoin.org" # "Support Information" link
-!define UPDATEURL "http://www.navcoin.org" # "Product Updates" link
-!define ABOUTURL "http://www.navcoin.org" # "Publisher" link
+!define HELPURL "https://folm.io" # "Support Information" link
+!define UPDATEURL "https://folm.io" # "Product Updates" link
+!define ABOUTURL "https://folm.io" # "Publisher" link
 # This is the size (in kB) of all the files copied into "Program Files"
 !define INSTALLSIZE 308252
 
@@ -31,7 +31,7 @@ InstallDir "$PROGRAMFILES\${COMPANYNAME}\${APPNAME}"
 # This will be in the installer/uninstaller's title bar
 Name "${COMPANYNAME} - ${APPNAME}"
 Icon "icon.ico"
-outFile "NavPay-${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}.exe"
+outFile "FolmPay-${VERSIONMAJOR}.${VERSIONMINOR}.${VERSIONBUILD}.exe"
 
 !include LogicLib.nsh
 
@@ -67,7 +67,7 @@ section "install"
 
 	# Start Menu
 	createDirectory "$SMPROGRAMS\${COMPANYNAME}"
-	createShortCut "$SMPROGRAMS\${COMPANYNAME}\${APPNAME}.lnk" "$INSTDIR\NavPay.exe" "" "$INSTDIR\icon.ico"
+	createShortCut "$SMPROGRAMS\${COMPANYNAME}\${APPNAME}.lnk" "$INSTDIR\FolmPay.exe" "" "$INSTDIR\icon.ico"
 
 	# Registry information for add\remove programs
 	WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${COMPANYNAME} ${APPNAME}" "DisplayName" "${COMPANYNAME} - ${APPNAME} - ${DESCRIPTION}"

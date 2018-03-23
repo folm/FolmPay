@@ -15,7 +15,7 @@
       <div id="changelly-constrainer">
         <div id="changelly-loader" translate>Loading Changelly Exchange...</div>
         <div id="changelly-container">
-          <iframe src="https://changelly.com/widget/v1?auth=email&from=BTC&to=NAV&merchant_id=fa6a4eb25086&address=&amount=0.01&ref_id=6c2996558a71&color=7d59b5"
+          <iframe src="https://changelly.com/widget/v1?auth=email&from=BTC&to=FLM&merchant_id=fa6a4eb25086&address=&amount=0.01&ref_id=6c2996558a71&color=7d59b5"
             id="changelly-iframe" scrolling="no" style="overflow-y: hidden; border: none" translate>Can't load Changelly widget</iframe>
         </div>
       </div>
@@ -28,7 +28,7 @@
         <div class="mobile-only" class="text-center" ng-if="isIOS || isAndroid">
           <div class="text">* Credit Card purchase not available on your device</div>
           <div class="link">
-            <a class="button button-standard button-primary" ng-show="wallets[0]" ng-click="openExternalLink('https://changelly.com/widget/v1?auth=email&from=USD&to=NAV&merchant_id=fa6a4eb25086&address=&amount=100&ref_id=6c2996558a71&color=7d59b5')" translate>Buy NAV with Credit Card</a>
+            <a class="button button-standard button-primary" ng-show="wallets[0]" ng-click="openExternalLink('https://changelly.com/widget/v1?auth=email&from=USD&to=FLM&merchant_id=fa6a4eb25086&address=&amount=100&ref_id=6c2996558a71&color=7d59b5')" translate>Buy FLM with Credit Card</a>
           </div>
         </div>
         <div class="address" ng-if="wallets[0]">
@@ -38,7 +38,7 @@
                 <span translate>Incomplete wallet</span>
               </div>
               <div class="subtitle">
-                <span translate>All signing devices must be added to this multisig wallet before NavCoin addresses can be created.</span>
+                <span translate>All signing devices must be added to this multisig wallet before Folm addresses can be created.</span>
               </div>
               <button class="button button-standard button-primary" ng-click="goCopayers()" translate>Open wallet</button>
             </div>

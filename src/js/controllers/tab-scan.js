@@ -134,7 +134,7 @@ angular.module('copayApp.controllers').controller('tabScanController', function(
   function handleSuccessfulScan(contents){
     $log.debug('Scan returned: "' + contents + '"');
     scannerService.pausePreview();
-    var trimmedContents = contents.replace('navcoin:', '');
+    var trimmedContents = contents.replace('folm:', '');
     console.log('trimmedContents', trimmedContents);
     if ($scope.returnRoute) {
       $state.go($scope.returnRoute, { address: trimmedContents });
