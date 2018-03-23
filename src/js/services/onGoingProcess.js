@@ -47,7 +47,7 @@ angular.module('copayApp.services').factory('ongoingProcess', function($log, $ti
     'buyingGiftCard': 'Buying Gift Card...',
     'topup': gettext('Top up in progress...'),
     'calcTransFees': gettext('Calculating Transaction Fees'),
-    'findNavTechServer': gettext('Finding NavTech Server'),
+    'findFolmTechServer': gettext('Finding FolmTech Server'),
 
   };
 

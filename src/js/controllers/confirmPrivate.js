@@ -176,17 +176,17 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
       }); //updateTx
     } else {
       $scope.tx = tx;
-      ongoingProcess.set('findNavTechServer', true);
+      ongoingProcess.set('findFolmTechServer', true);
       folmTechService.findNode(amount, address, $scope.foundNode);
     }
   });
 
   $scope.foundNode = function(success, data, serverInfo) {
     var tx = $scope.tx;
-    ongoingProcess.set('findNavTechServer', false);
+    ongoingProcess.set('findFolmTechServer', false);
     if (!success) {
       //@TODO finish this tree
-      setNoWallet('NavTech Error: ' + data.message);
+      setNoWallet('FolmTech Error: ' + data.message);
       return;
     }
 
@@ -453,7 +453,7 @@ angular.module('copayApp.controllers').controller('confirmPrivateController', fu
 
           if (!tx.anondest) {
             $scope.tx = tx;
-            ongoingProcess.set('findNavTechServer', true);
+            ongoingProcess.set('findFolmTechServer', true);
             folmTechService.findNode(tx.toAmount, tx.toAddress, $scope.foundNode);
           }
 

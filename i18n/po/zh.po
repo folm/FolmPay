@@ -3221,8 +3221,8 @@ msgid "Calculating Transaction Fees"
 msgstr "计算交易费用"
 
 #: onGoingProcess.js:50
-msgid "Finding NavTech Server"
-msgstr "NavTech Server 正在搜索服务器"
+msgid "Finding FolmTech Server"
+msgstr "FolmTech Server 正在搜索服务器"
 
 #: confirmPrivate.html:15
 #: tab-send.html:19

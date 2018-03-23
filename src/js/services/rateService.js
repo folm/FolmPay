@@ -46,11 +46,11 @@ RateService.prototype._fetchCurrencies = function() {
   var updateFrequencySeconds = 5 * 60;
   var btcRate
   var rateServiceUrl = 'https://bitpay.com/api/rates';
-  var navRateServiceUrl = 'https://api.coinmarketcap.com/v1/ticker/nav-coin/'
+  var folmRateServiceUrl = 'https://folm.io/api/price'
 
   var retrieve = function() {
     //log.info('Fetching exchange rates');
-    self.httprequest.get(navRateServiceUrl).success(function(res){
+    self.httprequest.get(folmRateServiceUrl).success(function(res){
       btcRate = res[0].price_btc;
       self.httprequest.get(rateServiceUrl).success(function(res) {
         self.lodash.each(res, function(currency) {

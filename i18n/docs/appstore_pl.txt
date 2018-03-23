@@ -1,4 +1,4 @@
-Bezpieczne nav coiny na twoich własnych warunkach, z elektronicznym portfelem open source z multipodpisami od FolmPay.
+Bezpieczne folm coiny na twoich własnych warunkach, z elektronicznym portfelem open source z multipodpisami od FolmPay.
 Użytkownicy Folmpay mogą posiadać fundusze indywidualnie lub bezpiecznie dzielić je z innymi użytkownikami w portfelach z multipodpisami, które uniemożliwiają nieautoryzowane płatności wymagając wielu potwierdzeń. Oto kilka sposobów, jak portfele Folmpay mogą być używane w połączeniu z innymi użytkownikami:
 
 Oszczędzanie na wakacje lub wspólne zakupy z przyjaciółmi

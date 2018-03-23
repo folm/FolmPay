@@ -183,11 +183,11 @@ angular.module('copayApp.controllers').controller('bitpayCardController', functi
   };
 
   this.viewOnBlockchain = function(transactionId) {
-    var url = 'https://chainz.cryptoid.info/nav/tx.dws?' + transactionId;
+    var url = 'https://explorer.folm.io/transactions/' + transactionId;
     var optIn = true;
     var title = null;
-    var message = gettextCatalog.getString('View Transaction on CryptoID');
-    var okText = gettextCatalog.getString('Open CryptoID');
+    var message = gettextCatalog.getString('View Transaction on Explorer');
+    var okText = gettextCatalog.getString('Open Explorer');
     var cancelText = gettextCatalog.getString('Go Back');
     externalLinkService.open(url, optIn, title, message, okText, cancelText);
   };

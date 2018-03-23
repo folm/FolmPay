@@ -3225,11 +3225,11 @@ msgstr "カメラは無効になっているか、カメラが接続されてい
 
 #: onGoingProcess.js:49
 msgid "Calculating Transaction Fees"
-msgstr "NavTech Serverの検索"
+msgstr "FolmTech Serverの検索"
 
 #: onGoingProcess.js:50
-msgid "Finding NavTech Server"
-msgstr "NavTech Serverの検索"
+msgid "Finding FolmTech Server"
+msgstr "FolmTech Serverの検索"
 
 #: confirmPrivate.html:15
 #: tab-send.html:19

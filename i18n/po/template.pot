@@ -3211,7 +3211,7 @@ msgid "Calculating Transaction Fees"
 msgstr ""
 
 #: onGoingProcess.js:50
-msgid "Finding NavTech Server"
+msgid "Finding FolmTech Server"
 msgstr ""
 
 #: confirmPrivate.html:15

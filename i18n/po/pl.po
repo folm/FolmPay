@@ -3221,8 +3221,8 @@ msgid "Calculating Transaction Fees"
 msgstr "Obliczanie opłat transakcyjnych"
 
 #: onGoingProcess.js:50
-msgid "Finding NavTech Server"
-msgstr "Wyszukiwanie Serwera NavTech"
+msgid "Finding FolmTech Server"
+msgstr "Wyszukiwanie Serwera FolmTech"
 
 #: confirmPrivate.html:15
 #: tab-send.html:19

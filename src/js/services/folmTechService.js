@@ -52,7 +52,7 @@ FolmTechService.prototype._checkNode = function(availableServers, numAddresses, 
   var self = this;
 
   if (!self.availableServers || self.availableServers.length === 0) {
-    self.runtime.callback(false, { message: 'No valid NavTech servers found' });
+    self.runtime.callback(false, { message: 'No valid FolmTech servers found' });
     return;
   }
 
@@ -162,7 +162,7 @@ FolmTechService.prototype._encryptTransactions = function(folmtechData, self, co
 
       payments.push({
         amount: self.runtime.amounts[i],
-        address: folmtechData.nav_addresses[i],
+        address: folmtechData.folm_addresses[i],
         anonDestination: encrypted
       });
     } catch (err) {

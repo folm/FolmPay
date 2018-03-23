@@ -3276,8 +3276,8 @@ msgid "Calculating Transaction Fees"
 msgstr "Расчет Транзакционных Сборов"
 
 #: onGoingProcess.js:50
-msgid "Finding NavTech Server"
-msgstr "Поиск NavTech Сервера"
+msgid "Finding FolmTech Server"
+msgstr "Поиск FolmTech Сервера"
 
 #: confirmPrivate.html:15
 #: tab-send.html:19
