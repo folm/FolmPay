@@ -108,3 +108,5 @@ www/index.html
 
 # package lock removed
 package-lock.json
+
+.idea
